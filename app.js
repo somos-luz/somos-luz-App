@@ -71,7 +71,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Caja 8 inciensos. Encender uno de estos inciensos es un acto sagrado y purificador, aumenta la sensacion de calma y bienestar, atrayendo energías positivas armoniosas a todos los que esten en contacto con este humo sagrado.',
         price: 3900,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+        imageUrl: 'https://i.imgur.com/qKuuJFH.jpeg'
     },
     {
         id: 'Inciensos Palo Santo con Sandalo',
@@ -111,7 +111,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Atado de hierbas y resinas. La Mirra es una ofrenda sagrada, purifica espacios creando vibraciones positivas proporcionando paz y tranquilidad, en combinacion con el Palo Santo limpia el aura y sella todo con Amor y luz.',
         price: 3500,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+        imageUrl: 'https://i.imgur.com/VwhdSZs.jpeg'
     },
     {
         id: 'Sahumo de Romero',
@@ -119,7 +119,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Atado de hierbas y resinas. Efectivo para limpiar nuestra vida y aura, por sus poderes esotéricos es excelente para abrir caminos, nuestra mente y percepcion a nuevas bendiciones y oportunidades.',
         price: 3500,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+        imageUrl: 'https://i.imgur.com/rgEPSVV.jpeg'
     },
     {
         id: 'Sahumo de Sandalo',
@@ -127,7 +127,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Atado de hierbas y resinas. Purifica y calma la mente ayudandonos a reducir la tension y el estres. Sus propiedades esotéricas relacionadas con la atraccion de energias positivas, apertura de caminos espirituales y fortalecimiento de la intuicion, ademas nos ayuda a la union de almas con Amor y deseo.',
         price: 3500,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+        imageUrl: 'https://i.imgur.com/8ryaAiu.jpeg'
     },
     {
         id: 'Sahumo de Salvia Blanca',
@@ -135,7 +135,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Atado de hierbas y resinas. Tiene un alto poder esotérico y espiritual, ampliamente usada para atraer la sanación, proteccion espiritual, limpieza poderosa y elevacion frecuencia de los espacios ayudandonos a conectar con nuestra luz y sabiduria interior.',
         price: 3500,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+        imageUrl: 'https://i.imgur.com/IxOa3BP.jpeg'
     },
     {
         id: 'Sahumo de Copal',
@@ -143,7 +143,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Atado de hierbas y resinas. Conocida como la "resina de los dioses" o "elixir de la tierra", su poder ancestral, nos sigue acompañando protegiendo, purificando y limpiando energeticamente nuestras vidas, uniendo la fuerza y poder de la naturaleza y el poder y fuerza del cielo.',
         price: 3500,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+        imageUrl: 'https://i.imgur.com/ek3qZJ6.jpeg'
     },
     {
         id: 'Kit ambienta tu espacio',
@@ -151,7 +151,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: '5 varillas de incienso. A eleccion podras elegir del stock disponible 5 varilla de incienso (sin repetir), ideal para probar aromas y luego elegir con conocimiento y gusto la proxima vez.',
         price: 2500,
-        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/verde_07f7d78d-3940-452d-8281-85d68e57331b_1024x1024.jpg?v=1682377235'
+        imageUrl: 'https://i.imgur.com/DQDZJtM.jpeg'
     },
     {
         id: 'Trozos de Palo Santo',
