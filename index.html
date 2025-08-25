@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somos Luz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Somos Luz</h1>
+        <div class="cart-icon-container">
+            <span class="cart-count">0</span>
+            <button id="cart-button">🛒 Carrito</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="products-services" class="catalog-grid"></section>
+
+        <section id="cart-container" class="hidden">
+            <h2>Tu Carrito</h2>
+            <div id="cart-items"></div>
+            <div id="cart-summary">
+                <p>Total: <span id="cart-total">0</span></p>
+            </div>
+            <button id="checkout-button">Enviar Pedido por WhatsApp</button>
+            <button id="close-cart">Cerrar</button>
+        </section>
+
+        <section id="contact-form" class="hidden">
+            <h2>Contacto</h2>
+            <p>Envíanos un mensaje y te responderemos pronto.</p>
+            <form id="contact-form-content">
+                <input type="text" id="contact-name" placeholder="Tu Nombre" required>
+                <input type="email" id="contact-email" placeholder="Tu Email" required>
+                <textarea id="contact-message" placeholder="Tu Mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="#" id="admin-link" style="color: #ccc; font-size: 12px;">Panel de Administración</a>
+        <section id="admin-panel" class="hidden">
+            <h2>Panel de Administración</h2>
+            <div id="login-form">
+                <input type="text" id="admin-username" placeholder="Usuario">
+                <input type="password" id="admin-password" placeholder="Contraseña">
+                <button id="admin-login-btn">Iniciar Sesión</button>
+            </div>
+            
+            <div id="catalog-manager" class="hidden">
+                <h3>Gestionar Catálogo</h3>
+                <form id="product-form" class="admin-form">
+                    <input type="hidden" id="product-id-input">
+                    <input type="text" id="product-name-input" placeholder="Nombre" required>
+                    <textarea id="product-description-input" placeholder="Descripción" rows="2" required></textarea>
+                    <input type="number" id="product-price-input" placeholder="Precio" required>
+                    <input type="text" id="product-image-url-input" placeholder="URL de la Imagen" required>
+                    <select id="product-type-input" required>
+                        <option value="producto">Producto</option>
+                        <option value="servicio">Servicio</option>
+                    </select>
+                    <button type="submit" id="add-edit-btn">Añadir/Guardar Producto</button>
+                </form>
+
+                <h4>Productos y Servicios Actuales</h4>
+                <div id="current-catalog"></div>
+            </div>
+        </section></div>
+    </main></main>
+
+    <script src="app.js"></script>
+</body>
+</html>
