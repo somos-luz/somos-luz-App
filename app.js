@@ -2,37 +2,245 @@
 // Los datos se guardan en el localStorage del navegador para que no se pierdan al recargar
 let catalog = JSON.parse(localStorage.getItem('catalog')) || [
     {
-        id: 'incienso-salvia',
+        id: 'Incienso de Salvia Blanca',
         name: 'Incienso de Salvia Blanca',
         type: 'producto',
-        description: 'Ideal para limpiezas energéticas profundas del hogar y el aura.',
+        description: 'Caja 9 inciensos. Ideal para limpiezas energéticas profundas del hogar y el aura nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiendonos y abriendo nuestro camino para conectar con nuestra luz y sabiduria interior.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/T0TD8EI.jpeg'
+    },
+    {
+        id: 'Incienso de Eucalipto, Laurel & Cedro',
+        name: 'Incienso de Eucalipto, Laurel & Cedro',
+        type: 'producto',
+        description: 'Caja 9 inciensos. Esta fusión nos ayuda a la apertura de caminos y nuevas posibilidades. El Cedro nos conecta con la estabilidad, el Laurel con la abundancia y el Eucalipto nos abre nuestra percepcion para poder ver todo materializado.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/FQdcp3m.jpeg'
+    },
+    {
+        id: 'Inciensos Anis, Canela & Olibano',
+        name: 'Inciensos Anis, Canela & Olibano',
+        type: 'producto',
+        description: 'Caja 9 Inciensos. La combinacion de estas hierbas y maderas crea una mezcla poderosa que limpia energías densas, protege el aura y atrae prosperidad. Ideal para rituales de apertura, cambios, manifestación consciente y proteccion energetica',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/6haCS0h.jpeg'
+    },
+    {
+        id: 'Inciensos de Lavanda & Olibano',
+        name: 'Inciensos de Lavanda & Olibano',
+        type: 'producto',
+        description: 'Caja 9 Inciensos. La lavanda aporta equilibrio y armonia que junto con el Oibano que atrae energías positivas, sutiles y purifica el espacio, son un protector poderoso del hogar y neutralidad de energias densas',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/IxAqUo1.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Lavanda',
+        name: 'Inciensos Palo Santo con Lavanda',
+        type: 'producto',
+        description: 'Caja 8 inciensos. La sagrada madera de Palo Santo combinada con la frescura de la lavanda purifican el campo energetico y relajan nuestra mente, nos da equilibrio y armonia en el espacio.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/9yxQcsQ.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Mirra',
+        name: 'Inciensos Palo Santo con Mirra',
+        type: 'producto',
+        description: 'Caja 8 inciensos. El Palo Santo combinado con la Mirra atrae energías positivas armoniosas atrayendo el poder de renovación, calma y tranquilidad a todo aquel que se deleite con su fragancia.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/2AqLPM6.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Ruda',
+        name: 'Inciensos Palo Santo con Ruda',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Esta mezcla nos ayuda a purificar los espacios, nos brinda proteccion y llena de Amor y luz nuestros espacios, ademas de limpiar las energías densas nos protege.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/K0VvwGx.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Canela',
+        name: 'Inciensos Palo Santo con Canela',
+        type: 'producto',
+        description: 'Caja 8 inciensos. La canela con su aroma nos ayuda a relajar y ,amtemer una paz mental que nos guía hacia la abundancia y prosperidad junto con el Palos Santo intensifica y abre nuestros caminos.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/mlQb2GW.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo',
+        name: 'Inciensos Palo Santo',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Encender uno de estos inciensos es un acto sagrado y purificador, aumenta la sensacion de calma y bienestar, atrayendo energías positivas armoniosas a todos los que esten en contacto con este humo sagrado.',
+        price: 3900,
+        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+    },
+    {
+        id: 'Inciensos Palo Santo con Sandalo',
+        name: 'Inciensos Palo Santo con Sandalo',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Estas dos maderas sagradas nos brinda claridad mental, es un relajante natural, ayudandonos con la memoria, su aroma afrodisiaco natural reduce nuestro estres y nos aporta amor propio o de pareja en el espacio.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/mqSKjb6.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Copal',
+        name: 'Inciensos Palo Santo con Copal',
+        type: 'producto',
+        description: 'Caja 8 inciensos. La union de Palo Santo con el Copal forman un humo poderoso y sagrado que nos ayuda con la purificación y sanación, nos vuelve un iman para las energias de abundancia y sanación tanto fisica como espiritual por su gran conexion con lo divino y sagrado.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/pPFGtHx.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Salvia',
+        name: 'Inciensos Palo Santo con Salvia',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Combinacion poderosa que nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiendonos y abriendo nuestro camino para conectar con nuestra luz.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/XVCHgXr.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Romero',
+        name: 'Inciensos Palo Santo con Romero',
+        type: 'producto',
+        description: 'Caja 8 inciensos. El Palo Santo y el Romero juntos nos brindan purificacion y sanación de espacios, atrae energías positivas uniendo las almas con Amor, lo que genera paz y armonia en el hogar o trabajo.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/kL062nJ.jpeg'
+    },
+    {
+        id: 'Sahumo Mirra y Palo Santo',
+        name: 'Sahumo de Mirra y Palo Santo',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. La Mirra es una ofrenda sagrada, purifica espacios creando vibraciones positivas proporcionando paz y tranquilidad, en combinacion con el Palo Santo limpia el aura y sella todo con Amor y luz.',
         price: 3500,
         imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
     },
     {
-        id: 'piedra-amatista',
-        name: 'Piedra Amatista',
+        id: 'Sahumo de Romero',
+        name: 'Sahumo de Romero',
         type: 'producto',
-        description: 'Calma la mente, alivia el estrés y ayuda en la meditación.',
-        price: 8000,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Piedra+Amatista'
+        description: 'Atado de hierbas y resinas. Efectivo para limpiar nuestra vida y aura, por sus poderes esotéricos es excelente para abrir caminos, nuestra mente y percepcion a nuevas bendiciones y oportunidades.',
+        price: 3500,
+        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
     },
     {
-        id: 'reiki-sesion',
-        name: 'Sesión de Reiki',
-        type: 'servicio',
-        description: 'Terapia energética para equilibrar los chakras y promover la sanación.',
-        price: 15000,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Sesión+de+Reiki'
+        id: 'Sahumo de Sandalo',
+        name: 'Sahumo de Sandalo',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Purifica y calma la mente ayudandonos a reducir la tension y el estres. Sus propiedades esotéricas relacionadas con la atraccion de energias positivas, apertura de caminos espirituales y fortalecimiento de la intuicion, ademas nos ayuda a la union de almas con Amor y deseo.',
+        price: 3500,
+        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
     },
     {
-        id: 'lectura-cartas',
-        name: 'Lectura de Cartas de Tarot',
-        type: 'servicio',
-        description: 'Guía y claridad sobre preguntas de vida, amor y carrera.',
-        price: 18000,
-        imageUrl: 'https://via.placeholder.com/300x200.png?text=Lectura+de+Cartas'
-    }
+        id: 'Sahumo de Salvia Blanca',
+        name: 'Sahumo de Salvia Blanca',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Tiene un alto poder esotérico y espiritual, ampliamente usada para atraer la sanación, proteccion espiritual, limpieza poderosa y elevacion frecuencia de los espacios ayudandonos a conectar con nuestra luz y sabiduria interior.',
+        price: 3500,
+        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+    },
+    {
+        id: 'Sahumo de Copal',
+        name: 'Sahumo de Copal',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Conocida como la "resina de los dioses" o "elixir de la tierra", su poder ancestral, nos sigue acompañando protegiendo, purificando y limpiando energeticamente nuestras vidas, uniendo la fuerza y poder de la naturaleza y el poder y fuerza del cielo.',
+        price: 3500,
+        imageUrl: 'https://via.placeholder.com/300x200.png?text=Incienso+de+Salvia'
+    },
+    {
+        id: 'Kit ambienta tu espacio',
+        name: 'Kit Ambienta tu Espacio',
+        type: 'producto',
+        description: '5 varillas de incienso. A eleccion podras elegir del stock disponible 5 varilla de incienso (sin repetir), ideal para probar aromas y luego elegir con conocimiento y gusto la proxima vez.',
+        price: 2500,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/verde_07f7d78d-3940-452d-8281-85d68e57331b_1024x1024.jpg?v=1682377235'
+    },
+    {
+        id: 'Trozos de Palo Santo',
+        name: 'Trozos de Palo Santo',
+        type: 'producto',
+        description: 'Bolsa con 4 Trozos. Esta madera sagrada nos ayuda a purificar espacios, armonizarlos alejando energías densas y que nos estacan en pensamiento y emociones bajas y densas.',
+        price: 1500,
+        imageUrl: 'https://i.imgur.com/drQiWTL.jpeg'
+    },
+    {
+        id: 'Infusion de Tranquilidad',
+        name: 'Infusion de Tranquilidad',
+        type: 'producto',
+        description: 'Pack 5 bolsitas de infusion herbal. Mezcla de hierbas medicinales, Manzanilla, Hierba Buena, Cedrón, Matico, Eucalipto. Nos ayuda a relajar el sistema nervioso, abre nuestro corazon para expulsar tensiones emocionales y mentales para un descanso restaurador.',
+        price: 2000,
+        imageUrl: 'https://i.imgur.com/eLbunwP.jpeg'
+    },
+    {
+        id: 'Velas lisas',
+        name: 'Vela Lisa Blanca',
+        type: 'producto',
+        description: '1 vela blanca 17cm. El color Blanco nos transmite pureza y claridad, es un color neutral podemos encender una vela con la fiel intencion y certeza de atraer claridad y guia divina, para encender la luz y a traerla hacia tu vida, puedes invocar al Arcangel Gabriel el custodio de la luz y la claridad del Creador.',
+        price: 1000,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/blanca_f0f8a11c-642f-497a-8ace-5912a2d2e4df_1024x1024.jpg?v=1682376881'
+    },
+    {
+        id: 'Velas lisas',
+        name: 'Vela Lisa Morada',
+        type: 'producto',
+        description: '1 vela morada 17cm. El color Morado nos transmite cambio y transmutacion, al endenderla nos pre dispone a la meditacion e introspeccion y realizar desde allí con intencion y conviccion los cambios y transformaciones que necesitamos en nuestra vida, puedes invocar al Arcangel Zadquiel el custodio de la energia de transformacion y cambio del Creador.',
+        price: 1000,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/morada-3_1024x1024.jpg?v=1682377036'
+    },
+     {
+        id: 'Velas lisas',
+        name: 'Vela Lisa Naranja',
+        type: 'producto',
+        description: '1 vela naranja 17cm. El color Naranjo nos transmite alegria y energia, enciendela cuando estes falto de estas cualidades, con pesades y sin muchas ganas, intencionala con conviccion de despertar la energia y alegria que necesitas para actuar con equilibrio y armonia, puedes invocar al Arcangel Uriel el custodio de la alegria y las ganas o la energía del Creador.',
+        price: 1000,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/naranja_5416fbfe-432c-4c06-a0db-61a8190dee98_1024x1024.jpg?v=1682377044'
+    },
+    {
+        id: 'Velas lisas',
+        name: 'Vela Lisa Amarilla',
+        type: 'producto',
+        description: '1 vela amarilla 17cm. El color Amarillo nos transmite sabiduria y abundancia, enciendela cuando necesites sabiduria para actuar desde el corazon y para adquirir el aprendizaje de las lecciones que nos presenta la vida, agredeciendo la abundancia y la prosperidad, puedes invocar al Arcangel Jofhiel el custodio de la sabiduria y abundancia del Creador.',
+        price: 1000,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/llama-dinero_1024x1024.jpg?v=1682376769'
+    },
+    {
+        id: 'Velas lisas',
+        name: 'Vela Lisa Azul',
+        type: 'producto',
+        description: '1 vela Azul 17cm. El color Azul nos transmite Seguridad y Fuerza, enciendela cuando te sientas inseguro y necesites fuerza para afrontar las adversidades y enseñanzas de la vida intencionala con fuerza y poder de conviccion que la luz azul te esta protegiendo y envolviendo a ti y todo tu alrededor, puedes invocar al Arcangel Miguel el custodio de la proteccion y fuerza del Creador.',
+        price: 1000,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/azul_a1103d62-ce0a-4a3d-8814-4b33fcf99470_1024x1024.jpg?v=1682376785'
+    },
+    {
+        id: 'Velas lisas',
+        name: 'Vela Lisa Rosada',
+        type: 'producto',
+        description: '1 vela Rosada 17cm. El color Rosado nos transmite Amor y Compasión, enciendela cuando quieras atraer el Amor divino y la compasión a tu vida, intencionala con la conviccion que todo tu ser esta siendo envuelto en luz rosada y que todo se puede solucionar con el Amor, puedes invocar al Arcangel Shamuel el custodio del Amor y la Compasion del Creador.',
+        price: 1000,
+        imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/rosada_272546b6-f8f8-418f-bd88-90d9ca8d2c3e_1024x1024.jpg?v=1682377084'
+    },
+    {
+        id: 'Bisuteria',
+        name: 'Aros de Minerales o Piedras Semipreciosas',
+        type: 'producto',
+        description: '1 par de pendientes artesanales. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
+        price: 3500,
+        imageUrl: 'https://i.imgur.com/kzjBMt3.jpeg'
+    },
+    {
+        id: 'Bisuteria',
+        name: 'Collares de Minerales o Piedras Semipreciosas',
+        type: 'producto',
+        description: '1 Collar artesanal. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
+        price: 5000,
+        imageUrl: 'https://i.imgur.com/KGYOS6S.jpeg'
+    },
+    {
+        id: 'Bisuteria',
+        name: 'Colgantes Armonizadores de Minerales o Piedras Semipreciosas',
+        type: 'producto',
+        description: '1 Colgante artesanal. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
+        price: 6000,
+        imageUrl: 'https://i.imgur.com/JgpEZnB.jpeg'
+    },
 ];
 
 // --- VARIABLES Y ELEMENTOS DEL DOM ---
