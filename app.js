@@ -154,6 +154,30 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/DQDZJtM.jpeg'
     },
     {
+        id: 'Kits',
+        name: 'Kit Amor Propio y Conexion Espiritual',
+        type: 'producto',
+        description: 'Este kit incluye; 1 Vela lisa Rosada, 1 sahumo de Copal, 1 Collar de Cuarzo Rosa, Ritual paso a paso, Este kit está diseñado para quienes necesitan conectarse con su corazón, sanar sus emociones y cultivar el amor por sí mismos.',
+        price: 8888,
+        imageUrl: 'https://i.imgur.com/2AGTgBd.jpeg'
+    },
+    {
+        id: 'Kits',
+        name: 'Kit Proteccion y Manifestacion',
+        type: 'producto',
+        description: 'Este kit incluye; 1 Vela lisa Violeta, 1 sahumo de Romero, 1 Collar de Pirita o 1 collar de Obsidiana, Ritual paso a paso, Este kit es para quienes buscan protegerse de energías densas del exterior e interior y enfocarse en manifestar sus deseos y metas.',
+        price: 8888,
+        imageUrl: 'https://i.imgur.com/5vXxZR9.jpeg'
+    },
+    {
+        id: 'Kits',
+        name: 'Kit Limpieza Energetica y Paz Interior',
+        type: 'producto',
+        description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 Collar de Cuarzo blanco, Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
+        price: 8888,
+        imageUrl: 'https://i.imgur.com/Ql99G1W.jpeg'
+    },
+    {
         id: 'Trozos de Palo Santo',
         name: 'Trozos de Palo Santo',
         type: 'producto',
@@ -240,6 +264,94 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         description: '1 Colgante artesanal. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
         price: 6000,
         imageUrl: 'https://i.imgur.com/JgpEZnB.jpeg'
+    },
+    {
+        id: 'Terapias',
+        name: 'Flores de Bach',
+        type: 'servicio',
+        description: 'Es una terapia energética que utiliza esencias florales silvestres. Cada flor aporta su huella energética para ayudarnos en procesos emocionales, Su propósito es guiarnos y permitirnos ver la vida desde nuestro verdadero ser.',
+        price: 19000,
+        imageUrl: 'https://lh3.googleusercontent.com/gg-dl/AJfQ9KS7YXpf3ltKkWcZgWFKGGqoiROogWDjReV3-GJQ-BwzcScULWPas7A9LCvgFPFhgJKtidRJVsRjDd7453ogLa74LkU8Unsg-ekKad1oPgUyUlXi_SIldgbDmMdPen_gbVPkrUJy8i8NT2gbR7vlu-TzbTtIM8O5KgFZsYMHz_G_R2o4'
+    },
+    {
+        id: 'Masajes',
+        name: 'Masaje de Relajacion 40 min.',
+        type: 'servicio',
+        description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos y manos, de duracion aprox. de 30 a 40 min, ideal para personas que tienen un corto tiempo para regalarse un descanso y despojarse del estres de la rutina. Puedes pedirlo a domicilio por un valor adicional.',
+        price: 28000,
+        imageUrl: 'https://lh3.googleusercontent.com/gg-dl/AJfQ9KQPMeESZltC3e5ZqR_85CwgDVK63qHAZ5dgw1KwCOCOP_7RWOijAah7lBFeEDb2n6zQZENrwKPh4GzcfPlN--MLkOvnQg5jzs0W8zgsc9KTdbholkEe7wNh2QPqwOWN6oKUS9lbg8aZwQ4Flzlo_CrvrTNYVvN2OOT44dNWo5-c39Cpow'
+    },
+    {
+        id: 'Masajes',
+        name: 'Masaje de Relajacion 1 Hora.',
+        type: 'servicio',
+        description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 1 hora y media, ideal para personas que quieren una desconexion total de la rutina, del estres y volver a conectar con su energia regenerativa que produce un buen masaje. Puedes pedirlo a domicilio por un valor adicional.',
+        price: 35000,
+        imageUrl: 'https://lh3.googleusercontent.com/gg-dl/AJfQ9KSc_iLxRx3ahDxaGSUCZ_Se6v7WuRUNYmCNk1wv8FCbAoQLHzXPrhMD7Je92aGB1255CyCJ1NN04pDU8f6dWWOftb10qC_OIfA_j1eXoppsR3p8400GhciXJrGEfgPg54ff8QfI1pXNEufaKb12WLdNhpqbXtbM7rmmiCvtXlDLQL2OpQ'
+    },
+    {
+        id: 'Masajes',
+        name: 'Ritual Masaje Holistico.',
+        type: 'servicio',
+        description: 'Este ritual de conexion empieza con una infusion de hierbas que nos ayuda abrir el corazon para luego pasar por un test floral que nos ayudara abrir y entender nuestro mundo emocional, pasaremos a un Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 2 hora y media, ideal para personas que quieren una desconexion total para una reconexion con su ser completo. Puedes pedirlo a domicilio por un valor adicional.',
+        price: 45000,
+        imageUrl: 'https://i.imgur.com/rQJAMND.jpeg'
+    },
+    {
+        id: 'Masajes',
+        name: 'GIFTCARD Ritual Masaje Holistico.',
+        type: 'servicio',
+        description: '¿No sabes que regalar? este ritual de conexion es el mejor regalo para esa persona que amas y quiere regalarle bienestar y conexion verdadera, empieza con una infusion de hierbas que nos ayuda abrir el corazon para luego pasar por un test floral que nos ayudara abrir y entender nuestro mundo emocional, pasaremos a un Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 2 hora y media, ideal para personas que quieren una desconexion total para una reconexion con su ser completo. Puedes pedirlo a domicilio por un valor adicional. 1 mes para canjear.',
+        price: 45000,
+        imageUrl: 'https://i.imgur.com/2w7Fuzz.jpeg'
+    },
+    {
+        id: 'Terapias',
+        name: 'Sesiones de Reiki Usui.',
+        type: 'servicio',
+        description: 'Su principal función es la sanación y el equilibrio energético . El Reiki actúa limpiando, purificando y alineando los siete chakras principales, que son centros de energía a lo largo del cuerpo. Esto permite un flujo energético correcto, ayudando a la persona a liberar emociones negativas, traumas y bloqueos kármicos. esta terapia se puede hacer a distancia a personas, animalitos y plantas.',
+        price: 10000,
+        imageUrl: 'https://i.imgur.com/EhZ9fOg.jpeg'
+    },
+    {
+        id: 'Terapias',
+        name: 'Lectura de Registros Akashicos.',
+        type: 'servicio',
+        description: 'La Lectura de Registros Akáshicos es la apertura del "libro" del alma. Es un campo energético y la memoria universal de la existencia, que contiene todas las experiencias de un ser desde su origen. Esta información, custodiada por Maestros y Guardianes, es accesible para obtener el conocimiento necesario para la evolución espiritual. no es predictiva, es altamente sanadora.',
+        price: 20000,
+        imageUrl: 'https://i.imgur.com/TBiwupA.jpeg'
+    },
+    {
+        id: 'Terapias',
+        name: 'Sesion de Terapia de codificación Solar.',
+        type: 'servicio',
+        description: 'Es una Terapia complementaria que utiliza la energía solar de Quinta Dimensión , conocida como energía Crística . Esta energía, que irradia desde el Sol y está conectada con el Gran Sol Central, es de alta frecuencia y vibración, promoviendo el despertar de la conciencia y el amor incondicional. La terapia limpia y purifica el torrente sanguíneo, el agua del cuerpo y los hemisferios cerebrales de toxinas emocionales, mentales y físicas del pasado y presente. El propósito de esta limpieza es preparar a la persona para anclar la energía Crística, facilitando una transformación interna hacia un "nuevo ser humano".',
+        price: 10000,
+        imageUrl: 'https://i.imgur.com/OIpd2rc.png'
+    },
+    {
+        id: 'Terapias',
+        name: 'Sesion de Pendulo.',
+        type: 'servicio',
+        description: '✨ Lecturas con Péndulo ✨, El péndulo es una poderosa herramienta de conexión energética que nos ayuda a acceder a respuestas claras desde nuestra intuición y el campo espiritual. A través de esta práctica podrás recibir orientación para tomar decisiones, liberar bloqueos, equilibrar tu energía y encontrar mayor claridad en tu camino. 🌙💫Déjate guiar por la sabiduría de tu propia energía y descubre lo que el péndulo tiene para revelarte..',
+        price: 12000,
+        imageUrl: 'https://i.imgur.com/7onlA3S.jpeg'
+    },
+    {
+        id: 'Terapias',
+        name: 'Guia de los ELementos.',
+        type: 'servicio',
+        description: '🌿✨ Lecturas con el Oráculo de la Bruja Verde ✨🌿, Este oráculo es un portal a la sabiduría ancestral de la naturaleza, donde cada carta revela mensajes de sanación, guía espiritual y conexión con los ciclos de la vida. A través de sus símbolos mágicos recibirás ORIENTACIÓN para comprender tu presente, tomar decisiones conscientes y abrirte a nuevas posibilidades. 🍃🔮Permite que la energía de la tierra y la magia de lo verde te acompañen en tu camino.',
+        price: 12000,
+        imageUrl: 'https://i.imgur.com/hpbi6mT.jpeg'
+    },
+    {
+        id: 'Terapias',
+        name: 'Guia de los Angeles.',
+        type: 'servicio',
+        description: 'Recibiras una guia consciente, orientacion, ayuda y consejo por medio de una Lectura de cartas de Angeles, podras realizar preguntas y recibir guia con diferentes formas de respuestas a traves de esta excelente conexión con ellos.',
+        price: 10000,
+        imageUrl: 'https://i.imgur.com/vCNFpdC.jpeg'
     },
 ];
 
@@ -487,3 +599,4 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
