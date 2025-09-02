@@ -279,7 +279,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'servicio',
         description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos y manos, de duracion aprox. de 30 a 40 min, ideal para personas que tienen un corto tiempo para regalarse un descanso y despojarse del estres de la rutina. Puedes pedirlo a domicilio por un valor adicional.',
         price: 28000,
-        imageUrl: 'https://lh3.googleusercontent.com/gg-dl/AJfQ9KQPMeESZltC3e5ZqR_85CwgDVK63qHAZ5dgw1KwCOCOP_7RWOijAah7lBFeEDb2n6zQZENrwKPh4GzcfPlN--MLkOvnQg5jzs0W8zgsc9KTdbholkEe7wNh2QPqwOWN6oKUS9lbg8aZwQ4Flzlo_CrvrTNYVvN2OOT44dNWo5-c39Cpow'
+        imageUrl: 'https://i.imgur.com/gq8dB5O.jpeg'
     },
     {
         id: 'Masajes',
@@ -287,7 +287,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'servicio',
         description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 1 hora y media, ideal para personas que quieren una desconexion total de la rutina, del estres y volver a conectar con su energia regenerativa que produce un buen masaje. Puedes pedirlo a domicilio por un valor adicional.',
         price: 35000,
-        imageUrl: 'https://lh3.googleusercontent.com/gg-dl/AJfQ9KSc_iLxRx3ahDxaGSUCZ_Se6v7WuRUNYmCNk1wv8FCbAoQLHzXPrhMD7Je92aGB1255CyCJ1NN04pDU8f6dWWOftb10qC_OIfA_j1eXoppsR3p8400GhciXJrGEfgPg54ff8QfI1pXNEufaKb12WLdNhpqbXtbM7rmmiCvtXlDLQL2OpQ'
+        imageUrl: 'https://i.imgur.com/7lKMyPg.png'
     },
     {
         id: 'Masajes',
@@ -342,7 +342,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Guia de los ELementos.',
         type: 'servicio',
         description: '🌿✨ Lecturas con el Oráculo de la Bruja Verde ✨🌿, Este oráculo es un portal a la sabiduría ancestral de la naturaleza, donde cada carta revela mensajes de sanación, guía espiritual y conexión con los ciclos de la vida. A través de sus símbolos mágicos recibirás ORIENTACIÓN para comprender tu presente, tomar decisiones conscientes y abrirte a nuevas posibilidades. 🍃🔮Permite que la energía de la tierra y la magia de lo verde te acompañen en tu camino.',
-        price: 12000,
+        price: 15000,
         imageUrl: 'https://i.imgur.com/hpbi6mT.jpeg'
     },
     {
@@ -599,4 +599,5 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
