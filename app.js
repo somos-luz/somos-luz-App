@@ -194,7 +194,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/eLbunwP.jpeg'
     },
     {
-        id: 'Velas lisas',
+        id: 'Velas Lisa Blanca',
         name: 'Vela Lisa Blanca',
         type: 'producto',
         description: '1 vela blanca 17cm. El color Blanco nos transmite pureza y claridad, es un color neutral podemos encender una vela con la fiel intencion y certeza de atraer claridad y guia divina, para encender la luz y a traerla hacia tu vida, puedes invocar al Arcangel Gabriel el custodio de la luz y la claridad del Creador.',
@@ -202,7 +202,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/blanca_f0f8a11c-642f-497a-8ace-5912a2d2e4df_1024x1024.jpg?v=1682376881'
     },
     {
-        id: 'Velas lisas',
+        id: 'Velas Lisa Morada',
         name: 'Vela Lisa Morada',
         type: 'producto',
         description: '1 vela morada 17cm. El color Morado nos transmite cambio y transmutacion, al endenderla nos pre dispone a la meditacion e introspeccion y realizar desde allí con intencion y conviccion los cambios y transformaciones que necesitamos en nuestra vida, puedes invocar al Arcangel Zadquiel el custodio de la energia de transformacion y cambio del Creador.',
@@ -210,7 +210,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/morada-3_1024x1024.jpg?v=1682377036'
     },
      {
-        id: 'Velas lisas',
+        id: 'Velas Lisa Naranja',
         name: 'Vela Lisa Naranja',
         type: 'producto',
         description: '1 vela naranja 17cm. El color Naranjo nos transmite alegria y energia, enciendela cuando estes falto de estas cualidades, con pesades y sin muchas ganas, intencionala con conviccion de despertar la energia y alegria que necesitas para actuar con equilibrio y armonia, puedes invocar al Arcangel Uriel el custodio de la alegria y las ganas o la energía del Creador.',
@@ -218,7 +218,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/naranja_5416fbfe-432c-4c06-a0db-61a8190dee98_1024x1024.jpg?v=1682377044'
     },
     {
-        id: 'Velas lisas',
+        id: 'Velas Lisa Amarilla',
         name: 'Vela Lisa Amarilla',
         type: 'producto',
         description: '1 vela amarilla 17cm. El color Amarillo nos transmite sabiduria y abundancia, enciendela cuando necesites sabiduria para actuar desde el corazon y para adquirir el aprendizaje de las lecciones que nos presenta la vida, agredeciendo la abundancia y la prosperidad, puedes invocar al Arcangel Jofhiel el custodio de la sabiduria y abundancia del Creador.',
@@ -226,7 +226,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/llama-dinero_1024x1024.jpg?v=1682376769'
     },
     {
-        id: 'Velas lisas',
+        id: 'Velas Lisa Azul',
         name: 'Vela Lisa Azul',
         type: 'producto',
         description: '1 vela Azul 17cm. El color Azul nos transmite Seguridad y Fuerza, enciendela cuando te sientas inseguro y necesites fuerza para afrontar las adversidades y enseñanzas de la vida intencionala con fuerza y poder de conviccion que la luz azul te esta protegiendo y envolviendo a ti y todo tu alrededor, puedes invocar al Arcangel Miguel el custodio de la proteccion y fuerza del Creador.',
@@ -234,7 +234,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/azul_a1103d62-ce0a-4a3d-8814-4b33fcf99470_1024x1024.jpg?v=1682376785'
     },
     {
-        id: 'Velas lisas',
+        id: 'Velas Lisa Rosada',
         name: 'Vela Lisa Rosada',
         type: 'producto',
         description: '1 vela Rosada 17cm. El color Rosado nos transmite Amor y Compasión, enciendela cuando quieras atraer el Amor divino y la compasión a tu vida, intencionala con la conviccion que todo tu ser esta siendo envuelto en luz rosada y que todo se puede solucionar con el Amor, puedes invocar al Arcangel Shamuel el custodio del Amor y la Compasion del Creador.',
@@ -242,7 +242,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://fabricadevelas.cl/cdn/shop/products/rosada_272546b6-f8f8-418f-bd88-90d9ca8d2c3e_1024x1024.jpg?v=1682377084'
     },
     {
-        id: 'Bisuteria',
+        id: 'Aros de Minerales o Piedras Semipreciosas',
         name: 'Aros de Minerales o Piedras Semipreciosas',
         type: 'producto',
         description: '1 par de pendientes artesanales. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
@@ -250,7 +250,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/kzjBMt3.jpeg'
     },
     {
-        id: 'Bisuteria',
+        id: 'Collares de Minerales o Piedras Semipreciosas',
         name: 'Collares de Minerales o Piedras Semipreciosas',
         type: 'producto',
         description: '1 Collar artesanal. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
@@ -258,7 +258,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/KGYOS6S.jpeg'
     },
     {
-        id: 'Bisuteria',
+        id: 'Colgantes Armonizadores de Minerales o Piedras Semipreciosas',
         name: 'Colgantes Armonizadores de Minerales o Piedras Semipreciosas',
         type: 'producto',
         description: '1 Colgante artesanal. Consulta por el stock disponible o diseña el tuyo propio eligiendo el mineral tu mismo, linea unica de bisuteria artesanal con sentido y propiedades energeticas unicas.',
@@ -266,7 +266,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/JgpEZnB.jpeg'
     },
     {
-        id: 'Terapias',
+        id: 'Flores De Bach',
         name: 'Flores de Bach',
         type: 'servicio',
         description: 'Es una terapia energética que utiliza esencias florales silvestres. Cada flor aporta su huella energética para ayudarnos en procesos emocionales, Su propósito es guiarnos y permitirnos ver la vida desde nuestro verdadero ser.',
@@ -274,15 +274,15 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/XneDcpr.jpeg'
     },
     {
-        id: 'Masajes',
-        name: 'Masaje de Relajacion 40 min.',
+        id: 'Masaje de Relajacion 30 min',
+        name: 'Masaje de Relajacion 30 min.',
         type: 'servicio',
         description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos y manos, de duracion aprox. de 30 a 40 min, ideal para personas que tienen un corto tiempo para regalarse un descanso y despojarse del estres de la rutina. Puedes pedirlo a domicilio por un valor adicional.',
         price: 28000,
         imageUrl: 'https://i.imgur.com/gq8dB5O.jpeg'
     },
     {
-        id: 'Masajes',
+        id: 'Masaje de Relajacion 1 Hora',
         name: 'Masaje de Relajacion 1 Hora.',
         type: 'servicio',
         description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 1 hora y media, ideal para personas que quieren una desconexion total de la rutina, del estres y volver a conectar con su energia regenerativa que produce un buen masaje. Puedes pedirlo a domicilio por un valor adicional.',
@@ -290,7 +290,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/7lKMyPg.png'
     },
     {
-        id: 'Masajes',
+        id: 'Ritual Masaje Holistico',
         name: 'Ritual Masaje Holistico.',
         type: 'servicio',
         description: 'Este ritual de conexion empieza con una infusion de hierbas que nos ayuda abrir el corazon para luego pasar por un test floral que nos ayudara abrir y entender nuestro mundo emocional, pasaremos a un Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 2 hora y media, ideal para personas que quieren una desconexion total para una reconexion con su ser completo. Puedes pedirlo a domicilio por un valor adicional.',
@@ -298,56 +298,56 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/rQJAMND.jpeg'
     },
     {
-        id: 'Masajes',
-        name: 'GIFTCARD Ritual Masaje Holistico.',
+        id: 'GIFTCARD Ritual Masaje Holistico',
+        name: 'GIFTCARD Ritual Masaje Holistico',
         type: 'servicio',
         description: '¿No sabes que regalar? este ritual de conexion es el mejor regalo para esa persona que amas y quiere regalarle bienestar y conexion verdadera, empieza con una infusion de hierbas que nos ayuda abrir el corazon para luego pasar por un test floral que nos ayudara abrir y entender nuestro mundo emocional, pasaremos a un Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 2 hora y media, ideal para personas que quieren una desconexion total para una reconexion con su ser completo. Puedes pedirlo a domicilio por un valor adicional. 1 mes para canjear.',
         price: 45000,
         imageUrl: 'https://i.imgur.com/2w7Fuzz.jpeg'
     },
     {
-        id: 'Terapias',
-        name: 'Sesiones de Reiki Usui.',
+        id: 'Sesiones de Reiki Usui',
+        name: 'Sesiones de Reiki Usui',
         type: 'servicio',
         description: 'Su principal función es la sanación y el equilibrio energético . El Reiki actúa limpiando, purificando y alineando los siete chakras principales, que son centros de energía a lo largo del cuerpo. Esto permite un flujo energético correcto, ayudando a la persona a liberar emociones negativas, traumas y bloqueos kármicos. esta terapia se puede hacer a distancia a personas, animalitos y plantas.',
         price: 10000,
         imageUrl: 'https://i.imgur.com/EhZ9fOg.jpeg'
     },
     {
-        id: 'Terapias',
-        name: 'Lectura de Registros Akashicos.',
+        id: 'Lectura de Registros Akashicos',
+        name: 'Lectura de Registros Akashicos',
         type: 'servicio',
         description: 'La Lectura de Registros Akáshicos es la apertura del "libro" del alma. Es un campo energético y la memoria universal de la existencia, que contiene todas las experiencias de un ser desde su origen. Esta información, custodiada por Maestros y Guardianes, es accesible para obtener el conocimiento necesario para la evolución espiritual. no es predictiva, es altamente sanadora.',
         price: 20000,
         imageUrl: 'https://i.imgur.com/TBiwupA.jpeg'
     },
     {
-        id: 'Terapias',
-        name: 'Sesion de Terapia de codificación Solar.',
+        id: 'Sesion de Terapia de codificación Solar',
+        name: 'Sesion de Terapia de codificación Solar',
         type: 'servicio',
         description: 'Es una Terapia complementaria que utiliza la energía solar de Quinta Dimensión , conocida como energía Crística . Esta energía, que irradia desde el Sol y está conectada con el Gran Sol Central, es de alta frecuencia y vibración, promoviendo el despertar de la conciencia y el amor incondicional. La terapia limpia y purifica el torrente sanguíneo, el agua del cuerpo y los hemisferios cerebrales de toxinas emocionales, mentales y físicas del pasado y presente. El propósito de esta limpieza es preparar a la persona para anclar la energía Crística, facilitando una transformación interna hacia un "nuevo ser humano".',
         price: 10000,
         imageUrl: 'https://i.imgur.com/OIpd2rc.png'
     },
     {
-        id: 'Terapias',
-        name: 'Sesion de Pendulo.',
+        id: 'Sesion de Pendulo',
+        name: 'Sesion de Pendulo',
         type: 'servicio',
         description: '✨ Lecturas con Péndulo ✨, El péndulo es una poderosa herramienta de conexión energética que nos ayuda a acceder a respuestas claras desde nuestra intuición y el campo espiritual. A través de esta práctica podrás recibir orientación para tomar decisiones, liberar bloqueos, equilibrar tu energía y encontrar mayor claridad en tu camino. 🌙💫Déjate guiar por la sabiduría de tu propia energía y descubre lo que el péndulo tiene para revelarte..',
         price: 12000,
         imageUrl: 'https://i.imgur.com/7onlA3S.jpeg'
     },
     {
-        id: 'Terapias',
-        name: 'Guia de los ELementos.',
+        id: 'Guia de los Elementos',
+        name: 'Guia de los ELementos',
         type: 'servicio',
         description: '🌿✨ Lecturas con el Oráculo de la Bruja Verde ✨🌿, Este oráculo es un portal a la sabiduría ancestral de la naturaleza, donde cada carta revela mensajes de sanación, guía espiritual y conexión con los ciclos de la vida. A través de sus símbolos mágicos recibirás ORIENTACIÓN para comprender tu presente, tomar decisiones conscientes y abrirte a nuevas posibilidades. 🍃🔮Permite que la energía de la tierra y la magia de lo verde te acompañen en tu camino.',
         price: 15000,
         imageUrl: 'https://i.imgur.com/hpbi6mT.jpeg'
     },
     {
-        id: 'Terapias',
-        name: 'Guia de los Angeles.',
+        id: 'Guia de los Angeles',
+        name: 'Guia de los Angeles',
         type: 'servicio',
         description: 'Recibiras una guia consciente, orientacion, ayuda y consejo por medio de una Lectura de cartas de Angeles, podras realizar preguntas y recibir guia con diferentes formas de respuestas a traves de esta excelente conexión con ellos.',
         price: 10000,
@@ -599,6 +599,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
