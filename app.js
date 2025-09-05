@@ -154,7 +154,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/DQDZJtM.jpeg'
     },
     {
-        id: 'Kits',
+        id: 'Kits Amor Propio y Conexion Espiritual',
         name: 'Kit Amor Propio y Conexion Espiritual',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa Rosada, 1 sahumo de Copal, 1 Collar de Cuarzo Rosa, Ritual paso a paso, Este kit está diseñado para quienes necesitan conectarse con su corazón, sanar sus emociones y cultivar el amor por sí mismos.',
@@ -162,7 +162,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/2AGTgBd.jpeg'
     },
     {
-        id: 'Kits',
+        id: 'Kits Proteccion y Manifestacion',
         name: 'Kit Proteccion y Manifestacion',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa Violeta, 1 sahumo de Romero, 1 Collar de Pirita o 1 collar de Obsidiana, Ritual paso a paso, Este kit es para quienes buscan protegerse de energías densas del exterior e interior y enfocarse en manifestar sus deseos y metas.',
@@ -170,7 +170,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/5vXxZR9.jpeg'
     },
     {
-        id: 'Kits',
+        id: 'Kits Limpieza Energetica y Paz Interior',
         name: 'Kit Limpieza Energetica y Paz Interior',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 Collar de Cuarzo blanco, Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
@@ -271,7 +271,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'servicio',
         description: 'Es una terapia energética que utiliza esencias florales silvestres. Cada flor aporta su huella energética para ayudarnos en procesos emocionales, Su propósito es guiarnos y permitirnos ver la vida desde nuestro verdadero ser.',
         price: 19000,
-        imageUrl: 'https://lh3.googleusercontent.com/gg-dl/AJfQ9KS7YXpf3ltKkWcZgWFKGGqoiROogWDjReV3-GJQ-BwzcScULWPas7A9LCvgFPFhgJKtidRJVsRjDd7453ogLa74LkU8Unsg-ekKad1oPgUyUlXi_SIldgbDmMdPen_gbVPkrUJy8i8NT2gbR7vlu-TzbTtIM8O5KgFZsYMHz_G_R2o4'
+        imageUrl: 'https://i.imgur.com/XneDcpr.jpeg'
     },
     {
         id: 'Masajes',
@@ -599,5 +599,6 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
