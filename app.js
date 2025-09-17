@@ -334,7 +334,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Sesion de Pendulo',
         type: 'servicio',
         description: '✨ Lecturas con Péndulo ✨, El péndulo es una poderosa herramienta de conexión energética que nos ayuda a acceder a respuestas claras desde nuestra intuición y el campo espiritual. A través de esta práctica podrás recibir orientación para tomar decisiones, liberar bloqueos, equilibrar tu energía y encontrar mayor claridad en tu camino. 🌙💫Déjate guiar por la sabiduría de tu propia energía y descubre lo que el péndulo tiene para revelarte..',
-        price: 12000,
+        price: 10000,
         imageUrl: 'https://i.imgur.com/7onlA3S.jpeg'
     },
     {
@@ -342,7 +342,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Guia de los ELementos',
         type: 'servicio',
         description: '🌿✨ Lecturas con el Oráculo de la Bruja Verde ✨🌿, Este oráculo es un portal a la sabiduría ancestral de la naturaleza, donde cada carta revela mensajes de sanación, guía espiritual y conexión con los ciclos de la vida. A través de sus símbolos mágicos recibirás ORIENTACIÓN para comprender tu presente, tomar decisiones conscientes y abrirte a nuevas posibilidades. 🍃🔮Permite que la energía de la tierra y la magia de lo verde te acompañen en tu camino.',
-        price: 15000,
+        price: 10000,
         imageUrl: 'https://i.imgur.com/hpbi6mT.jpeg'
     },
     {
@@ -599,6 +599,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
