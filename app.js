@@ -7,7 +7,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Conocido como el "hongo de la paz" es tu solucion natural para cuando el estres y la ansiedad no te dejan desconectar y tu mente no para. es el adaptogeno Maestro de la calma, su funcion principal es ayudar al cuerpo a gestionar y reducir el impacto del estres fisico y mental. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
         price: 16000,
-        imageUrl: 'https://ibb.co/pBnb4bLN'
+        imageUrl: 'https://i.imgur.com/V7mvHAB.jpeg'
     },
      {
         id: 'Melena de Leon',
@@ -15,7 +15,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Conocido como el "hongo que nutre tu cerebro" es tu solucion natural si sientes niebla mental, fatiga o necesidad de un empujon para estudiar o concentrarte, enfocado en tu cerebro ayuda a mejorar la funcion cognitiva, la memoria y la capacidad de concentracion. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
         price: 16000,
-        imageUrl: 'https://ibb.co/7N2G1036'
+        imageUrl: 'https://i.imgur.com/RDEVBCE.jpeg'
     },
     {
         id: 'Cordyceps',
@@ -23,7 +23,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'Conocido como el "hongo que energiza" es tu solucion natural para quienes buscan vitalidad y rendimiento fisico son nerviosismo del cafe o bebidas energeticas, no da el bajon del cafe, ayuda a tu cuerpo a utilizar mejor el oxigeno disponible y promueve una mejor salud cardiovascular. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
         price: 16000,
-        imageUrl: 'https://ibb.co/KxjzcJ9B'
+        imageUrl: 'https://i.imgur.com/CVZQ5uO.jpeg'
     },
     {
         id: 'Duo Pack adaptogeno',
@@ -31,7 +31,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         type: 'producto',
         description: 'lleva 2 hongos adaptogenos y combínalos como quieras, puedes juntar la calma del Reishi con el enfoque de Melena de Leon o puedes combinar la energia de Cordyceps y el enfoque de Melena de Leon, haz la sinergia perfecta adaptando tu cuerpo y alma al mundo. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
         price: 29000,
-        imageUrl: 'https://ibb.co/fZx0Xvg'
+        imageUrl: 'https://i.imgur.com/uyudjBx.jpeg'
     },
     {
         id: 'Incienso de Salvia Blanca',
@@ -631,6 +631,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
