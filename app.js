@@ -1,159 +1,47 @@
 // Este es el catálogo de productos y servicios de "Somos Luz"
 // Los datos se guardan en el localStorage del navegador para que no se pierdan al recargar
 let catalog = JSON.parse(localStorage.getItem('catalog')) || [
+     {
+        id: 'Reishi',
+        name: 'Hongo Adaptogeno Reishi',
+        type: 'producto',
+        description: 'Conocido como el "hongo de la paz" es tu solucion natural para cuando el estres y la ansiedad no te dejan desconectar y tu mente no para. es el adaptogeno Maestro de la calma, su funcion principal es ayudar al cuerpo a gestionar y reducir el impacto del estres fisico y mental. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
+        price: 16000,
+        imageUrl: 'https://ibb.co/pBnb4bLN'
+    },
+     {
+        id: 'Melena de Leon',
+        name: 'Hongo Adaptogeno Melena de Leon',
+        type: 'producto',
+        description: 'Conocido como el "hongo que nutre tu cerebro" es tu solucion natural si sientes niebla mental, fatiga o necesidad de un empujon para estudiar o concentrarte, enfocado en tu cerebro ayuda a mejorar la funcion cognitiva, la memoria y la capacidad de concentracion. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
+        price: 16000,
+        imageUrl: 'https://ibb.co/7N2G1036'
+    },
+    {
+        id: 'Cordyceps',
+        name: 'Hongo Adaptogeno Cordyceps',
+        type: 'producto',
+        description: 'Conocido como el "hongo que energiza" es tu solucion natural para quienes buscan vitalidad y rendimiento fisico son nerviosismo del cafe o bebidas energeticas, no da el bajon del cafe, ayuda a tu cuerpo a utilizar mejor el oxigeno disponible y promueve una mejor salud cardiovascular. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
+        price: 16000,
+        imageUrl: 'https://ibb.co/KxjzcJ9B'
+    },
+    {
+        id: 'Duo Pack adaptogeno',
+        name: 'Duo Pack adaptogeno',
+        type: 'producto',
+        description: 'lleva 2 hongos adaptogenos y combínalos como quieras, puedes juntar la calma del Reishi con el enfoque de Melena de Leon o puedes combinar la energia de Cordyceps y el enfoque de Melena de Leon, haz la sinergia perfecta adaptando tu cuerpo y alma al mundo. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
+        price: 29000,
+        imageUrl: 'https://ibb.co/fZx0Xvg'
+    },
     {
         id: 'Incienso de Salvia Blanca',
         name: 'Incienso de Salvia Blanca',
         type: 'producto',
         description: 'Caja 9 inciensos. Ideal para limpiezas energéticas profundas del hogar y el aura nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiendonos y abriendo nuestro camino para conectar con nuestra luz y sabiduria interior.',
-        price: 4300,
+        price: 4800,
         imageUrl: 'https://i.imgur.com/T0TD8EI.jpeg'
     },
-    {
-        id: 'Incienso de Eucalipto, Laurel & Cedro',
-        name: 'Incienso de Eucalipto, Laurel & Cedro',
-        type: 'producto',
-        description: 'Caja 9 inciensos. Esta fusión nos ayuda a la apertura de caminos y nuevas posibilidades. El Cedro nos conecta con la estabilidad, el Laurel con la abundancia y el Eucalipto nos abre nuestra percepcion para poder ver todo materializado.',
-        price: 4300,
-        imageUrl: 'https://i.imgur.com/FQdcp3m.jpeg'
-    },
-    {
-        id: 'Inciensos Anis, Canela & Olibano',
-        name: 'Inciensos Anis, Canela & Olibano',
-        type: 'producto',
-        description: 'Caja 9 Inciensos. La combinacion de estas hierbas y maderas crea una mezcla poderosa que limpia energías densas, protege el aura y atrae prosperidad. Ideal para rituales de apertura, cambios, manifestación consciente y proteccion energetica',
-        price: 4300,
-        imageUrl: 'https://i.imgur.com/6haCS0h.jpeg'
-    },
-    {
-        id: 'Inciensos de Lavanda & Olibano',
-        name: 'Inciensos de Lavanda & Olibano',
-        type: 'producto',
-        description: 'Caja 9 Inciensos. La lavanda aporta equilibrio y armonia que junto con el Oibano que atrae energías positivas, sutiles y purifica el espacio, son un protector poderoso del hogar y neutralidad de energias densas',
-        price: 4300,
-        imageUrl: 'https://i.imgur.com/IxAqUo1.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Lavanda',
-        name: 'Inciensos Palo Santo con Lavanda',
-        type: 'producto',
-        description: 'Caja 8 inciensos. La sagrada madera de Palo Santo combinada con la frescura de la lavanda purifican el campo energetico y relajan nuestra mente, nos da equilibrio y armonia en el espacio.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/9yxQcsQ.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Mirra',
-        name: 'Inciensos Palo Santo con Mirra',
-        type: 'producto',
-        description: 'Caja 8 inciensos. El Palo Santo combinado con la Mirra atrae energías positivas armoniosas atrayendo el poder de renovación, calma y tranquilidad a todo aquel que se deleite con su fragancia.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/2AqLPM6.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Ruda',
-        name: 'Inciensos Palo Santo con Ruda',
-        type: 'producto',
-        description: 'Caja 8 inciensos. Esta mezcla nos ayuda a purificar los espacios, nos brinda proteccion y llena de Amor y luz nuestros espacios, ademas de limpiar las energías densas nos protege.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/K0VvwGx.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Canela',
-        name: 'Inciensos Palo Santo con Canela',
-        type: 'producto',
-        description: 'Caja 8 inciensos. La canela con su aroma nos ayuda a relajar y ,amtemer una paz mental que nos guía hacia la abundancia y prosperidad junto con el Palos Santo intensifica y abre nuestros caminos.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/mlQb2GW.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo',
-        name: 'Inciensos Palo Santo',
-        type: 'producto',
-        description: 'Caja 8 inciensos. Encender uno de estos inciensos es un acto sagrado y purificador, aumenta la sensacion de calma y bienestar, atrayendo energías positivas armoniosas a todos los que esten en contacto con este humo sagrado.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/qKuuJFH.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Sandalo',
-        name: 'Inciensos Palo Santo con Sandalo',
-        type: 'producto',
-        description: 'Caja 8 inciensos. Estas dos maderas sagradas nos brinda claridad mental, es un relajante natural, ayudandonos con la memoria, su aroma afrodisiaco natural reduce nuestro estres y nos aporta amor propio o de pareja en el espacio.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/mqSKjb6.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Copal',
-        name: 'Inciensos Palo Santo con Copal',
-        type: 'producto',
-        description: 'Caja 8 inciensos. La union de Palo Santo con el Copal forman un humo poderoso y sagrado que nos ayuda con la purificación y sanación, nos vuelve un iman para las energias de abundancia y sanación tanto fisica como espiritual por su gran conexion con lo divino y sagrado.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/pPFGtHx.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Salvia',
-        name: 'Inciensos Palo Santo con Salvia',
-        type: 'producto',
-        description: 'Caja 8 inciensos. Combinacion poderosa que nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiendonos y abriendo nuestro camino para conectar con nuestra luz.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/XVCHgXr.jpeg'
-    },
-    {
-        id: 'Inciensos Palo Santo con Romero',
-        name: 'Inciensos Palo Santo con Romero',
-        type: 'producto',
-        description: 'Caja 8 inciensos. El Palo Santo y el Romero juntos nos brindan purificacion y sanación de espacios, atrae energías positivas uniendo las almas con Amor, lo que genera paz y armonia en el hogar o trabajo.',
-        price: 3900,
-        imageUrl: 'https://i.imgur.com/kL062nJ.jpeg'
-    },
-    {
-        id: 'Sahumo Mirra y Palo Santo',
-        name: 'Sahumo de Mirra y Palo Santo',
-        type: 'producto',
-        description: 'Atado de hierbas y resinas. La Mirra es una ofrenda sagrada, purifica espacios creando vibraciones positivas proporcionando paz y tranquilidad, en combinacion con el Palo Santo limpia el aura y sella todo con Amor y luz.',
-        price: 3500,
-        imageUrl: 'https://i.imgur.com/VwhdSZs.jpeg'
-    },
-    {
-        id: 'Sahumo de Romero',
-        name: 'Sahumo de Romero',
-        type: 'producto',
-        description: 'Atado de hierbas y resinas. Efectivo para limpiar nuestra vida y aura, por sus poderes esotéricos es excelente para abrir caminos, nuestra mente y percepcion a nuevas bendiciones y oportunidades.',
-        price: 3500,
-        imageUrl: 'https://i.imgur.com/rgEPSVV.jpeg'
-    },
-    {
-        id: 'Sahumo de Sandalo',
-        name: 'Sahumo de Sandalo',
-        type: 'producto',
-        description: 'Atado de hierbas y resinas. Purifica y calma la mente ayudandonos a reducir la tension y el estres. Sus propiedades esotéricas relacionadas con la atraccion de energias positivas, apertura de caminos espirituales y fortalecimiento de la intuicion, ademas nos ayuda a la union de almas con Amor y deseo.',
-        price: 3500,
-        imageUrl: 'https://i.imgur.com/8ryaAiu.jpeg'
-    },
-    {
-        id: 'Sahumo de Salvia Blanca',
-        name: 'Sahumo de Salvia Blanca',
-        type: 'producto',
-        description: 'Atado de hierbas y resinas. Tiene un alto poder esotérico y espiritual, ampliamente usada para atraer la sanación, proteccion espiritual, limpieza poderosa y elevacion frecuencia de los espacios ayudandonos a conectar con nuestra luz y sabiduria interior.',
-        price: 3500,
-        imageUrl: 'https://i.imgur.com/IxOa3BP.jpeg'
-    },
-    {
-        id: 'Sahumo de Copal',
-        name: 'Sahumo de Copal',
-        type: 'producto',
-        description: 'Atado de hierbas y resinas. Conocida como la "resina de los dioses" o "elixir de la tierra", su poder ancestral, nos sigue acompañando protegiendo, purificando y limpiando energeticamente nuestras vidas, uniendo la fuerza y poder de la naturaleza y el poder y fuerza del cielo.',
-        price: 3500,
-        imageUrl: 'https://i.imgur.com/ek3qZJ6.jpeg'
-    },
-    {
-        id: 'Kit ambienta tu espacio',
-        name: 'Kit Ambienta tu Espacio',
-        type: 'producto',
-        description: '5 varillas de incienso. A eleccion podras elegir del stock disponible 5 varilla de incienso (sin repetir), ideal para probar aromas y luego elegir con conocimiento y gusto la proxima vez.',
-        price: 2500,
-        imageUrl: 'https://i.imgur.com/DQDZJtM.jpeg'
-    },
-    {
+     {
         id: 'Kits Amor Propio y Conexion Espiritual',
         name: 'Kit Amor Propio y Conexion Espiritual',
         type: 'producto',
@@ -162,6 +50,22 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/2AGTgBd.jpeg'
     },
     {
+        id: 'Incienso de Eucalipto, Laurel & Cedro',
+        name: 'Incienso de Eucalipto, Laurel & Cedro',
+        type: 'producto',
+        description: 'Caja 9 inciensos. Esta fusión nos ayuda a la apertura de caminos y nuevas posibilidades. El Cedro nos conecta con la estabilidad, el Laurel con la abundancia y el Eucalipto nos abre nuestra percepcion para poder ver todo materializado.',
+        price: 4800,
+        imageUrl: 'https://i.imgur.com/FQdcp3m.jpeg'
+    },
+    {
+        id: 'Inciensos Anis, Canela & Olibano',
+        name: 'Inciensos Anis, Canela & Olibano',
+        type: 'producto',
+        description: 'Caja 9 Inciensos. La combinacion de estas hierbas y maderas crea una mezcla poderosa que limpia energías densas, protege el aura y atrae prosperidad. Ideal para rituales de apertura, cambios, manifestación consciente y proteccion energetica',
+        price: 4800,
+        imageUrl: 'https://i.imgur.com/6haCS0h.jpeg'
+    },
+     {
         id: 'Kits Proteccion y Manifestacion',
         name: 'Kit Proteccion y Manifestacion',
         type: 'producto',
@@ -170,12 +74,172 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/5vXxZR9.jpeg'
     },
     {
+        id: 'Inciensos de Lavanda & Olibano',
+        name: 'Inciensos de Lavanda & Olibano',
+        type: 'producto',
+        description: 'Caja 9 Inciensos. La lavanda aporta equilibrio y armonia que junto con el Oibano que atrae energías positivas, sutiles y purifica el espacio, son un protector poderoso del hogar y neutralidad de energias densas',
+        price: 4800,
+        imageUrl: 'https://i.imgur.com/IxAqUo1.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Lavanda',
+        name: 'Inciensos Palo Santo con Lavanda',
+        type: 'producto',
+        description: 'Caja 8 inciensos. La sagrada madera de Palo Santo combinada con la frescura de la lavanda purifican el campo energetico y relajan nuestra mente, nos da equilibrio y armonia en el espacio.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/9yxQcsQ.jpeg'
+    },
+     {
         id: 'Kits Limpieza Energetica y Paz Interior',
         name: 'Kit Limpieza Energetica y Paz Interior',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 Collar de Cuarzo blanco, Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
         price: 8888,
         imageUrl: 'https://i.imgur.com/Ql99G1W.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Mirra',
+        name: 'Inciensos Palo Santo con Mirra',
+        type: 'producto',
+        description: 'Caja 8 inciensos. El Palo Santo combinado con la Mirra atrae energías positivas armoniosas atrayendo el poder de renovación, calma y tranquilidad a todo aquel que se deleite con su fragancia.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/2AqLPM6.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Ruda',
+        name: 'Inciensos Palo Santo con Ruda',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Esta mezcla nos ayuda a purificar los espacios, nos brinda proteccion y llena de Amor y luz nuestros espacios, ademas de limpiar las energías densas nos protege.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/K0VvwGx.jpeg'
+    },
+     {
+        id: 'Flores De Bach',
+        name: 'Flores de Bach',
+        type: 'servicio',
+        description: 'Es una terapia energética que utiliza esencias florales silvestres. Cada flor aporta su huella energética para ayudarnos en procesos emocionales, Su propósito es guiarnos y permitirnos ver la vida desde nuestro verdadero ser.',
+        price: 19000,
+        imageUrl: 'https://i.imgur.com/XneDcpr.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Canela',
+        name: 'Inciensos Palo Santo con Canela',
+        type: 'producto',
+        description: 'Caja 8 inciensos. La canela con su aroma nos ayuda a relajar y ,amtemer una paz mental que nos guía hacia la abundancia y prosperidad junto con el Palos Santo intensifica y abre nuestros caminos.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/mlQb2GW.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo',
+        name: 'Inciensos Palo Santo',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Encender uno de estos inciensos es un acto sagrado y purificador, aumenta la sensacion de calma y bienestar, atrayendo energías positivas armoniosas a todos los que esten en contacto con este humo sagrado.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/qKuuJFH.jpeg'
+    },
+    {
+        id: 'Guia de los Elementos',
+        name: 'Guia de los ELementos',
+        type: 'servicio',
+        description: '🌿✨ Lecturas con el Oráculo de la Bruja Verde ✨🌿, Este oráculo es un portal a la sabiduría ancestral de la naturaleza, donde cada carta revela mensajes de sanación, guía espiritual y conexión con los ciclos de la vida. A través de sus símbolos mágicos recibirás ORIENTACIÓN para comprender tu presente, tomar decisiones conscientes y abrirte a nuevas posibilidades. 🍃🔮Permite que la energía de la tierra y la magia de lo verde te acompañen en tu camino.',
+        price: 10000,
+        imageUrl: 'https://i.imgur.com/hpbi6mT.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Sandalo',
+        name: 'Inciensos Palo Santo con Sandalo',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Estas dos maderas sagradas nos brinda claridad mental, es un relajante natural, ayudandonos con la memoria, su aroma afrodisiaco natural reduce nuestro estres y nos aporta amor propio o de pareja en el espacio.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/mqSKjb6.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Copal',
+        name: 'Inciensos Palo Santo con Copal',
+        type: 'producto',
+        description: 'Caja 8 inciensos. La union de Palo Santo con el Copal forman un humo poderoso y sagrado que nos ayuda con la purificación y sanación, nos vuelve un iman para las energias de abundancia y sanación tanto fisica como espiritual por su gran conexion con lo divino y sagrado.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/pPFGtHx.jpeg'
+    },
+    {
+        id: 'Masaje de Relajacion 30 min',
+        name: 'Masaje de Relajacion 30 min.',
+        type: 'servicio',
+        description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos y manos, de duracion aprox. de 30 a 40 min, ideal para personas que tienen un corto tiempo para regalarse un descanso y despojarse del estres de la rutina. Puedes pedirlo a domicilio por un valor adicional.',
+        price: 28000,
+        imageUrl: 'https://i.imgur.com/gq8dB5O.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Salvia',
+        name: 'Inciensos Palo Santo con Salvia',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Combinacion poderosa que nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiendonos y abriendo nuestro camino para conectar con nuestra luz.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/XVCHgXr.jpeg'
+    },
+    {
+        id: 'Inciensos Palo Santo con Romero',
+        name: 'Inciensos Palo Santo con Romero',
+        type: 'producto',
+        description: 'Caja 8 inciensos. El Palo Santo y el Romero juntos nos brindan purificacion y sanación de espacios, atrae energías positivas uniendo las almas con Amor, lo que genera paz y armonia en el hogar o trabajo.',
+        price: 4300,
+        imageUrl: 'https://i.imgur.com/kL062nJ.jpeg'
+    },
+    {
+        id: 'Lectura de Registros Akashicos',
+        name: 'Lectura de Registros Akashicos',
+        type: 'servicio',
+        description: 'La Lectura de Registros Akáshicos es la apertura del "libro" del alma. Es un campo energético y la memoria universal de la existencia, que contiene todas las experiencias de un ser desde su origen. Esta información, custodiada por Maestros y Guardianes, es accesible para obtener el conocimiento necesario para la evolución espiritual. no es predictiva, es altamente sanadora.',
+        price: 20000,
+        imageUrl: 'https://i.imgur.com/TBiwupA.jpeg'
+    },
+    {
+        id: 'Sahumo Mirra y Palo Santo',
+        name: 'Sahumo de Mirra y Palo Santo',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. La Mirra es una ofrenda sagrada, purifica espacios creando vibraciones positivas proporcionando paz y tranquilidad, en combinacion con el Palo Santo limpia el aura y sella todo con Amor y luz.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/VwhdSZs.jpeg'
+    },
+    {
+        id: 'Sahumo de Romero',
+        name: 'Sahumo de Romero',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Efectivo para limpiar nuestra vida y aura, por sus poderes esotéricos es excelente para abrir caminos, nuestra mente y percepcion a nuevas bendiciones y oportunidades.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/rgEPSVV.jpeg'
+    },
+    {
+        id: 'Sahumo de Sandalo',
+        name: 'Sahumo de Sandalo',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Purifica y calma la mente ayudandonos a reducir la tension y el estres. Sus propiedades esotéricas relacionadas con la atraccion de energias positivas, apertura de caminos espirituales y fortalecimiento de la intuicion, ademas nos ayuda a la union de almas con Amor y deseo.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/8ryaAiu.jpeg'
+    },
+    {
+        id: 'Sahumo de Salvia Blanca',
+        name: 'Sahumo de Salvia Blanca',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Tiene un alto poder esotérico y espiritual, ampliamente usada para atraer la sanación, proteccion espiritual, limpieza poderosa y elevacion frecuencia de los espacios ayudandonos a conectar con nuestra luz y sabiduria interior.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/IxOa3BP.jpeg'
+    },
+    {
+        id: 'Sahumo de Copal',
+        name: 'Sahumo de Copal',
+        type: 'producto',
+        description: 'Atado de hierbas y resinas. Conocida como la "resina de los dioses" o "elixir de la tierra", su poder ancestral, nos sigue acompañando protegiendo, purificando y limpiando energeticamente nuestras vidas, uniendo la fuerza y poder de la naturaleza y el poder y fuerza del cielo.',
+        price: 3900,
+        imageUrl: 'https://i.imgur.com/ek3qZJ6.jpeg'
+    },
+    {
+        id: 'Kit ambienta tu espacio',
+        name: 'Kit Ambienta tu Espacio',
+        type: 'producto',
+        description: '5 varillas de incienso. A eleccion podras elegir del stock disponible 5 varilla de incienso (sin repetir), ideal para probar aromas y luego elegir con conocimiento y gusto la proxima vez.',
+        price: 2700,
+        imageUrl: 'https://i.imgur.com/DQDZJtM.jpeg'
     },
     {
         id: 'Trozos de Palo Santo',
@@ -190,7 +254,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Infusion de Tranquilidad',
         type: 'producto',
         description: 'Pack 5 bolsitas de infusion herbal. Mezcla de hierbas medicinales, Manzanilla, Hierba Buena, Cedrón, Matico, Eucalipto. Nos ayuda a relajar el sistema nervioso, abre nuestro corazon para expulsar tensiones emocionales y mentales para un descanso restaurador.',
-        price: 2000,
+        price: 2800,
         imageUrl: 'https://i.imgur.com/eLbunwP.jpeg'
     },
     {
@@ -266,22 +330,6 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/JgpEZnB.jpeg'
     },
     {
-        id: 'Flores De Bach',
-        name: 'Flores de Bach',
-        type: 'servicio',
-        description: 'Es una terapia energética que utiliza esencias florales silvestres. Cada flor aporta su huella energética para ayudarnos en procesos emocionales, Su propósito es guiarnos y permitirnos ver la vida desde nuestro verdadero ser.',
-        price: 19000,
-        imageUrl: 'https://i.imgur.com/XneDcpr.jpeg'
-    },
-    {
-        id: 'Masaje de Relajacion 30 min',
-        name: 'Masaje de Relajacion 30 min.',
-        type: 'servicio',
-        description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos y manos, de duracion aprox. de 30 a 40 min, ideal para personas que tienen un corto tiempo para regalarse un descanso y despojarse del estres de la rutina. Puedes pedirlo a domicilio por un valor adicional.',
-        price: 28000,
-        imageUrl: 'https://i.imgur.com/gq8dB5O.jpeg'
-    },
-    {
         id: 'Masaje de Relajacion 1 Hora',
         name: 'Masaje de Relajacion 1 Hora.',
         type: 'servicio',
@@ -314,19 +362,11 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/EhZ9fOg.jpeg'
     },
     {
-        id: 'Lectura de Registros Akashicos',
-        name: 'Lectura de Registros Akashicos',
-        type: 'servicio',
-        description: 'La Lectura de Registros Akáshicos es la apertura del "libro" del alma. Es un campo energético y la memoria universal de la existencia, que contiene todas las experiencias de un ser desde su origen. Esta información, custodiada por Maestros y Guardianes, es accesible para obtener el conocimiento necesario para la evolución espiritual. no es predictiva, es altamente sanadora.',
-        price: 20000,
-        imageUrl: 'https://i.imgur.com/TBiwupA.jpeg'
-    },
-    {
         id: 'Sesion de Terapia de codificación Solar',
         name: 'Sesion de Terapia de codificación Solar',
         type: 'servicio',
         description: 'Es una Terapia complementaria que utiliza la energía solar de Quinta Dimensión , conocida como energía Crística . Esta energía, que irradia desde el Sol y está conectada con el Gran Sol Central, es de alta frecuencia y vibración, promoviendo el despertar de la conciencia y el amor incondicional. La terapia limpia y purifica el torrente sanguíneo, el agua del cuerpo y los hemisferios cerebrales de toxinas emocionales, mentales y físicas del pasado y presente. El propósito de esta limpieza es preparar a la persona para anclar la energía Crística, facilitando una transformación interna hacia un "nuevo ser humano".',
-        price: 10000,
+        price: 9000,
         imageUrl: 'https://i.imgur.com/OIpd2rc.png'
     },
     {
@@ -334,16 +374,8 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Sesion de Pendulo',
         type: 'servicio',
         description: '✨ Lecturas con Péndulo ✨, El péndulo es una poderosa herramienta de conexión energética que nos ayuda a acceder a respuestas claras desde nuestra intuición y el campo espiritual. A través de esta práctica podrás recibir orientación para tomar decisiones, liberar bloqueos, equilibrar tu energía y encontrar mayor claridad en tu camino. 🌙💫Déjate guiar por la sabiduría de tu propia energía y descubre lo que el péndulo tiene para revelarte..',
-        price: 10000,
+        price: 9000,
         imageUrl: 'https://i.imgur.com/7onlA3S.jpeg'
-    },
-    {
-        id: 'Guia de los Elementos',
-        name: 'Guia de los ELementos',
-        type: 'servicio',
-        description: '🌿✨ Lecturas con el Oráculo de la Bruja Verde ✨🌿, Este oráculo es un portal a la sabiduría ancestral de la naturaleza, donde cada carta revela mensajes de sanación, guía espiritual y conexión con los ciclos de la vida. A través de sus símbolos mágicos recibirás ORIENTACIÓN para comprender tu presente, tomar decisiones conscientes y abrirte a nuevas posibilidades. 🍃🔮Permite que la energía de la tierra y la magia de lo verde te acompañen en tu camino.',
-        price: 10000,
-        imageUrl: 'https://i.imgur.com/hpbi6mT.jpeg'
     },
     {
         id: 'Guia de los Angeles',
@@ -599,6 +631,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
