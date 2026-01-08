@@ -33,6 +33,22 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         price: 29000,
         imageUrl: 'https://i.imgur.com/uyudjBx.jpeg'
     },
+     {
+        id: 'Inciensos Palo Santo con Pachulí',
+        name: 'Inciensos Palo Santo con Pachulí',
+        type: 'producto',
+        description: 'Caja 8 inciensos. Ideal para iniciar un viaje emocional y espiritual, invitando a conectar con las emociones profundas y a encontrar la paz interior.',
+        price: 4800,
+        imageUrl: 'https://i.imgur.com/kM24kDo.jpeg'
+    },
+     {
+        id: 'Incienso de Incienso Blanco',
+        name: 'Incienso de Incienso Blanco',
+        type: 'producto',
+        description: 'Caja 9 inciensos. Ideal para limpiezas energéticas, meditaciones y crear un clima de bienestar, util para cerrar o dar inicios dando una sensacion de orden y limpieza.',
+        price: 4800,
+        imageUrl: 'https://i.imgur.com/DYCPYuM.jpeg'
+    },
     {
         id: 'Incienso de Salvia Blanca',
         name: 'Incienso de Salvia Blanca',
@@ -69,7 +85,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         id: 'Kits Proteccion y Manifestacion',
         name: 'Kit Proteccion y Manifestacion',
         type: 'producto',
-        description: 'Este kit incluye; 1 Vela lisa Violeta, 1 sahumo de Romero, 1 Collar de Pirita o 1 collar de Obsidiana, Ritual paso a paso, Este kit es para quienes buscan protegerse de energías densas del exterior e interior y enfocarse en manifestar sus deseos y metas.',
+        description: 'Este kit incluye; 1 Vela lisa Violeta, 1 sahumo de Romero, 1 Collar de Pirita o 1 producto de Obsidiana, Ritual paso a paso, Este kit es para quienes buscan protegerse de energías densas del exterior e interior y enfocarse en manifestar sus deseos y metas.',
         price: 8888,
         imageUrl: 'https://i.imgur.com/5vXxZR9.jpeg'
     },
@@ -93,7 +109,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         id: 'Kits Limpieza Energetica y Paz Interior',
         name: 'Kit Limpieza Energetica y Paz Interior',
         type: 'producto',
-        description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 Collar de Cuarzo blanco, Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
+        description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 producto de Cuarzo blanco (aros, colgantes, pulseras, collar), Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
         price: 8888,
         imageUrl: 'https://i.imgur.com/Ql99G1W.jpeg'
     },
@@ -248,6 +264,14 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         description: 'Bolsa con 4 Trozos. Esta madera sagrada nos ayuda a purificar espacios, armonizarlos alejando energías densas y que nos estacan en pensamiento y emociones bajas y densas.',
         price: 1500,
         imageUrl: 'https://i.imgur.com/drQiWTL.jpeg'
+    },
+      {
+        id: 'Infusion Dharana',
+        name: 'Infusion Dharana',
+        type: 'producto',
+        description: 'Pack 5 bolsitas de infusion herbal. Mezcla de hierbas y especias. Te Negro Ceylan, Clavo de Olor, Canela, Cedron, las cuales tienen propiedades tanto fisicas como energeticas, activa nuestra energia, nos da calidez y calma, a la vez nos ayuda con la concentracion y nos conecta con la tierra.',
+        price: 2800,
+        imageUrl: 'https://i.imgur.com/9VtD0i3.jpeg'
     },
     {
         id: 'Infusion de Tranquilidad',
@@ -631,6 +655,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
