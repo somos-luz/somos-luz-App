@@ -66,14 +66,6 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/2AGTgBd.jpeg'
     },
     {
-        id: 'Incienso de Eucalipto, Laurel & Cedro',
-        name: 'Incienso de Eucalipto, Laurel & Cedro',
-        type: 'producto',
-        description: 'Caja 9 inciensos. Esta fusión nos ayuda a la apertura de caminos y nuevas posibilidades. El Cedro nos conecta con la estabilidad, el Laurel con la abundancia y el Eucalipto nos abre nuestra percepcion para poder ver todo materializado.',
-        price: 4800,
-        imageUrl: 'https://i.imgur.com/FQdcp3m.jpeg'
-    },
-    {
         id: 'Inciensos Anis, Canela & Olibano',
         name: 'Inciensos Anis, Canela & Olibano',
         type: 'producto',
@@ -655,6 +647,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
