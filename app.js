@@ -262,7 +262,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Infusion Dharana',
         type: 'producto',
         description: 'Pack 5 bolsitas de infusion herbal. Mezcla de hierbas y especias. Te Negro Ceylan, Clavo de Olor, Canela, Cedron, las cuales tienen propiedades tanto fisicas como energeticas, activa nuestra energia, nos da calidez y calma, a la vez nos ayuda con la concentracion y nos conecta con la tierra.',
-        price: 2800,
+        price: 2000,
         imageUrl: 'https://i.imgur.com/9VtD0i3.jpeg'
     },
     {
@@ -270,7 +270,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Infusion de Tranquilidad',
         type: 'producto',
         description: 'Pack 5 bolsitas de infusion herbal. Mezcla de hierbas medicinales, Manzanilla, Hierba Buena, Cedrón, Matico, Eucalipto. Nos ayuda a relajar el sistema nervioso, abre nuestro corazon para expulsar tensiones emocionales y mentales para un descanso restaurador.',
-        price: 2800,
+        price: 2000,
         imageUrl: 'https://i.imgur.com/eLbunwP.jpeg'
     },
     {
@@ -647,6 +647,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
