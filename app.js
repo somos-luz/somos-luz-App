@@ -33,6 +33,14 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         price: 29000,
         imageUrl: 'https://i.imgur.com/uyudjBx.jpeg'
     },
+    {
+        id: 'kit Conecta con tu Poder Creador',
+        name: 'kit Conecta con tu Poder Creador',
+        type: 'producto',
+        description: 'Intención Activar la energía vital, fortalecer la confianza personal y acompañar procesos de inicio, motivación y acción consciente, Este ritual invita a que tus intenciones vayan más allá de los deseos banales y superficiales, conectándote con tu poder creador, tu luz interior y permitiendo que esta crezca y se expanda desde el amor y la conciencia, Materiales incluidos • 🕯️ Vela amarilla y naranja (energía, creatividad y acción consciente) • 🌿 Sahúmo limpiador (copal o salvia) • 🪵 Palo santo.',
+        price: 7777,
+        imageUrl: 'https://i.imgur.com/MRnS53F.jpeg'
+    },
      {
         id: 'Inciensos Palo Santo con Pachulí',
         name: 'Inciensos Palo Santo con Pachulí',
@@ -647,6 +655,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
