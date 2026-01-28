@@ -46,7 +46,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         name: 'Inciensos Palo Santo con Pachulí',
         type: 'producto',
         description: 'Caja 8 inciensos. Ideal para iniciar un viaje emocional y espiritual, invitando a conectar con las emociones profundas y a encontrar la paz interior.',
-        price: 4800,
+        price: 4300,
         imageUrl: 'https://i.imgur.com/kM24kDo.jpeg'
     },
      {
@@ -655,6 +655,7 @@ currentCatalogContainer.addEventListener('click', (event) => {
 
 // Inicializar la aplicación
 renderCatalog();
+
 
 
 
