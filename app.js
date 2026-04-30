@@ -1,38 +1,6 @@
 // Este es el catálogo de productos y servicios de "Somos Luz"
 // Los datos se guardan en el localStorage del navegador para que no se pierdan al recargar
 let catalog = JSON.parse(localStorage.getItem('catalog')) || [
-     {
-        id: 'Reishi',
-        name: 'Hongo Adaptogeno Reishi',
-        type: 'producto',
-        description: 'Conocido como el "hongo de la paz" es tu solucion natural para cuando el estres y la ansiedad no te dejan desconectar y tu mente no para. es el adaptogeno Maestro de la calma, su funcion principal es ayudar al cuerpo a gestionar y reducir el impacto del estres fisico y mental. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
-        price: 16000,
-        imageUrl: 'https://i.imgur.com/V7mvHAB.jpeg'
-    },
-     {
-        id: 'Melena de Leon',
-        name: 'Hongo Adaptogeno Melena de Leon',
-        type: 'producto',
-        description: 'Conocido como el "hongo que nutre tu cerebro" es tu solucion natural si sientes niebla mental, fatiga o necesidad de un empujon para estudiar o concentrarte, enfocado en tu cerebro ayuda a mejorar la funcion cognitiva, la memoria y la capacidad de concentracion. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
-        price: 16000,
-        imageUrl: 'https://i.imgur.com/RDEVBCE.jpeg'
-    },
-    {
-        id: 'Cordyceps',
-        name: 'Hongo Adaptogeno Cordyceps',
-        type: 'producto',
-        description: 'Conocido como el "hongo que energiza" es tu solucion natural para quienes buscan vitalidad y rendimiento fisico son nerviosismo del cafe o bebidas energeticas, no da el bajon del cafe, ayuda a tu cuerpo a utilizar mejor el oxigeno disponible y promueve una mejor salud cardiovascular. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
-        price: 16000,
-        imageUrl: 'https://i.imgur.com/ZRgKkez.png'
-    },
-    {
-        id: 'Duo Pack adaptogeno',
-        name: 'Duo Pack adaptogeno',
-        type: 'producto',
-        description: 'lleva 2 hongos adaptogenos y combínalos como quieras, puedes juntar la calma del Reishi con el enfoque de Melena de Leon o puedes combinar la energia de Cordyceps y el enfoque de Melena de Leon, haz la sinergia perfecta adaptando tu cuerpo y alma al mundo. Extractos 100% naturales, extraídos por medio de mecanismos de ultima generación, producidos en instalaciones certificadas por la Seremi de salud de chile.',
-        price: 29000,
-        imageUrl: 'https://i.imgur.com/uyudjBx.jpeg'
-    },
     {
         id: 'kit Conecta con tu Poder Creador',
         name: 'kit Conecta con tu Poder Creador',
@@ -66,7 +34,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/T0TD8EI.jpeg'
     },
      {
-        id: 'Kits Amor Propio y Conexion Espiritual',
+        id: 'Kit Amor Propio y Conexion Espiritual',
         name: 'Kit Amor Propio y Conexion Espiritual',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa Rosada, 1 sahumo de Copal, 1 Collar de Cuarzo Rosa, Ritual paso a paso, Este kit está diseñado para quienes necesitan conectarse con su corazón, sanar sus emociones y cultivar el amor por sí mismos.',
@@ -82,7 +50,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/6haCS0h.jpeg'
     },
      {
-        id: 'Kits Proteccion y Manifestacion',
+        id: 'Kit Proteccion y Manifestacion',
         name: 'Kit Proteccion y Manifestacion',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa Violeta, 1 sahumo de Romero, 1 Collar de Pirita o 1 producto de Obsidiana, Ritual paso a paso, Este kit es para quienes buscan protegerse de energías densas del exterior e interior y enfocarse en manifestar sus deseos y metas.',
@@ -106,7 +74,7 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/9yxQcsQ.jpeg'
     },
      {
-        id: 'Kits Limpieza Energetica y Paz Interior',
+        id: 'Kit Limpieza Energetica y Paz Interior',
         name: 'Kit Limpieza Energetica y Paz Interior',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 producto de Cuarzo blanco (aros, colgantes, pulseras, collar), Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
@@ -178,12 +146,12 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/pPFGtHx.jpeg'
     },
     {
-        id: 'Masaje de Relajacion 30 min',
-        name: 'Masaje de Relajacion 30 min.',
+        id: 'Masaje de Reconexión y Armonía 40 min',
+        name: 'Masaje de Reconexión y Armonía 40 min.',
         type: 'servicio',
-        description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos y manos, de duracion aprox. de 30 a 40 min, ideal para personas que tienen un corto tiempo para regalarse un descanso y despojarse del estres de la rutina. Puedes pedirlo a domicilio por un valor adicional.',
+        description: 'Ideal para un respiro profundo en medio de la rutina. Este masaje se enfoca en liberar la carga de las zonas donde más acumulamos tensión: espalda, cuello, brazos y manos. Es perfecto si buscas alivio rápido y efectivo. ​¿Qué incluye? Masaje de relajación en tren superior + un cierre armonizador de 15 a 20 minutos de Sonoterapia con cuencos de cuarzo y bronce para alinear tu energía.',
         price: 28000,
-        imageUrl: 'https://i.imgur.com/gq8dB5O.jpeg'
+        imageUrl: 'https://i.imgur.com/MfYvg7O.jpeg'
     },
     {
         id: 'Inciensos Palo Santo con Salvia',
@@ -354,27 +322,27 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/JgpEZnB.jpeg'
     },
     {
-        id: 'Masaje de Relajacion 1 Hora',
-        name: 'Masaje de Relajacion 1 Hora.',
+        id: 'Masaje de Relajación Profunda de Cuerpo Completo.',
+        name: 'Masaje de Relajación Profunda de Cuerpo Completo.',
         type: 'servicio',
-        description: 'Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 1 hora y media, ideal para personas que quieren una desconexion total de la rutina, del estres y volver a conectar con su energia regenerativa que produce un buen masaje. Puedes pedirlo a domicilio por un valor adicional.',
-        price: 30000,
-        imageUrl: 'https://i.imgur.com/7lKMyPg.png'
+        description: 'Una renovación total para tu templo físico. Una experiencia diseñada para soltar el control y permitir que la energía fluya sin bloqueos. Trabajamos de forma integral en espalda, cuello, brazos, manos, piernas y opcional gluteos y pies, eliminando el cansancio físico y mental. ​¿Qué incluye? Masaje integral de cuerpo completo + relajación profunda con cierre de sonoterapia con cuencos de cuarzo y bronce. ​Duración: 1 hora y 15 minutos aprox.',
+        price: 35000,
+        imageUrl: 'https://i.imgur.com/rFONerd.jpeg'
     },
     {
-        id: 'Ritual Masaje Holistico',
-        name: 'Ritual Masaje Holistico.',
+        id: 'Masaje Holístico Transmutador.',
+        name: 'Masaje Holístico Transmutador.',
         type: 'servicio',
-        description: 'Este ritual de conexion empieza con una infusion de hierbas que nos ayuda abrir el corazon para luego pasar por un test floral que nos ayudara abrir y entender nuestro mundo emocional, pasaremos a un Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 2 hora y media, ideal para personas que quieren una desconexion total para una reconexion con su ser completo. Puedes pedirlo a domicilio por un valor adicional.',
-        price: 40000,
+        description: '​Nuestra sesión más profunda: Sanación para el cuerpo y el alma. Este no es solo un masaje, es un proceso de acompañamiento en tu camino de crecimiento. Ideal para momentos de cambio o cuando necesitas reencontrar tu centro emocional. ¿Qué incluye?  ​Guía Consciente: Lectura de Flores de Bach para identificar y canalizar emociones o bloqueos actuales, infusión de hierbas medicinales para preparar tus sentidos y abrir el corazón, Masaje profundo de cuerpo completo para liberar memorias físicas de estrés, Cierre Vibracional con cuencos para asentar la paz en tu ser. Duración: 2 horas de dedicación exclusiva.',
+        price: 45000,
         imageUrl: 'https://i.imgur.com/rQJAMND.jpeg'
     },
     {
-        id: 'GIFTCARD Ritual Masaje Holistico',
-        name: 'GIFTCARD Ritual Masaje Holistico',
+        id: 'GIFTCARD Masaje Holistico',
+        name: 'GIFTCARD Masaje Holistico',
         type: 'servicio',
-        description: '¿No sabes que regalar? este ritual de conexion es el mejor regalo para esa persona que amas y quiere regalarle bienestar y conexion verdadera, empieza con una infusion de hierbas que nos ayuda abrir el corazon para luego pasar por un test floral que nos ayudara abrir y entender nuestro mundo emocional, pasaremos a un Masaje de relajacion que abarca espalda, cuello, hombros, brazos, manos piernas y opcional pies, ademas se incluye terapia de sonido con cuencos de cuarzo y bronce, tiene una duracion aprox. de 2 hora y media, ideal para personas que quieren una desconexion total para una reconexion con su ser completo. Puedes pedirlo a domicilio por un valor adicional. 1 mes para canjear.',
-        price: 40000,
+        description: '¿No sabes que regalar? este Masaje Holistico es ideal para esa persona que amas y quieres regalarle Sanación para el cuerpo y el alma. Este no es solo un masaje, es un proceso de acompañamiento en tu camino de crecimiento. Ideal para momentos de cambio o cuando necesitas reencontrar tu centro emocional. ¿Qué incluye?  ​Guía Consciente: Lectura de Flores de Bach para identificar y canalizar emociones o bloqueos actuales, infusión de hierbas medicinales para preparar tus sentidos y abrir el corazón, Masaje profundo de cuerpo completo para liberar memorias físicas de estrés, Cierre Vibracional con cuencos para asentar la paz en tu ser. Duración: 2 horas de dedicación exclusiva.',
+        price: 39000,
         imageUrl: 'https://i.imgur.com/2w7Fuzz.jpeg'
     },
     {
@@ -456,9 +424,16 @@ function saveCatalog() {
 }
 
 // Renderizar el catálogo para los clientes
-function renderCatalog() {
+function renderCatalog(filter = 'todos') {
     productsServicesContainer.innerHTML = '';
-    catalog.forEach(item => {
+    
+    // Filtramos el catálogo según el tipo seleccionado
+    const itemsToShow = catalog.filter(item => {
+        if (filter === 'todos') return true;
+        return item.type === filter;
+    });
+
+    itemsToShow.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.classList.add('catalog-item');
         itemElement.innerHTML = `
@@ -604,6 +579,19 @@ adminLoginBtn.addEventListener('click', () => {
     } else {
         alert('Usuario o contraseña incorrecta.');
     }
+     // Manejo de clics en los botones de filtro
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        // Quitar la clase 'active' de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Añadir 'active' al botón que recibió el clic
+        event.target.classList.add('active');
+
+        // Obtener el tipo de filtro y renderizar
+        const selectedType = event.target.getAttribute('data-type');
+        renderCatalog(selectedType);
 });
 
 // Escuchar el envío del formulario del panel de administración
