@@ -17,20 +17,17 @@
     </header>
 
     <main class="main-content">
-        <main class="main-content">
-    <!-- NUEVO: Botones de filtro -->
-    <div class="filter-container">
-        <button class="filter-btn active" data-type="todos">Ver Todo</button>
-        <button class="filter-btn" data-type="producto">Productos</button>
-        <button class="filter-btn" data-type="servicio">Servicios y Terapias</button>
-    </div>
+        <!-- Filtros de Categoría -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-type="todos">Ver Todo</button>
+            <button class="filter-btn" data-type="producto">Productos</button>
+            <button class="filter-btn" data-type="servicio">Servicios y Terapias</button>
+        </div>
 
-    <section id="products-services" class="catalog-grid"></section>
-    
-    <!-- El resto de tu código permanece igual... -->
-</main>
+        <!-- CONTENEDOR ÚNICO DEL CATÁLOGO -->
         <section id="products-services" class="catalog-grid"></section>
 
+        <!-- Sección de Carrito -->
         <section id="cart-container" class="hidden">
             <h2>Tu Carrito</h2>
             <div id="cart-items"></div>
@@ -41,6 +38,7 @@
             <button id="close-cart">Cerrar</button>
         </section>
 
+        <!-- Formulario de Contacto -->
         <section id="contact-form" class="hidden">
             <h2>Contacto</h2>
             <p>Envíanos un mensaje y te responderemos pronto.</p>
@@ -52,36 +50,39 @@
             </form>
         </section>
 
+        <!-- Panel de Administración -->
         <div style="text-align: center; margin-top: 20px;">
             <a href="#" id="admin-link" style="color: #ccc; font-size: 12px;">Panel de Administración</a>
-        <section id="admin-panel" class="hidden">
-            <h2>Panel de Administración</h2>
-            <div id="login-form">
-                <input type="text" id="admin-username" placeholder="Usuario">
-                <input type="password" id="admin-password" placeholder="Contraseña">
-                <button id="admin-login-btn">Iniciar Sesión</button>
-            </div>
             
-            <div id="catalog-manager" class="hidden">
-                <h3>Gestionar Catálogo</h3>
-                <form id="product-form" class="admin-form">
-                    <input type="hidden" id="product-id-input">
-                    <input type="text" id="product-name-input" placeholder="Nombre" required>
-                    <textarea id="product-description-input" placeholder="Descripción" rows="2" required></textarea>
-                    <input type="number" id="product-price-input" placeholder="Precio" required>
-                    <input type="text" id="product-image-url-input" placeholder="URL de la Imagen" required>
-                    <select id="product-type-input" required>
-                        <option value="producto">Producto</option>
-                        <option value="servicio">Servicio</option>
-                    </select>
-                    <button type="submit" id="add-edit-btn">Añadir/Guardar Producto</button>
-                </form>
+            <section id="admin-panel" class="hidden">
+                <h2>Panel de Administración</h2>
+                <div id="login-form">
+                    <input type="text" id="admin-username" placeholder="Usuario">
+                    <input type="password" id="admin-password" placeholder="Contraseña">
+                    <button id="admin-login-btn">Iniciar Sesión</button>
+                </div>
+                
+                <div id="catalog-manager" class="hidden">
+                    <h3>Gestionar Catálogo</h3>
+                    <form id="product-form" class="admin-form">
+                        <input type="hidden" id="product-id-input">
+                        <input type="text" id="product-name-input" placeholder="Nombre" required>
+                        <textarea id="product-description-input" placeholder="Descripción" rows="2" required></textarea>
+                        <input type="number" id="product-price-input" placeholder="Precio" required>
+                        <input type="text" id="product-image-url-input" placeholder="URL de la Imagen" required>
+                        <select id="product-type-input" required>
+                            <option value="producto">Producto</option>
+                            <option value="servicio">Servicio</option>
+                        </select>
+                        <button type="submit" id="add-edit-btn">Añadir/Guardar Producto</button>
+                    </form>
 
-                <h4>Productos y Servicios Actuales</h4>
-                <div id="current-catalog"></div>
-            </div>
-        </section></div>
-    </main></main>
+                    <h4>Productos y Servicios Actuales</h4>
+                    <div id="current-catalog"></div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <script src="app.js"></script>
 </body>
