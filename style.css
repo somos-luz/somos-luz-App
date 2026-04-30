@@ -197,3 +197,26 @@ body {
 .delete-btn {
     background-color: #ff6347; /* Rojo coral */
 }
+/* Estilos para los botones de filtrado */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: #8a2be2; /* Violeta de tu tema */
+    border: 2px solid #8a2be2;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.filter-btn:hover, .filter-btn.active {
+    background-color: #ff69b4; /* Rosa vibrante de tu tema */
+    border-color: #ff69b4;
+    color: white;
+}
