@@ -640,19 +640,20 @@ currentCatalogContainer.addEventListener('click', (event) => {
         }
     }
 });
+// --- INICIALIZACIÓN SEGURA ---
+// Esta función espera a que todo el HTML esté listo antes de actuar
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("El DOM está listo, cargando catálogo..."); // Esto te ayuda a ver si funciona en la consola
+    
+    // 1. Renderizamos todo el catálogo inicialmente
+    renderCatalog('todos');
 
-// Inicializar la aplicación
-renderCatalog();
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // 2. Volvemos a configurar los botones de filtro por si acaso
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            const selectedType = e.target.getAttribute('data-type');
+            renderCatalog(selectedType);
+        });
