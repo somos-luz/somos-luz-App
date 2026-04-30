@@ -539,116 +539,97 @@ function handleContactForm(event) {
 
 // --- EVENT LISTENERS (ESCUCHAS DE CLICS) ---
 
-// Escuchar clics en el catálogo para añadir al carrito
-productsServicesContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('add-to-cart-btn')) {
-        const itemId = event.target.getAttribute('data-id');
-        addToCart(itemId);
-    }
-});
+// 1. Gestión del Carrito y Contacto
+if (cartButton) cartButton.addEventListener('click', toggleCart);
+if (closeCartButton) closeCartButton.addEventListener('click', toggleCart);
+if (checkoutButton) checkoutButton.addEventListener('click', sendToWhatsApp);
+if (contactFormContent) contactFormContent.addEventListener('submit', handleContactForm);
 
-// Escuchar clics en el botón del carrito para mostrarlo
-cartButton.addEventListener('click', toggleCart);
+// 2. Acceso al Panel de Administración
+if (adminLink) {
+    adminLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        productsServicesContainer.classList.add('hidden');
+        if (cartContainer) cartContainer.classList.add('hidden');
+        if (contactForm) contactForm.classList.add('hidden');
+        adminPanel.classList.remove('hidden'); 
+        adminPanel.style.display = 'block';
+    });
+}
 
-// Escuchar clics en el botón para cerrar el carrito
-closeCartButton.addEventListener('click', toggleCart);
+// 3. Inicio de Sesión Administrativo
+if (adminLoginBtn) {
+    adminLoginBtn.addEventListener('click', () => {
+        const username = adminUsernameInput.value;
+        const password = adminPasswordInput.value;
+        if (username === 'somosluz' && password === 'somos$888') {
+            loginForm.classList.add('hidden');
+            catalogManager.classList.remove('hidden');
+            renderAdminCatalog();
+        } else {
+            alert('Usuario o contraseña incorrecta.');
+        }
+    });
+}
 
-// Escuchar clic en el botón de "Enviar Pedido por WhatsApp"
-checkoutButton.addEventListener('click', sendToWhatsApp);
+// 4. Gestión de Productos (Añadir/Editar)
+if (productForm) {
+    productForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const id = productIdInput.value || Math.random().toString(36).substring(2, 9);
+        const name = productNameInput.value;
+        const description = productDescriptionInput.value;
+        const price = parseFloat(productPriceInput.value);
+        const imageUrl = productImageInput.value;
+        const type = productTypeInput.value;
+        
+        const newProduct = { id, name, description, price, imageUrl, type };
+        const existingIndex = catalog.findIndex(item => item.id === id);
+        
+        if (existingIndex !== -1) {
+            catalog[existingIndex] = newProduct;
+        } else {
+            catalog.push(newProduct);
+        }
 
-// Escuchar el envío del formulario de contacto
-contactFormContent.addEventListener('submit', handleContactForm);
-
-// Escuchar clic en el enlace de administración
-adminLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    productsServicesContainer.classList.add('hidden');
-    cartContainer.classList.add('hidden');
-    contactForm.classList.add('hidden');
-    adminPanel.style.display = 'block';
-});
-
-// Escuchar clic en el botón de inicio de sesión
-adminLoginBtn.addEventListener('click', () => {
-    const username = adminUsernameInput.value;
-    const password = adminPasswordInput.value;
-    if (username === 'somosluz' && password === 'somos$888') {
-        loginForm.classList.add('hidden');
-        catalogManager.classList.remove('hidden');
-        renderAdminCatalog();
-    } else {
-        alert('Usuario o contraseña incorrecta.');
-    }
-     // Manejo de clics en los botones de filtro
-const filterButtons = document.querySelectorAll('.filter-btn');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-        // Quitar la clase 'active' de todos los botones
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Añadir 'active' al botón que recibió el clic
-        event.target.classList.add('active');
-
-        // Obtener el tipo de filtro y renderizar
-        const selectedType = event.target.getAttribute('data-type');
-        renderCatalog(selectedType);
-});
-
-// Escuchar el envío del formulario del panel de administración
-productForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const id = productIdInput.value || Math.random().toString(36).substring(2, 9);
-    const name = productNameInput.value;
-    const description = productDescriptionInput.value;
-    const price = parseFloat(productPriceInput.value);
-    const imageUrl = productImageInput.value;
-    const type = productTypeInput.value;
-    
-    const newProduct = { id, name, description, price, imageUrl, type };
-
-    const existingIndex = catalog.findIndex(item => item.id === id);
-    if (existingIndex !== -1) {
-        catalog[existingIndex] = newProduct;
-    } else {
-        catalog.push(newProduct);
-    }
-
-    saveCatalog();
-    renderCatalog();
-    renderAdminCatalog();
-    productForm.reset();
-    productIdInput.value = '';
-});
-
-// Escuchar clics en los botones de editar y eliminar en el panel de administración
-currentCatalogContainer.addEventListener('click', (event) => {
-    const itemId = event.target.getAttribute('data-id');
-    if (event.target.classList.contains('delete-btn')) {
-        catalog = catalog.filter(item => item.id !== itemId);
         saveCatalog();
         renderCatalog();
         renderAdminCatalog();
-    } else if (event.target.classList.contains('edit-btn')) {
-        const itemToEdit = catalog.find(item => item.id === itemId);
-        if (itemToEdit) {
-            productIdInput.value = itemToEdit.id;
-            productNameInput.value = itemToEdit.name;
-            productDescriptionInput.value = itemToEdit.description;
-            productPriceInput.value = itemToEdit.price;
-            productImageInput.value = itemToEdit.imageUrl;
-            productTypeInput.value = itemToEdit.type;
+        productForm.reset();
+        productIdInput.value = '';
+    });
+}
+
+// 5. Botones de Editar/Eliminar en Admin
+if (currentCatalogContainer) {
+    currentCatalogContainer.addEventListener('click', (event) => {
+        const itemId = event.target.getAttribute('data-id');
+        if (event.target.classList.contains('delete-btn')) {
+            catalog = catalog.filter(item => item.id !== itemId);
+            saveCatalog();
+            renderCatalog();
+            renderAdminCatalog();
+        } else if (event.target.classList.contains('edit-btn')) {
+            const itemToEdit = catalog.find(item => item.id === itemId);
+            if (itemToEdit) {
+                productIdInput.value = itemToEdit.id;
+                productNameInput.value = itemToEdit.name;
+                productDescriptionInput.value = itemToEdit.description;
+                productPriceInput.value = itemToEdit.price;
+                productImageInput.value = itemToEdit.imageUrl;
+                productTypeInput.value = itemToEdit.type;
+            }
         }
-    }
-});
+    });
+}
 // --- INICIALIZACIÓN SEGURA ---
-// Esta función espera a que todo el HTML esté listo antes de actuar
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("El DOM está listo, cargando catálogo..."); // Esto te ayuda a ver si funciona en la consola
+    console.log("El DOM está listo, cargando catálogo...");
     
-    // 1. Renderizamos todo el catálogo inicialmente
+    // Renderizado inicial
     renderCatalog('todos');
 
-    // 2. Volvemos a configurar los botones de filtro por si acaso
+    // Configuración de botones de filtro
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -657,3 +638,5 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedType = e.target.getAttribute('data-type');
             renderCatalog(selectedType);
         });
+    });
+}); //
