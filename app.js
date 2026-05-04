@@ -540,6 +540,22 @@ function handleContactForm(event) {
 // --- EVENT LISTENERS (ESCUCHAS DE CLICS) ---
 
 // 1. Gestión del Carrito y Contacto
+// 1.1 Conexión del catálogo con la función de compra
+if (productsServicesContainer) {
+    productsServicesContainer.addEventListener('click', (event) => {
+        // Detectamos si el clic fue en el botón de añadir
+        if (event.target.classList.contains('add-to-cart-btn')) {
+            // Extraemos el ID que guardamos en el atributo 'data-id' al renderizar
+            const itemId = event.target.getAttribute('data-id');
+            
+            // Llamamos a tu función que está definida más arriba
+            addToCart(itemId);
+            
+            // Consola para confirmar que el código está trabajando
+            console.log("Producto detectado y enviado al carrito:", itemId);
+        }
+    });
+}
 if (cartButton) cartButton.addEventListener('click', toggleCart);
 if (closeCartButton) closeCartButton.addEventListener('click', toggleCart);
 if (checkoutButton) checkoutButton.addEventListener('click', sendToWhatsApp);
