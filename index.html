@@ -6,61 +6,59 @@
   <title>Somos Luz</title>
   
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="estilo.css">
 </head>
-<body data-template-id="__page-root" class="w-full">
+<body class="w-full">
 
   <header class="w-full sticky top-0 z-40 border-b border-[#e9e1d5] backdrop-blur-md bg-[#f8f4ed]/95">
     <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between gap-6">
       <a href="#inicio" class="shrink-0">
-        <div data-template-id="brand-name" class="canva-text serif text-[30px] leading-none tracking-wide">Somos Luz</div>
-        <div data-template-id="brand-subtitle" class="canva-text text-[10px] uppercase tracking-[0.24em] mt-1">Espacio Holístico</div>
+        <div class="serif text-[30px] leading-none tracking-wide">Somos Luz</div>
+        <div class="text-[10px] uppercase tracking-[0.24em] mt-1">Espacio Holístico</div>
       </a>
       <nav class="hidden md:flex items-center gap-8 text-[13px] uppercase tracking-[0.16em]">
-        <a data-template-id="nav-home" href="#inicio" class="canva-link hover:text-[#6e806a] transition">Inicio</a> 
-        <a data-template-id="nav-shop" href="#tienda" class="canva-link hover:text-[#6e806a] transition">Tienda</a> 
-        <a data-template-id="nav-about" href="#esencia" class="canva-link hover:text-[#6e806a] transition">Esencia</a> 
-        <a data-template-id="nav-contact" href="#contacto" class="canva-link hover:text-[#6e806a] transition">Contacto</a>
+        <a href="#inicio" class="hover:text-[#6e806a] transition">Inicio</a> 
+        <a href="#tienda" class="hover:text-[#6e806a] transition">Tienda</a> 
+        <a href="#esencia" class="hover:text-[#6e806a] transition">Esencia</a> 
+        <a href="#contacto" class="hover:text-[#6e806a] transition">Contacto</a>
       </nav>
       <button id="open-cart" class="focus-ring relative flex items-center gap-2 px-3 py-2 rounded-full hover:bg-[#eee6db] transition" type="button" aria-label="Abrir carrito"> 
         <i data-lucide="shopping-bag" class="w-5 h-5"></i> 
-        <span data-template-id="cart-label" class="canva-text hidden sm:inline text-[12px] uppercase tracking-[0.16em]">Carrito</span> 
+        <span class="hidden sm:inline text-[12px] uppercase tracking-[0.16em]">Carrito</span> 
         <span id="cart-count" class="min-w-[20px] h-5 px-1 rounded-full bg-[#6e806a] text-white text-[11px] flex items-center justify-center">0</span> 
       </button>
     </div>
   </header>
 
   <main>
-    <section id="inicio" class="relative w-full min-h-[660px] overflow-hidden">
-      <div class="absolute inset-0 bg-[#4d604b]"></div>
+    <section id="inicio" class="relative w-full min-h-[660px] overflow-hidden bg-[#4d604b]">
       <div class="hero-overlay absolute inset-0"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-8 min-h-[660px] flex items-center">
         <div class="max-w-2xl text-white py-20">
-          <p data-template-id="hero-eyebrow" class="canva-text fade-up text-[12px] uppercase tracking-[0.28em] mb-5">Bienvenido a tu bienestar</p>
-          <h1 data-template-id="hero-title" class="canva-text serif fade-up delay-1 text-[56px] md:text-[76px] leading-[0.95] font-medium max-w-xl">Encuentra tu equilibrio interior</h1>
-          <p data-template-id="hero-copy" class="canva-text fade-up delay-2 mt-7 max-w-lg text-[16px] leading-7 text-white/88">Herramientas y productos pensados para armonizar tu energía diaria.</p>
-          <button id="hero-cta" data-template-id="hero-button" class="canva-button focus-ring fade-up delay-3 mt-8 inline-flex items-center gap-3 px-7 py-4 bg-[#f5efe5] text-[#354033] rounded-full uppercase tracking-[0.16em] text-[12px] hover:bg-white transition" type="button">Ver Tienda</button>
+          <p class="fade-up text-[12px] uppercase tracking-[0.28em] mb-5">Bienvenido a tu bienestar</p>
+          <h1 class="serif fade-up delay-1 text-[56px] md:text-[76px] leading-[0.95] font-medium max-w-xl">Encuentra tu equilibrio interior</h1>
+          <p class="fade-up delay-2 mt-7 max-w-lg text-[16px] leading-7 text-white/88">Herramientas y productos pensados para armonizar tu energía diaria.</p>
+          <button id="hero-cta" class="focus-ring fade-up delay-3 mt-8 inline-flex items-center gap-3 px-7 py-4 bg-[#f5efe5] text-[#354033] rounded-full uppercase tracking-[0.16em] text-[12px] hover:bg-white transition" type="button">Ver Tienda</button>
         </div>
       </div>
     </section>
 
     <section class="w-full bg-[#eee7dc] border-y border-[#e4dacb]">
       <div class="max-w-7xl mx-auto px-5 md:px-8 py-5 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-        <div class="flex items-center gap-3 justify-center md:justify-start"><i data-lucide="leaf" class="w-4 h-4 text-[#6e806a]"></i> <span data-template-id="benefit-1" class="canva-text text-[12px] uppercase tracking-[0.18em]">100% Natural</span></div>
-        <div class="flex items-center gap-3 justify-center"><i data-lucide="sparkles" class="w-4 h-4 text-[#6e806a]"></i> <span data-template-id="benefit-2" class="canva-text text-[12px] uppercase tracking-[0.18em]">Energía Intencionada</span></div>
-        <div class="flex items-center gap-3 justify-center md:justify-end"><i data-lucide="heart" class="w-4 h-4 text-[#6e806a]"></i> <span data-template-id="benefit-3" class="canva-text text-[12px] uppercase tracking-[0.18em]">Hecho con Amor</span></div>
+        <div class="flex items-center gap-3 justify-center md:justify-start"><i data-lucide="leaf" class="w-4 h-4 text-[#6e806a]"></i> <span class="text-[12px] uppercase tracking-[0.18em]">100% Natural</span></div>
+        <div class="flex items-center gap-3 justify-center"><i data-lucide="sparkles" class="w-4 h-4 text-[#6e806a]"></i> <span class="text-[12px] uppercase tracking-[0.18em]">Energía Intencionada</span></div>
+        <div class="flex items-center gap-3 justify-center md:justify-end"><i data-lucide="heart" class="w-4 h-4 text-[#6e806a]"></i> <span class="text-[12px] uppercase tracking-[0.18em]">Hecho con Amor</span></div>
       </div>
     </section>
 
     <section id="tienda" class="w-full px-5 md:px-8 py-20 md:py-24">
       <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto">
-          <p data-template-id="shop-eyebrow" class="canva-text text-[12px] uppercase tracking-[0.26em]">Nuestros Productos</p>
-          <h2 data-template-id="shop-title" class="canva-text serif mt-3 text-[46px] md:text-[60px] leading-none font-medium">Lleva magia a tu hogar</h2>
+          <p class="text-[12px] uppercase tracking-[0.26em]">Nuestros Productos</p>
+          <h2 class="serif mt-3 text-[46px] md:text-[60px] leading-none font-medium">Lleva magia a tu hogar</h2>
         </div>
         
         <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -68,7 +66,6 @@
           <button data-filter="productos" class="filter-btn focus-ring px-5 py-2.5 border border-[#cfc5b6] rounded-full text-[12px] uppercase tracking-[0.14em] transition hover:bg-[#eee6db]" type="button">Productos</button> 
           <button data-filter="kits" class="filter-btn focus-ring px-5 py-2.5 border border-[#cfc5b6] rounded-full text-[12px] uppercase tracking-[0.14em] transition hover:bg-[#eee6db]" type="button">Kits</button> 
           <button data-filter="servicios" class="filter-btn focus-ring px-5 py-2.5 border border-[#cfc5b6] rounded-full text-[12px] uppercase tracking-[0.14em] transition hover:bg-[#eee6db]" type="button">Servicios</button> 
-          <button data-filter="otros" class="filter-btn focus-ring px-5 py-2.5 border border-[#cfc5b6] rounded-full text-[12px] uppercase tracking-[0.14em] transition hover:bg-[#eee6db]" type="button">Otros</button>
         </div>
 
         <div id="product-grid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,135 +74,59 @@
             <div class="p-5">
               <p class="text-[10px] uppercase tracking-[0.2em] mb-2 text-[#6e806a]">Aromaterapia</p>
               <h3 class="serif text-[28px] leading-tight">Salvia blanca</h3>
-              <p class="mt-2 text-[13px] leading-6 text-gray-600">Ideal para purificar los espacios de energías densas.</p>
               <div class="mt-5 flex items-center justify-between gap-3">
                 <span class="serif text-[24px]">$6.900</span> 
-                <button class="add-to-cart focus-ring w-10 h-10 rounded-full bg-[#dfe6da] flex items-center justify-center hover:bg-[#6e806a] hover:text-white transition" type="button" aria-label="Agregar Salvia blanca al carrito"> <i data-lucide="plus" class="w-4 h-4"></i> </button>
+                <button class="add-to-cart focus-ring w-10 h-10 rounded-full bg-[#dfe6da] flex items-center justify-center hover:bg-[#6e806a] hover:text-white transition" type="button"> <i data-lucide="plus" class="w-4 h-4"></i> </button>
               </div>
             </div>
           </article>
+
           <article class="product-card bg-[#fbf8f2] overflow-hidden" data-category="productos" data-product-id="amethyst">
             <div class="overflow-hidden aspect-[4/5] bg-[#dfd6c8]"></div>
             <div class="p-5">
               <p class="text-[10px] uppercase tracking-[0.2em] mb-2 text-[#6e806a]">Cristales</p>
               <h3 class="serif text-[28px] leading-tight">Amatista natural</h3>
-              <p class="mt-2 text-[13px] leading-6 text-gray-600">Transmuta la energía negativa en positiva y calma la mente.</p>
               <div class="mt-5 flex items-center justify-between gap-3">
                 <span class="serif text-[24px]">$8.900</span> 
-                <button class="add-to-cart focus-ring w-10 h-10 rounded-full bg-[#dfe6da] flex items-center justify-center hover:bg-[#6e806a] hover:text-white transition" type="button" aria-label="Agregar Amatista al carrito"> <i data-lucide="plus" class="w-4 h-4"></i> </button>
+                <button class="add-to-cart focus-ring w-10 h-10 rounded-full bg-[#dfe6da] flex items-center justify-center hover:bg-[#6e806a] hover:text-white transition" type="button"> <i data-lucide="plus" class="w-4 h-4"></i> </button>
               </div>
             </div>
           </article>
-          <article class="product-card bg-[#fbf8f2] overflow-hidden" data-category="productos" data-product-id="candle">
-            <div class="overflow-hidden aspect-[4/5] bg-[#dfd6c8]"></div>
-            <div class="p-5">
-              <p class="text-[10px] uppercase tracking-[0.2em] mb-2 text-[#6e806a]">Rituales</p>
-              <h3 class="serif text-[28px] leading-tight">Vela ritual Calma</h3>
-              <p class="mt-2 text-[13px] leading-6 text-gray-600">Intencionada con aceites esenciales para tus meditaciones.</p>
-              <div class="mt-5 flex items-center justify-between gap-3">
-                <span class="serif text-[24px]">$11.900</span> 
-                <button class="add-to-cart focus-ring w-10 h-10 rounded-full bg-[#dfe6da] flex items-center justify-center hover:bg-[#6e806a] hover:text-white transition" type="button" aria-label="Agregar Vela ritual al carrito"> <i data-lucide="plus" class="w-4 h-4"></i> </button>
-              </div>
-            </div>
-          </article>
-          <article class="product-card bg-[#fbf8f2] overflow-hidden" data-category="productos" data-product-id="palo">
-            <div class="overflow-hidden aspect-[4/5] bg-[#dfd6c8]"></div>
-            <div class="p-5">
-              <p class="text-[10px] uppercase tracking-[0.2em] mb-2 text-[#6e806a]">Aromaterapia</p>
-              <h3 class="serif text-[28px] leading-tight">Palo santo</h3>
-              <p class="mt-2 text-[13px] leading-6 text-gray-600">Madera sagrada para atraer paz y buena fortuna.</p>
-              <div class="mt-5 flex items-center justify-between gap-3">
-                <span class="serif text-[24px]">$5.900</span> 
-                <button class="add-to-cart focus-ring w-10 h-10 rounded-full bg-[#dfe6da] flex items-center justify-center hover:bg-[#6e806a] hover:text-white transition" type="button" aria-label="Agregar Palo santo al carrito"> <i data-lucide="plus" class="w-4 h-4"></i> </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="esencia" class="w-full bg-[#e7ded1] py-20 md:py-24 px-5 md:px-8">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-        <div class="overflow-hidden bg-[#dfd6c8] h-[520px]"></div>
-        <div class="max-w-xl">
-          <p class="text-[12px] uppercase tracking-[0.26em] text-[#6e806a]">Nuestra Historia</p>
-          <h2 class="serif mt-3 text-[46px] md:text-[60px] leading-none font-medium">Nacidos de la intención</h2>
-          <p class="mt-6 text-[15px] leading-7 text-gray-700">Somos Luz nació con el propósito de acercar herramientas de bienestar espiritual a tu rutina diaria, creando instantes de conexión y paz en tu entorno.</p>
-          <div class="mt-8 flex items-center gap-4">
-            <div class="w-12 h-px bg-[#7b8d74]"></div>
-            <p class="serif text-[25px] italic text-[#4d604b]">Somos Luz</p>
-          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="contacto" class="w-full bg-[#30402f] text-white">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid md:grid-cols-3 gap-10">
-      <div>
-        <div class="serif text-[34px]">Somos Luz</div>
-        <p class="mt-4 text-[14px] leading-6 max-w-sm text-white/75">Acompañándote en tu camino de regreso hacia tu centro.</p>
-      </div>
-      <div>
-        <h3 class="text-[12px] uppercase tracking-[0.2em]">Contacto</h3>
-        <div class="mt-4 space-y-2 text-[14px] text-white/75">
-          <p>📍 Santiago, Chile</p>
-          <p>✉️ hola@somosluz.cl</p>
-        </div>
-      </div>
-      <div>
-        <h3 class="text-[12px] uppercase tracking-[0.2em]">Redes Sociales</h3>
-        <div class="flex gap-4 mt-4">
-          <button class="focus-ring w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-white hover:text-[#30402f] transition" type="button" aria-label="Instagram"> <i data-lucide="instagram" class="w-4 h-4"></i> </button> 
-          <button class="focus-ring w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-white hover:text-[#30402f] transition" type="button" aria-label="Facebook"> <i data-lucide="facebook" class="w-4 h-4"></i> </button> 
-          <button class="focus-ring w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-white hover:text-[#30402f] transition" type="button" aria-label="WhatsApp"> <i data-lucide="message-circle" class="w-4 h-4"></i> </button>
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex flex-col sm:flex-row gap-2 justify-between text-[11px] uppercase tracking-[0.14em] text-white/55">
-        <p>© 2026 Somos Luz. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
   <div id="cart-overlay" class="cart-overlay fixed inset-0 bg-black/35 z-50"></div>
-  
   <aside id="cart-panel" class="cart-panel fixed right-0 top-0 z-[60] w-full sm:w-[430px] h-full bg-[#fbf8f2] shadow-2xl flex flex-col" aria-hidden="true">
     <div class="px-6 py-5 border-b border-[#e5dccf] flex items-center justify-between">
       <div>
         <p class="text-[10px] uppercase tracking-[0.2em] text-[#6e806a]">Tu Selección</p>
         <h2 class="serif text-[36px] leading-none mt-1">Carrito</h2>
       </div>
-      <button id="close-cart" class="focus-ring w-10 h-10 rounded-full hover:bg-[#eee6db] flex items-center justify-center transition" type="button" aria-label="Cerrar carrito"> <i data-lucide="x" class="w-5 h-5"></i> </button>
+      <button id="close-cart" class="focus-ring w-10 h-10 rounded-full hover:bg-[#eee6db] flex items-center justify-center transition" type="button"> <i data-lucide="x" class="w-5 h-5"></i> </button>
     </div>
     
     <div id="cart-content" class="flex-1 overflow-y-auto px-6 py-5">
       <div id="empty-cart" class="h-full flex flex-col items-center justify-center text-center">
-        <div class="w-16 h-16 rounded-full bg-[#ebe5db] flex items-center justify-center mb-4">
-          <i data-lucide="shopping-bag" class="w-7 h-7 text-[#7a8a73]"></i>
-        </div>
+        <i data-lucide="shopping-bag" class="w-7 h-7 text-[#7a8a73] mb-2"></i>
         <h3 class="serif text-[30px]">Tu carrito está vacío</h3>
-        <p class="mt-2 text-[14px] leading-6 max-w-[250px] text-gray-500">Agrega productos de nuestra tienda para comenzar.</p>
       </div>
       <div id="cart-items" class="space-y-4 hidden"></div>
     </div>
     
     <div class="px-6 py-5 border-t border-[#e5dccf]">
       <div class="flex items-center justify-between mb-4">
-        <span class="text-[12px] uppercase tracking-[0.16em]">Total Estimado</span> 
+        <span class="text-[12px] uppercase tracking-[0.16em]">Total</span> 
         <span id="cart-total" class="serif text-[30px]">$0</span>
       </div>
-      <button id="whatsapp-order" class="w-full py-4 bg-[#5f735b] text-white rounded-full uppercase tracking-[0.14em] text-[12px] hover:bg-[#4d604b] transition disabled:opacity-50 disabled:cursor-not-allowed" type="button" disabled>Pedir por WhatsApp</button> 
+      <button id="whatsapp-order" class="w-full py-4 bg-[#5f735b] text-white rounded-full uppercase tracking-[0.14em] text-[12px] hover:bg-[#4d604b] transition disabled:opacity-50" type="button" disabled>Pedir por WhatsApp</button> 
       <button id="continue-shopping" class="w-full mt-3 py-3 border border-[#d5cab9] rounded-full uppercase tracking-[0.14em] text-[11px] hover:bg-[#eee6db] transition" type="button">Continuar Comprando</button>
     </div>
   </aside>
 
   <template id="cart-item-template">
     <div class="cart-item flex gap-3 pb-4 border-b border-[#eee5d9]">
-      <div class="w-16 h-20 bg-[#eee8df] overflow-hidden shrink-0 flex items-center justify-center">
-         <i data-lucide="package" class="w-6 h-6 text-gray-400"></i>
-      </div>
       <div class="flex-1 min-w-0">
         <h3 class="cart-item-name serif text-[22px] leading-tight"></h3>
         <p class="cart-item-price mt-1 text-[13px] text-gray-600"></p>
@@ -222,9 +143,10 @@
   </template>
 
   <div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] bg-[#30402f] text-white px-5 py-3 rounded-full text-[12px] uppercase tracking-[0.14em] shadow-lg">
-    <span>¡Producto añadido al carrito!</span>
+    <span>¡Agregado al carrito!</span>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
