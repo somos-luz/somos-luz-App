@@ -1,106 +1,126 @@
-:root {
-  --sage: #6e806a;
-  --sage-dark: #4d604b;
-  --cream: #f7f2ea;
-  --sand: #e7dccb;
-  --ink: #2f382d;
-  --muted: #7d7d70;
-  --clay: #b67f67;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* ==========================================================================
+   1. CONFIGURACIÓN GENERAL Y FUENTES
+   ========================================================================== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   font-family: 'DM Sans', sans-serif;
-  color: var(--ink);
-  background: #f7f2ea;
-  width: 100%;
+  background-color: #f8f4ed;
+  color: #354033;
+  overflow-x: hidden;
 }
 
+/* Tipografía Serif para Títulos */
 .serif {
   font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
 }
 
+/* Enfoque accesible para botones */
+.focus-ring:focus-visible {
+  outline: 2px solid #6e806a;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   2. HERO SECCIÓN (INICIO)
+   ========================================================================== */
 .hero-overlay {
-  background: linear-gradient(90deg, rgba(35,48,35,.72), rgba(35,48,35,.34), rgba(35,48,35,.06));
+  background: linear-gradient(
+    to bottom,
+    rgba(77, 96, 75, 0.3),
+    rgba(53, 64, 51, 0.75)
+  );
 }
 
-.soft-shadow {
-  box-shadow: 0 18px 50px rgba(74,89,70,.14);
-}
+/* ==========================================================================
+   3. COMPONENTE: CARRITO DE COMPRAS (ASIDE)
+   ========================================================================== */
 
-.product-card {
-  transition: transform .35s ease, box-shadow .35s ease, opacity .25s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 40px rgba(68,79,63,.13);
-}
-
-.filter-btn.active {
-  background: var(--sage-dark);
-  color: #fff;
-  border-color: var(--sage-dark);
-}
-
-.cart-panel {
-  transform: translateX(100%);
-  transition: transform .38s cubic-bezier(.22,1,.36,1);
-}
-
-.cart-panel.open {
-  transform: translateX(0);
-}
-
+/* Fondo oscuro detrás del carrito - Inicia invisible */
 .cart-overlay {
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.4s ease;
 }
 
+/* Se activa cuando el JS añade la clase .open */
 .cart-overlay.open {
   opacity: 1;
   pointer-events: auto;
 }
 
+/* Panel del carrito - Inicia completamente fuera de la pantalla (derecha) */
+.cart-panel {
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Se desliza hacia adentro cuando el JS añade la clase .open */
+.cart-panel.open {
+  transform: translateX(0);
+}
+
+/* Personalización de la barra de desplazamiento dentro del carrito */
+#cart-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+#cart-content::-webkit-scrollbar-track {
+  background: #f1eae0;
+}
+
+#cart-content::-webkit-scrollbar-thumb {
+  background: #c7bba8;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   4. INTERFAZ Y BOTONES ANIMADOS
+   ========================================================================== */
+
+/* Botones de Filtro de la Tienda */
+.filter-btn {
+  background-color: transparent;
+  color: #5c5346;
+}
+
+.filter-btn.active {
+  background-color: #6e806a;
+  color: #ffffff;
+  border-color: #6e806a;
+}
+
+/* Tarjetas de producto */
+.product-card {
+  border: 1px solid #eee6db;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(95, 82, 64, 0.06);
+}
+
+/* Notificación flotante (Toast) - Inicia oculta abajo */
 .toast {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translate(-50%, 1rem);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   pointer-events: none;
-  transition: all .28s ease;
 }
 
+/* Se muestra cuando el JS añade la clase .show */
 .toast.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
-.fade-up {
-  animation: fadeUp .8s ease both;
-}
-
-.fade-up.delay-1 { animation-delay: .12s; }
-.fade-up.delay-2 { animation-delay: .24s; }
-.fade-up.delay-3 { animation-delay: .36s; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.cart-item {
-  animation: fadeUp .3s ease both;
-}
-
-.focus-ring:focus-visible {
-  outline: 2px solid #71806a;
-  outline-offset: 3px;
+/* Clases de utilidad complementarias */
+.hidden {
+  display: none !important;
 }
