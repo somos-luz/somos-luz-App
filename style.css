@@ -20,40 +20,41 @@ body {
 }
 
 /* ==========================================================================
-   2. ENCABEZADO CORREGIDO (CON LOGO CIRCULAR PERFECTO)
+   2. ENCABEZADO RECALIBRADO (LOGO INTEGRADO SIN DESBORDES)
    ========================================================================== */
 .site-header {
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center; /* Mantiene el título perfectamente en el centro */
+    justify-content: space-between;
     padding: 10px 15px !important;
     background-color: var(--blanco-divino);
     border-bottom: 1px solid var(--verde-claro);
     min-height: 85px;
+    overflow: hidden; /* Corta cualquier residuo gris de la imagen */
 }
 
 .header-left {
-    position: absolute;
-    left: 15px; /* Fijado sutilmente a la izquierda */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+    flex: 0 0 70px !important; /* Espacio estricto y seguro para el logo */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .site-logo {
-    width: 55px !important;  /* Tamaño micro, elegante y compacto */
+    width: 55px !important;  /* Tamaño elegante y compacto */
     height: 55px !important;
-    border-radius: 50%;     /* Hace el recorte circular perfecto */
-    object-fit: cover !important; /* Enfoca directo al centro borrando el marco gris oscuro */
+    border-radius: 50%;     /* Fuerza el recorte circular */
+    object-fit: cover !important;
+    transform: scale(1.6);  /* ¡El truco! Zoom al círculo SL ocultando el marco gris de Canva */
     border: 1px solid var(--dorado-luz) !important;
     box-shadow: 0 2px 6px rgba(74, 93, 78, 0.1);
+    margin-left: 8px;       /* Despega el logo del borde de la pantalla */
 }
 
 .header-center {
+    flex: 1 !important;     /* Distribuye el espacio para centrar el título */
     text-align: center;
-    max-width: 55%; /* Protege el espacio para que no choque con los costados */
-    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .brand-title {
@@ -61,7 +62,7 @@ body {
     font-style: italic;
     font-weight: 700;
     color: var(--verde-natural);
-    font-size: 2rem !important; /* Tamaño ideal y legible en móviles */
+    font-size: 1.8rem !important; /* Ajuste perfecto para evitar saltos bruscos en móviles */
     margin: 0;
     line-height: 1.1;
 }
@@ -70,39 +71,16 @@ body {
     color: var(--dorado-luz);
     margin: 3px 0 0 0;
     font-size: 0.7rem !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase;
     line-height: 1.2;
 }
 
 .header-right {
-    position: absolute;
-    right: 15px; /* Fijado sutilmente a la derecha */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-
-.brand-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 700;
-    color: var(--verde-natural);
-    font-size: 2rem !important;     /* Balanceado para móviles y PC */
-    margin: 0;
-}
-
-.brand-subtitle {
-    color: var(--dorado-luz);
-    margin: 2px 0 0 0;
-    font-size: 0.75rem !important;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.header-right {
-    flex: 0 0 75px !important;
+    flex: 0 0 85px !important; /* Espacio exacto e inamovible para el carrito */
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .cart-icon-container {
@@ -146,7 +124,7 @@ body {
     justify-content: center;
     gap: 10px;
     margin: 25px 0;
-    flex-wrap: wrap; /* Evita que se desborde en pantallas pequeñas */
+    flex-wrap: wrap; /* Evita desbordes en celulares */
 }
 
 .filter-btn, .botón-de-filtro {
@@ -194,7 +172,7 @@ body {
 .catalog-item:hover, .artículo-del-catálogo:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(74, 93, 78, 0.12);
-    border-color: var(--dorado-luz); /* Destello dorado al mirarlo */
+    border-color: var(--dorado-luz); /* Destello dorado sutil */
 }
 
 .catalog-item img, .artículo-del-catálogo img {
