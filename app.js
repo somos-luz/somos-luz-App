@@ -1,7 +1,7 @@
-// Este es el catálogo de productos y servicios de "Somos Luz"
-// Los datos se guardan en el localStorage del navegador para que no se pierdan al recargar
-let catalog = JSON.parse(localStorage.getItem('catalog')) || [
-    {
+ <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+    const products = {
+       {
         id: 'Conecta con tu Poder Creador',
         name: 'Conecta con tu Poder Creador',
         type: 'kit',
@@ -425,313 +425,184 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
     },
 ];
 
-// --- VARIABLES Y ELEMENTOS DEL DOM ---
+    const cart = {};
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    const cartItems = document.getElementById('cart-items');
+    const emptyCart = document.getElementById('empty-cart');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartOverlay = document.getElementById('cart-overlay');
+    const whatsappBtn = document.getElementById('whatsapp-order');
+    const toast = document.getElementById('toast');
 
-// Catálogo
-const productsServicesContainer = document.getElementById('products-services');
-
-// Carrito
-let cart = [];
-const cartButton = document.getElementById('cart-button');
-const cartCount = document.querySelector('.cart-count');
-const cartContainer = document.getElementById('cart-container');
-const closeCartButton = document.getElementById('close-cart');
-const cartItemsContainer = document.getElementById('cart-items');
-const cartTotalElement = document.getElementById('cart-total');
-const checkoutButton = document.getElementById('checkout-button');
-
-// Formulario de contacto
-const contactForm = document.getElementById('contact-form');
-const contactFormContent = document.getElementById('contact-form-content');
-
-// Administración
-const adminLink = document.getElementById('admin-link');
-const adminPanel = document.getElementById('admin-panel');
-const loginForm = document.getElementById('login-form');
-const catalogManager = document.getElementById('catalog-manager');
-const adminUsernameInput = document.getElementById('admin-username');
-const adminPasswordInput = document.getElementById('admin-password');
-const adminLoginBtn = document.getElementById('admin-login-btn');
-const productForm = document.getElementById('product-form');
-const productIdInput = document.getElementById('product-id-input');
-const productNameInput = document.getElementById('product-name-input');
-const productDescriptionInput = document.getElementById('product-description-input');
-const productPriceInput = document.getElementById('product-price-input');
-const productImageInput = document.getElementById('product-image-url-input');
-const productTypeInput = document.getElementById('product-type-input');
-const addEditBtn = document.getElementById('add-edit-btn');
-const currentCatalogContainer = document.getElementById('current-catalog');
-
-// --- FUNCIONES ---
-
-// Función para guardar el catálogo en el almacenamiento local del navegador
-function saveCatalog() {
-    localStorage.setItem('catalog', JSON.stringify(catalog));
-}
-
-// Renderizar el catálogo para los clientes
-function renderCatalog(filter = 'todos') {
-    productsServicesContainer.innerHTML = '';
-    
-    // Filtramos el catálogo según el tipo seleccionado
-    const itemsToShow = catalog.filter(item => {
-        if (filter === 'todos') return true;
-        return item.type === filter;
-    });
-
-    itemsToShow.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('catalog-item');
-        itemElement.innerHTML = `
-            <img src="${item.imageUrl}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-            <p class="price">$${item.price.toLocaleString('es-CL')}</p>
-            <button class="add-to-cart-btn" data-id="${item.id}">
-                ${item.type === 'producto' ? 'Añadir al carrito' : 'Agendar Servicio'}
-            </button>
-        `;
-        productsServicesContainer.appendChild(itemElement);
-    });
-}
-
-// Renderizar el catálogo en el panel de administración
-function renderAdminCatalog() {
-    currentCatalogContainer.innerHTML = '';
-    catalog.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('catalog-item');
-        itemElement.innerHTML = `
-            <img src="${item.imageUrl}" alt="${item.name}">
-            <div class="item-info">
-                <strong>${item.name}</strong> - $${item.price.toLocaleString('es-CL')}
-                <br>
-                <small>${item.type}</small>
-            </div>
-            <div class="item-actions">
-                <button class="edit-btn" data-id="${item.id}">Editar</button>
-                <button class="delete-btn" data-id="${item.id}">Eliminar</button>
-            </div>
-        `;
-        currentCatalogContainer.appendChild(itemElement);
-    });
-}
-
-// Función para mostrar/ocultar el carrito
-function toggleCart() {
-    cartContainer.classList.toggle('hidden');
-    productsServicesContainer.classList.toggle('hidden');
-}
-
-// Función para añadir un producto al carrito
-function addToCart(itemId) {
-    const itemToAdd = catalog.find(item => item.id === itemId);
-    if (itemToAdd) {
-        const existingItem = cart.find(item => item.id === itemId);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({ ...itemToAdd, quantity: 1 });
-        }
-        updateCartDisplay();
-    }
-}
-
-// Función para actualizar la interfaz del carrito
-function updateCartDisplay() {
-    cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
-    cartItemsContainer.innerHTML = '';
-    let total = 0;
-    cart.forEach(item => {
-        const cartItemElement = document.createElement('div');
-        cartItemElement.classList.add('cart-item');
-        cartItemElement.innerHTML = `
-            <span>${item.name} (${item.quantity})</span>
-            <p>$${(item.price * item.quantity).toLocaleString('es-CL')}</p>
-        `;
-        cartItemsContainer.appendChild(cartItemElement);
-        total += item.price * item.quantity;
-    });
-    cartTotalElement.textContent = `$${total.toLocaleString('es-CL')}`;
-}
-
-// Función para manejar el envío a WhatsApp
-function sendToWhatsApp() {
-    const phoneNumber = '56975291753';
-    let message = '¡Hola Somos Luz! Me gustaría realizar un pedido con los siguientes productos y servicios:\n\n';
-    let total = 0;
-    cart.forEach(item => {
-        message += `- ${item.name} x${item.quantity} - $${(item.price * item.quantity).toLocaleString('es-CL')}\n`;
-        total += item.price * item.quantity;
-    });
-    message += `\nTotal: $${total.toLocaleString('es-CL')}\n\n`;
-    message += '¡Espero su confirmación!';
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-// Función para manejar el formulario de contacto
-function handleContactForm(event) {
-    event.preventDefault();
-    const name = document.getElementById('contact-name').value;
-    const email = document.getElementById('contact-email').value;
-    const message = document.getElementById('contact-message').value;
-    const whatsappMessage = `¡Hola Somos Luz! Un cliente ha enviado un mensaje de contacto:\n\nNombre: ${name}\nEmail: ${email}\nMensaje: ${message}`;
-    const encodedWhatsappMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/56975291753?text=${encodedWhatsappMessage}`;
-    window.open(whatsappUrl, '_blank');
-}
-
-// --- EVENT LISTENERS (ESCUCHAS DE CLICS) ---
-
-// 1. Gestión del Carrito y Contacto
-// 1.1 Conexión del catálogo con la función de compra
-if (productsServicesContainer) {
-    productsServicesContainer.addEventListener('click', (event) => {
-        // Detectamos si el clic fue en el botón de añadir
-        if (event.target.classList.contains('add-to-cart-btn')) {
-            // Extraemos el ID que guardamos en el atributo 'data-id' al renderizar
-            const itemId = event.target.getAttribute('data-id');
-            
-            // Llamamos a tu función que está definida más arriba
-            addToCart(itemId);
-            
-            // Consola para confirmar que el código está trabajando
-            console.log("Producto detectado y enviado al carrito:", itemId);
-        }
-    });
-}
-if (cartButton) cartButton.addEventListener('click', toggleCart);
-if (closeCartButton) closeCartButton.addEventListener('click', toggleCart);
-if (checkoutButton) checkoutButton.addEventListener('click', sendToWhatsApp);
-if (contactFormContent) contactFormContent.addEventListener('submit', handleContactForm);
-
-// 2. Acceso al Panel de Administración
-if (adminLink) {
-    adminLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        productsServicesContainer.classList.add('hidden');
-        if (cartContainer) cartContainer.classList.add('hidden');
-        if (contactForm) contactForm.classList.add('hidden');
-        adminPanel.classList.remove('hidden'); 
-        adminPanel.style.display = 'block';
-    });
-}
-
-// 3. Inicio de Sesión Administrativo
-if (adminLoginBtn) {
-    adminLoginBtn.addEventListener('click', () => {
-        const username = adminUsernameInput.value;
-        const password = adminPasswordInput.value;
-        if (username === 'somosluz' && password === 'somos$888') {
-            loginForm.classList.add('hidden');
-            catalogManager.classList.remove('hidden');
-            renderAdminCatalog();
-        } else {
-            alert('Usuario o contraseña incorrecta.');
-        }
-    });
-}
-
-// 4. Gestión de Productos (Añadir/Editar)
-if (productForm) {
-    productForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const id = productIdInput.value || Math.random().toString(36).substring(2, 9);
-        const name = productNameInput.value;
-        const description = productDescriptionInput.value;
-        const price = parseFloat(productPriceInput.value);
-        const imageUrl = productImageInput.value;
-        const type = productTypeInput.value;
-        
-        const newProduct = { id, name, description, price, imageUrl, type };
-        const existingIndex = catalog.findIndex(item => item.id === id);
-        
-        if (existingIndex !== -1) {
-            catalog[existingIndex] = newProduct;
-        } else {
-            catalog.push(newProduct);
-        }
-
-        saveCatalog();
-        renderCatalog();
-        renderAdminCatalog();
-        productForm.reset();
-        productIdInput.value = '';
-    });
-}
-
-// 5. Botones de Editar/Eliminar en Admin
-if (currentCatalogContainer) {
-    currentCatalogContainer.addEventListener('click', (event) => {
-        const itemId = event.target.getAttribute('data-id');
-        if (event.target.classList.contains('delete-btn')) {
-            catalog = catalog.filter(item => item.id !== itemId);
-            saveCatalog();
-            renderCatalog();
-            renderAdminCatalog();
-        } else if (event.target.classList.contains('edit-btn')) {
-            const itemToEdit = catalog.find(item => item.id === itemId);
-            if (itemToEdit) {
-                productIdInput.value = itemToEdit.id;
-                productNameInput.value = itemToEdit.name;
-                productDescriptionInput.value = itemToEdit.description;
-                productPriceInput.value = itemToEdit.price;
-                productImageInput.value = itemToEdit.imageUrl;
-                productTypeInput.value = itemToEdit.type;
-            }
-        }
-    });
-}
-// --- INICIALIZACIÓN SEGURA Y FILTRADO DE KITS ---
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("El DOM está listo, cargando catálogo de Somos Luz...");
-    
-    // 1. Renderizado inicial: Muestra todos los elementos al cargar la página
-    if (typeof renderCatalog === 'function') {
-        renderCatalog('todos');
+    function playTone(freq = 520, duration = 0.06) {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+        const oscillator = ctx.createOscillator();
+        const gain = ctx.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.value = freq;
+        gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.025, ctx.currentTime + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+        oscillator.connect(gain);
+        gain.connect(ctx.destination);
+        oscillator.start();
+        oscillator.stop(ctx.currentTime + duration + 0.02);
+      } catch(e) {}
     }
 
-    // 2. Configuración de los botones de filtro (Todos, Producto, Kit, Servicio)
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Quitamos la clase activa de todos los botones para apagar el color verde
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Le añadimos la clase activa al botón que el usuario presionó
-            e.target.classList.add('active');
-            
-            // Obtenemos el tipo ('todos', 'producto', 'kit' o 'servicio')
-            const selectedType = e.target.getAttribute('data-type');
-            
-            // Llamamos a la función encargada de dibujar los productos correspondientes
-            if (typeof renderCatalog === 'function') {
-                renderCatalog(selectedType);
+    function money(value){
+      return '$' + value.toLocaleString('es-CL');
+    }
+
+    function openCart(){
+      cartPanel.classList.add('open');
+      cartOverlay.classList.add('open');
+      cartPanel.setAttribute('aria-hidden','false');
+      playTone(420);
+    }
+
+    function closeCart(){
+      cartPanel.classList.remove('open');
+      cartOverlay.classList.remove('open');
+      cartPanel.setAttribute('aria-hidden','true');
+      playTone(320);
+    }
+
+    function showToast(){
+      toast.classList.add('show');
+      setTimeout(()=>toast.classList.remove('show'), 1800);
+    }
+
+    function updateCart(){
+      const keys = Object.keys(cart);
+      let totalQty = 0;
+      let total = 0;
+      keys.forEach(id => {
+        totalQty += cart[id].qty;
+        total += cart[id].qty * products[id].price;
+      });
+
+      cartCount.textContent = totalQty;
+      cartTotal.textContent = money(total);
+      whatsappBtn.disabled = keys.length === 0;
+
+      const existing = new Map([...cartItems.children].map(el => [el.dataset.id, el]));
+
+      keys.forEach(id => {
+        const item = cart[id];
+        let row = existing.get(id);
+        if(!row){
+          const tpl = document.getElementById('cart-item-template').content.cloneNode(true);
+          row = tpl.querySelector('[data-template-id="cart-item"]');
+          row.dataset.id = id;
+
+          const sourceImg = document.querySelector(`[data-template-id="${products[id].image}"]`);
+          const img = row.querySelector('[data-template-id="cart-item-image"]');
+          if(sourceImg && sourceImg.src){
+            img.src = sourceImg.src;
+            img.alt = sourceImg.alt || products[id].name;
+          }
+
+          row.querySelector('[data-template-id="cart-item-name"]').textContent = products[id].name;
+          row.querySelector('[data-template-id="cart-item-price"]').textContent = money(products[id].price);
+
+          row.querySelector('.qty-plus').addEventListener('click', ()=> {
+            cart[id].qty += 1;
+            playTone(560);
+            updateCart();
+          });
+          row.querySelector('.qty-minus').addEventListener('click', ()=> {
+            if(cart[id].qty > 1){
+              cart[id].qty -= 1;
+            }else{
+              delete cart[id];
             }
-        });
+            playTone(380);
+            updateCart();
+          });
+          row.querySelector('.remove-item').addEventListener('click', ()=> {
+            delete cart[id];
+            playTone(300);
+            updateCart();
+          });
+
+          cartItems.appendChild(row);
+          lucide.createIcons();
+        } else {
+          existing.delete(id);
+        }
+        row.querySelector('.qty-value').textContent = item.qty;
+      });
+
+      existing.forEach(el => el.remove());
+
+      if(keys.length){
+        emptyCart.classList.add('hidden');
+        cartItems.classList.remove('hidden');
+      }else{
+        emptyCart.classList.remove('hidden');
+        cartItems.classList.add('hidden');
+      }
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const card = btn.closest('[data-product-id]');
+        const id = card.dataset.productId;
+        if(!cart[id]) cart[id] = { qty: 0 };
+        cart[id].qty += 1;
+        btn.classList.add('scale-110');
+        setTimeout(()=>btn.classList.remove('scale-110'), 180);
+        playTone(620);
+        updateCart();
+        showToast();
+      });
     });
-});
-    // 2. Configuración de los botones de filtro (Todos, Producto, Kit, Servicio)
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Quitamos la clase activa de todos los botones para apagar el color verde
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Le añadimos la clase activa al botón que el usuario presionó
-            e.target.classList.add('active');
-            
-            // Obtenemos el tipo ('todos', 'producto', 'kit' o 'servicio')
-            const selectedType = e.target.getAttribute('data-type');
-            
-            // Llamamos a la función encargada de dibujar los productos correspondientes
-            if (typeof renderCatalog === 'function') {
-                renderCatalog(selectedType);
-            }
+
+    document.querySelectorAll('.filter-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        playTone(480);
+        document.querySelectorAll('.product-card').forEach(card=>{
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.display = show ? '' : 'none';
         });
+      });
     });
-});
+
+    document.getElementById('open-cart').addEventListener('click', openCart);
+    document.getElementById('close-cart').addEventListener('click', closeCart);
+    document.getElementById('continue-shopping').addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    document.getElementById('hero-cta').addEventListener('click', ()=>{
+      document.getElementById('tienda').scrollIntoView({behavior:'smooth'});
+      playTone(520);
+    });
+
+    whatsappBtn.addEventListener('click', ()=>{
+      const keys = Object.keys(cart);
+      if(!keys.length) return;
+      let lines = ['Hola, quiero hacer este pedido en Somos Luz:', ''];
+      let total = 0;
+      keys.forEach(id=>{
+        const subtotal = cart[id].qty * products[id].price;
+        total += subtotal;
+        lines.push(`• ${products[id].name} x${cart[id].qty} - ${money(subtotal)}`);
+      });
+      lines.push('');
+      lines.push(`Total: ${money(total)}`);
+      const url = 'https://wa.me/56900000000?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(url, '_blank', 'noopener,noreferrer');
+      playTone(700);
+    });
+
+    updateCart();
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0dd8033a0294218',t:'MTc4MTgxOTMzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
