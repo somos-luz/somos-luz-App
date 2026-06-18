@@ -76,10 +76,56 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
      {
         id: 'Limpieza Energetica y Paz Interior',
         name: 'Limpieza Energetica y Paz Interior',
-        type: 'producto',
+        type: 'kit',
         description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 producto de Cuarzo blanco (aros, colgantes, pulseras, collar), Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
         price: 8888,
         imageUrl: 'https://i.imgur.com/Ql99G1W.jpeg'
+    },
+     {
+        id: 'Energía Vital',
+        name: 'Energía Vital',
+        type: 'kit',
+        description: 'Este kit incluye; 1 Vela lisa Naranja, 1 frasco Amuleto, Guía de conexión paso a paso. Activa este kit cuando te sientas estancada/o sin energía o desmotivada/o. la luz de esta vela activa tu alegría, tu creatividad y las ganas de disfrutar la vida, junto al amuleto que podrás llevar contigo, recargado e intencionado con la vibración de la vela.',
+        price: 5000,
+        imageUrl: 'https://i.imgur.com/2hLCMC3.jpeg'
+    },
+    {
+        id: 'Balsamo al Corazón',
+        name: 'Balsamo al Corazón',
+        type: 'kit',
+        description: 'Este kit incluye; 1 Vela lisa Rosada, 1 frasco Amuleto, Guía de conexión paso a paso. Activa este kit cuando necesites Amor propio o sanar una herida emocional. la vibracion y energía de esta vela envolvera tu corazón en ternura y aceptación, junto al amuleto que podrás llevar contigo, recargado e intencionado con la vibración de la vela.',
+        price: 5000,
+        imageUrl: 'https://i.imgur.com/AD7YvVD.jpeg'
+    },
+    {
+        id: 'Sol de Abundancia y Sabiduría',
+        name: 'Sol de Abundancia y Sabiduría',
+        type: 'kit',
+        description: 'Este kit incluye; 1 Vela lisa Amarilla, 1 frasco Amuleto, Guía de conexión paso a paso. Activa este kit cuando necesites enfoque, fuerza de voluntad, éxito en tus proyectos o recordar que la abundancia y la sabiduría del Universo son parte de ti, junto al amuleto que podrás llevar contigo, recargado e intencionado con la vibración de la vela.',
+        price: 5000,
+        imageUrl: 'https://i.imgur.com/ZChLehW.jpeg'
+    },
+    {
+        id: 'Claridad y Luz Eterna',
+        name: 'Claridad y Luz Eterna',
+        type: 'kit',
+        description: 'Este kit incluye; 1 Vela lisa Blanca, 1 frasco Amuleto, Guía de conexión paso a paso. Activa este kit cuando necesites iluminar tu Ser, purificar tu hogar o empezar un nuevo camino con la mente y las emociones claras y puras, junto al amuleto que podrás llevar contigo, recargado e intencionado con la vibración de la vela.',
+        price: 5000,
+        imageUrl: 'https://i.imgur.com/Tl1JTe0.jpeg'
+    },
+    {
+        id: 'Alquimia del Alma',
+        name: 'Alquimia del Alma',
+        type: 'kit',
+        description: 'Este kit incluye; 1 Vela lisa Violeta, 1 frasco Amuleto, Guía de conexión paso a paso. Activa este kit cuando necesites perdonar, soltar el pasado o transformar el dolor en sabiduría, la luz de esta vela transmuta lo viejo y denso en algo nuevo y luminoso, junto al amuleto que podrás llevar contigo, recargado e intencionado con la vibración de la vela.',
+        imageUrl: 'https://i.imgur.com/B87LxDn.jpeg'
+    },
+    {
+        id: 'Escudo de Paz',
+        name: 'Escudo de Paz',
+        type: 'kit',
+        description: 'Este kit incluye; 1 Vela lisa Azul, 1 frasco Amuleto, Guía de conexión paso a paso. Activa este kit cuando te sientas insegura/o, con ansiedad o necesites protección. la luz de esta vela crea un circulo de Paz y verdad a tu alredor, junto al amuleto que podrás llevar contigo, recargado e intencionado con la vibración de la vela.',
+        imageUrl: 'https://i.imgur.com/KaRsVYE.jpeg'
     },
     {
         id: 'Inciensos Palo Santo con Mirra',
