@@ -19,41 +19,23 @@ body {
 }
 
 /* ==========================================================================
-   2. ENCABEZADO RECALIBRADO (LOGO INTEGRADO SIN DESBORDES)
+   2. ENCABEZADO MINIMALISTA (SIN LOGO)
    ========================================================================== */
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px !important;
+    justify-content: center; /* Centra perfectamente el título de tu marca */
+    padding: 15px 20px !important;
     background-color: var(--blanco-divino);
     border-bottom: 1px solid var(--verde-claro);
     min-height: 85px;
-    overflow: hidden; /* Corta cualquier residuo gris de la imagen */
-}
-
-.header-left {
-    flex: 0 0 70px !important; /* Espacio estricto y seguro para el logo */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.site-logo {
-    width: 55px !important;  /* Tamaño elegante y compacto */
-    height: 55px !important;
-    border-radius: 50%;     /* Fuerza el recorte circular */
-    object-fit: cover !important;
-    transform: scale(1.6);  /* ¡El truco! Zoom al círculo SL ocultando el marco gris de Canva */
-    border: 1px solid var(--dorado-luz) !important;
-    box-shadow: 0 2px 6px rgba(74, 93, 78, 0.1);
-    margin-left: 8px;       /* Despega el logo del borde de la pantalla */
+    position: relative;
 }
 
 .header-center {
-    flex: 1 !important;     /* Distribuye el espacio para centrar el título */
     text-align: center;
-    padding: 0 10px;
+    width: 100%;
+    padding: 0 60px; /* Deja espacio seguro para que no choque con el carrito */
 }
 
 .brand-title {
@@ -61,58 +43,29 @@ body {
     font-style: italic;
     font-weight: 700;
     color: var(--verde-natural);
-    font-size: 1.8rem !important; /* Ajuste perfecto para evitar saltos bruscos en móviles */
+    font-size: 2.2rem !important; /* Un toque más grande y dominante */
     margin: 0;
     line-height: 1.1;
 }
 
 .brand-subtitle {
     color: var(--dorado-luz);
-    margin: 3px 0 0 0;
-    font-size: 0.7rem !important;
+    margin: 4px 0 0 0;
+    font-size: 0.75rem !important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase;
     line-height: 1.2;
 }
 
 .header-right {
-    flex: 0 0 85px !important; /* Espacio exacto e inamovible para el carrito */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    position: absolute;
+    right: 20px; /* Anclamos el carrito a la derecha de forma elegante */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .cart-icon-container {
     position: relative;
-}
-
-#cart-button, #botón-del-carrito {
-    background-color: transparent !important;
-    border: 2px solid var(--verde-natural) !important;
-    color: var(--verde-natural) !important;
-    padding: 6px 12px !important;
-    border-radius: 20px !important;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem !important;
-    transition: all 0.3s ease;
-}
-
-#cart-button:hover, #botón-del-carrito:hover {
-    background-color: var(--verde-natural) !important;
-    color: var(--blanco-divino) !important;
-}
-
-.cart-count, .recuento-de-carritos {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: var(--dorado-luz) !important;
-    color: white !important;
-    border-radius: 50%;
-    padding: 2px 7px;
-    font-size: 0.75rem;
-    font-weight: bold;
 }
 
 /* ==========================================================================
