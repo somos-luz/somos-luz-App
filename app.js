@@ -684,23 +684,36 @@ if (currentCatalogContainer) {
         }
     });
 }
-function inicializarFiltros() {
-    const botonesFiltro = document.querySelectorAll('.filter-btn');
+// --- INICIALIZACIÓN SEGURA Y FILTRADO DE KITS ---
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("El DOM está listo, cargando catálogo de Somos Luz...");
     
-    botonesFiltro.forEach(boton => {
-        boton.addEventListener('click', (e) => {
-            botonesFiltro.forEach(btn => btn.classList.remove('active'));
-            boton.classList.add('active');
+    // 1. Renderizado inicial: Muestra todos los elementos al cargar la página
+    if (typeof renderCatalog === 'function') {
+        renderCatalog('todos');
+    }
+
+    // 2. Configuración de los botones de filtro (Todos, Producto, Kit, Servicio)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Quitamos la clase activa de todos los botones para apagar el color verde
+            filterButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Esto lee de forma correcta el filtro seleccionado
-            const categoriaSeleccionada = boton.getAttribute('data-type');
+            // Le añadimos la clase activa al botón que el usuario presionó
+            e.target.classList.add('active');
             
-            // Redibuja tu catálogo sin romper tus datos originales
-            renderCatalogo(categoriaSeleccionada);
+            // Obtenemos el tipo ('todos', 'producto', 'kit' o 'servicio')
+            const selectedType = e.target.getAttribute('data-type');
+            
+            // Llamamos a la función encargada de dibujar los productos correspondientes
+            if (typeof renderCatalog === 'function') {
+                renderCatalog(selectedType);
+            }
         });
     });
-}
-
+});
     // 2. Configuración de los botones de filtro (Todos, Producto, Kit, Servicio)
     const filterButtons = document.querySelectorAll('.filter-btn');
     
