@@ -438,7 +438,7 @@
   const cart = {};
 
   function inicializarTienda() {
-    const grid = document.getElementById('products-grid');
+    const grid = document.getElementById('product-grid');
     const cartPanel = document.getElementById('cart-panel');
     const cartOverlay = document.getElementById('cart-overlay');
     const cartCount = document.getElementById('cart-count');
