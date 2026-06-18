@@ -20,30 +20,33 @@ body {
 }
 
 /* ==========================================================================
-   2. ENCABEZADO (SITE HEADER) - LOGO IZQUIERDA, TÍTULO CENTRO
+   2. ENCABEZADO OPTIMIZADO (LOGO PEQUEÑO Y SUTIL)
    ========================================================================== */
 .site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px !important; /* Optimizado para evitar deformaciones */
+    padding: 5px 15px !important; /* Reducimos el grosor del menú superior */
     background-color: var(--blanco-divino);
     border-bottom: 1px solid var(--verde-claro);
+    height: 70px; /* Forzamos una altura de barra fija y elegante */
 }
 
 .header-left {
-    flex: 0 0 60px !important;      /* Espacio controlado para el logo */
+    flex: 0 0 50px !important; /* Espacio estricto y pequeño para el logo */
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    height: 100%;
 }
 
 .site-logo {
-    width: 55px !important;         /* Tamaño sutil y delicado para el lateral */
-    height: 55px !important;
+    width: 45px !important;  /* Tamaño micro y delicado para la esquina izquierda */
+    height: 45px !important;
     border-radius: 50%;
     border: 1px solid var(--dorado-luz) !important;
-    object-fit: cover;
-    box-shadow: 0 2px 6px rgba(74, 93, 78, 0.1);
+    object-fit: contain !important; /* Encaja el círculo eliminando los bordes blancos fantasmas */
+    background-color: white;
 }
 
 .header-center {
