@@ -1,12 +1,14 @@
-/* --- ESTILOS GENERALES E IMPORTACIÓN DE FUENTES --- */
+/* ==========================================================================
+   1. IMPORTACIÓN DE FUENTES Y CONFIGURACIÓN DE VARIABLES
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Montserrat:wght@400;500;600&display=swap');
 
 :root {
-    --blanco-divino: #FAFAFA;        /* Blanco luz pura */
-    --dorado-luz: #D4AF37;           /* Dorado espiritual */
-    --verde-natural: #4A5D4E;        /* Verde hojas naturales */
-    --verde-claro: #E8EFE9;          /* Toque verde suave */
-    --texto-oscuro: #2C3530;
+    --blanco-divino: #FAFAFA;        /* Fondo que evoca luz y pureza */
+    --dorado-luz: #D4AF37;           /* Dorado espiritual para detalles e iconos */
+    --verde-natural: #4A5D4E;        /* Verde hojas para conectar con la naturaleza */
+    --verde-claro: #E8EFE9;          /* Fondo suave para contrastes armónicos */
+    --texto-oscuro: #2C3530;         /* Lectura fluida y firme */
 }
 
 body {
@@ -17,54 +19,58 @@ body {
     padding: 0;
 }
 
-/* --- ENCABEZADO: LOGO IZQUIERDA Y TÍTULO CENTRADO --- */
+/* ==========================================================================
+   2. ENCABEZADO (SITE HEADER) - LOGO IZQUIERDA, TÍTULO CENTRO
+   ========================================================================== */
 .site-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 10px 20px !important; /* Optimizado para evitar deformaciones */
     background-color: var(--blanco-divino);
     border-bottom: 1px solid var(--verde-claro);
 }
 
 .header-left {
-    flex: 1;
+    flex: 0 0 60px !important;      /* Espacio controlado para el logo */
     display: flex;
     justify-content: flex-start;
 }
 
 .site-logo {
-    width: 85px;
-    height: 85px;
+    width: 55px !important;         /* Tamaño sutil y delicado para el lateral */
+    height: 55px !important;
     border-radius: 50%;
-    border: 2px solid var(--dorado-luz);
+    border: 1px solid var(--dorado-luz) !important;
     object-fit: cover;
+    box-shadow: 0 2px 6px rgba(74, 93, 78, 0.1);
 }
 
 .header-center {
-    flex: 2;
+    flex: 1 !important;
     text-align: center;
+    padding: 0 10px;
 }
 
 .brand-title {
     font-family: 'Cormorant Garamond', serif;
-    font-style: italic;             /* Cursiva suave y elegante */
+    font-style: italic;
     font-weight: 700;
     color: var(--verde-natural);
-    font-size: 2.8rem;
+    font-size: 2rem !important;     /* Balanceado para móviles y PC */
     margin: 0;
 }
 
 .brand-subtitle {
     color: var(--dorado-luz);
-    margin: 4px 0 0 0;
-    font-size: 0.9rem;
-    letter-spacing: 3px;
+    margin: 2px 0 0 0;
+    font-size: 0.75rem !important;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .header-right {
-    flex: 1;
+    flex: 0 0 75px !important;
     display: flex;
     justify-content: flex-end;
 }
@@ -73,142 +79,214 @@ body {
     position: relative;
 }
 
-#cart-button {
-    background-color: transparent;
-    border: 2px solid var(--verde-natural);
-    color: var(--verde-natural);
-    padding: 8px 16px;
-    border-radius: 20px;
+#cart-button, #botón-del-carrito {
+    background-color: transparent !important;
+    border: 2px solid var(--verde-natural) !important;
+    color: var(--verde-natural) !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s;
-}
-
-#cart-button:hover {
-    background-color: var(--verde-natural);
-    color: var(--blanco-divino);
-}
-
-.cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: var(--dorado-luz);
-    color: white;
-    border-radius: 50%;
-    padding: 2px 7px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-/* --- BOTONES DE FILTRO (NUEVO DISEÑO NATURALEZA Y LUZ) --- */
-.filter-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    background-color: var(--blanco-divino);
-    color: var(--verde-natural);
-    border: 2px solid var(--verde-natural);
-    padding: 10px 22px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
+    font-size: 0.85rem !important;
     transition: all 0.3s ease;
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background-color: var(--verde-natural);
-    color: var(--blanco-divino);
-    border-color: var(--verde-natural);
+#cart-button:hover, #botón-del-carrito:hover {
+    background-color: var(--verde-natural) !important;
+    color: var(--blanco-divino) !important;
+}
+
+.cart-count, .recuento-de-carritos {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--dorado-luz) !important;
+    color: white !important;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   3. BOTONES DE FILTRADO (TODOS, PRODUCTOS, KITS, SERVICIOS)
+   ========================================================================== */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    flex-wrap: wrap; /* Evita que se desborde en pantallas pequeñas */
+}
+
+.filter-btn, .botón-de-filtro {
+    background-color: var(--blanco-divino) !important;
+    color: var(--verde-natural) !important;
+    border: 2px solid var(--verde-natural) !important;
+    padding: 8px 18px !important;
+    border-radius: 25px !important;
+    cursor: pointer;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    font-family: 'Montserrat', sans-serif !important;
+    transition: all 0.3s ease !important;
+}
+
+.filter-btn:hover, .filter-btn.active, .botón-de-filtro.active {
+    background-color: var(--verde-natural) !important;
+    color: var(--blanco-divino) !important;
+    border-color: var(--verde-natural) !important;
     box-shadow: 0 4px 10px rgba(74, 93, 78, 0.15);
 }
-/* Estilos para el catálogo de productos y servicios */
-.catalog-grid {
+
+/* ==========================================================================
+   4. CATÁLOGO DE PRODUCTOS, KITS Y SERVICIOS
+   ========================================================================== */
+.catalog-grid, .cuadrícula-de-catálogo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.catalog-item {
-    background-color: white;
+    gap: 25px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalog-item, .artículo-del-catálogo {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(74, 93, 78, 0.05);
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-bottom: 3px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.catalog-item:hover {
+.catalog-item:hover, .artículo-del-catálogo:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(74, 93, 78, 0.12);
+    border-color: var(--dorado-luz); /* Destello dorado al mirarlo */
 }
 
-.catalog-item img {
+.catalog-item img, .artículo-del-catálogo img {
     max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-.catalog-item h3 {
-    color: #ff69b4; /* Rosa vibrante */
-    margin-top: 10px;
-    margin-bottom: 5px;
+.catalog-item h3, .artículo-del-catálogo h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--verde-natural);
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
 }
 
-.catalog-item p {
+.catalog-item p, .artículo-del-catálogo p {
     font-size: 14px;
-    color: #666;
+    color: #555;
+    line-height: 1.4;
 }
 
-.catalog-item .price {
+.catalog-item .price, .artículo-del-catálogo .price {
     font-weight: bold;
-    color: #20b2aa; /* Turquesa vibrante */
-    font-size: 18px;
-    margin: 10px 0;
+    color: var(--verde-natural);
+    font-size: 1.2rem;
+    margin: 15px 0;
 }
 
+/* Botón Añadir al Carrito dentro de las tarjetas */
 .add-to-cart-btn {
-    background-color: #32cd32; /* Verde lima vibrante */
-    color: white;
-    border: none;
+    background-color: var(--blanco-divino);
+    color: var(--verde-natural);
+    border: 2px solid var(--verde-natural);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 20px;
+    font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #3cb371; /* Un verde más oscuro */
+    background-color: var(--verde-natural);
+    color: var(--blanco-divino);
 }
 
-/* Estilos para ocultar y mostrar secciones */
+/* ==========================================================================
+   5. VENTANA DEL CARRITO DE COMPRAS MÍSTICO
+   ========================================================================== */
+#cart-container, .cart-sidebar {
+    background-color: var(--blanco-divino) !important;
+    border-left: 3px solid var(--dorado-luz) !important;
+    box-shadow: -5px 0 25px rgba(74, 93, 78, 0.15);
+}
+
+#cart-container h2, .cart-sidebar h2 {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+    color: var(--verde-natural) !important;
+    font-size: 2.2rem !important;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cart-total-line {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    color: var(--verde-natural) !important;
+    border-top: 1px solid var(--verde-claro);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.cart-thank-you-msg {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic !important;
+    font-size: 1.1rem !important;
+    color: var(--verde-natural) !important;
+    text-align: center;
+    line-height: 1.4;
+    margin: 20px 0 !important;
+    padding: 15px !important;
+    background-color: var(--verde-claro) !important;
+    border-radius: 10px !important;
+    border-left: 4px solid var(--dorado-luz) !important;
+}
+
+#checkout-button, .whatsapp-btn {
+    background-color: var(--dorado-luz) !important;
+    color: white !important;
+    border: none !important;
+    padding: 14px !important;
+    width: 100% !important;
+    border-radius: 30px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 87, 0.2) !important;
+}
+
+#checkout-button:hover, .whatsapp-btn:hover {
+    background-color: var(--verde-natural) !important;
+    box-shadow: 0 4px 12px rgba(74, 93, 78, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. PANEL DE ADMINISTRACIÓN Y ADICIONALES
+   ========================================================================== */
 .hidden {
-    display: none;
-}
-/* Estilos para el panel de administración */
-#admin-panel {
-    display: none;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none !important;
 }
 
-.admin-form input, .admin-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-/* Estilos adicionales para el panel de administración */
 #admin-panel {
     display: none;
     max-width: 800px;
@@ -267,101 +345,9 @@ body {
 }
 
 .edit-btn {
-    background-color: #8a2be2;
+    background-color: var(--verde-natural);
 }
 
 .delete-btn {
-    background-color: #ff6347; /* Rojo coral */
-}
-/* Estilos para los botones de filtrado */
-.filter-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.filter-btn {
-    background-color: transparent;
-    color: #8a2be2; /* Violeta de tu tema */
-    border: 2px solid #8a2be2;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-.filter-btn:hover, .filter-btn.active {
-    background-color: #ff69b4; /* Rosa vibrante de tu tema */
-    border-color: #ff69b4;
-    color: white;
-}
-/* --- REDISEÑO MÍSTICO DEL CARRITO DE COMPRAS --- */
-
-/* Ventana lateral del carrito */
-#cart-container, .cart-sidebar {
-    background-color: var(--blanco-divino) !important;
-    border-left: 3px solid var(--dorado-luz) !important;
-    box-shadow: -5px 0 25px rgba(74, 93, 78, 0.15);
-}
-
-/* Título del carrito en letra cursiva, suave y firme */
-#cart-container h2, .cart-sidebar h2 {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-style: italic !important;
-    font-weight: 600 !important;
-    color: var(--verde-natural) !important;
-    font-size: 2.2rem !important;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Línea del Total */
-.cart-total-line {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-style: italic !important;
-    font-weight: 700 !important;
-    font-size: 1.5rem !important;
-    color: var(--verde-natural) !important;
-    border-top: 1px solid var(--verde-claro);
-    padding-top: 15px;
-    margin-top: 15px;
-}
-
-/* El nuevo mensaje de agradecimiento y llamado a la acción */
-.cart-thank-you-msg {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-style: italic !important;
-    font-size: 1.2rem !important;
-    color: var(--verde-natural) !important;
-    text-align: center;
-    line-height: 1.4;
-    margin: 20px 0 !important;
-    padding: 15px !important;
-    background-color: var(--verde-claro) !important;
-    border-radius: 10px !important;
-    border-left: 4px solid var(--dorado-luz) !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-}
-
-/* Botón de Enviar Pedido por WhatsApp */
-#checkout-button, .whatsapp-btn {
-    background-color: var(--dorado-luz) !important;
-    color: white !important;
-    border: none !important;
-    padding: 14px !important;
-    width: 100% !important;
-    border-radius: 30px !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1rem !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 4px 12px rgba(212, 175, 87, 0.2) !important;
-}
-
-#checkout-button:hover, .whatsapp-btn:hover {
-    background-color: var(--verde-natural) !important;
-    box-shadow: 0 4px 12px rgba(74, 93, 78, 0.2) !important;
-    transform: translateY(-1px);
+    background-color: #ff6347;
 }
