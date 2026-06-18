@@ -2,7 +2,6 @@
    1. IMPORTACIÓN DE FUENTES Y CONFIGURACIÓN DE VARIABLES
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Montserrat:wght@400;500;600&display=swap');
-
 :root {
     --blanco-divino: #FAFAFA;        /* Fondo que evoca luz y pureza */
     --dorado-luz: #D4AF37;           /* Dorado espiritual para detalles e iconos */
