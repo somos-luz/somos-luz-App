@@ -20,39 +20,66 @@ body {
 }
 
 /* ==========================================================================
-   2. ENCABEZADO OPTIMIZADO (LOGO PEQUEÑO Y SUTIL)
+   2. ENCABEZADO CORREGIDO (CON LOGO CIRCULAR PERFECTO)
    ========================================================================== */
 .site-header {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px 15px !important; /* Reducimos el grosor del menú superior */
+    justify-content: center; /* Mantiene el título perfectamente en el centro */
+    padding: 10px 15px !important;
     background-color: var(--blanco-divino);
     border-bottom: 1px solid var(--verde-claro);
-    height: 70px; /* Forzamos una altura de barra fija y elegante */
+    min-height: 85px;
 }
 
 .header-left {
-    flex: 0 0 50px !important; /* Espacio estricto y pequeño para el logo */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
+    position: absolute;
+    left: 15px; /* Fijado sutilmente a la izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .site-logo {
-    width: 45px !important;  /* Tamaño micro y delicado para la esquina izquierda */
-    height: 45px !important;
-    border-radius: 50%;
+    width: 55px !important;  /* Tamaño micro, elegante y compacto */
+    height: 55px !important;
+    border-radius: 50%;     /* Hace el recorte circular perfecto */
+    object-fit: cover !important; /* Enfoca directo al centro borrando el marco gris oscuro */
     border: 1px solid var(--dorado-luz) !important;
-    object-fit: contain !important; /* Encaja el círculo eliminando los bordes blancos fantasmas */
-    background-color: white;
+    box-shadow: 0 2px 6px rgba(74, 93, 78, 0.1);
 }
 
 .header-center {
-    flex: 1 !important;
     text-align: center;
-    padding: 0 10px;
+    max-width: 55%; /* Protege el espacio para que no choque con los costados */
+    margin: 0 auto;
+}
+
+.brand-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--verde-natural);
+    font-size: 2rem !important; /* Tamaño ideal y legible en móviles */
+    margin: 0;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+    color: var(--dorado-luz);
+    margin: 3px 0 0 0;
+    font-size: 0.7rem !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2;
+}
+
+.header-right {
+    position: absolute;
+    right: 15px; /* Fijado sutilmente a la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
 .brand-title {
