@@ -8,21 +8,30 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1>Somos Luz</h1>
+   <header class="site-header">
+    <div class="header-left">
+        <img src="https://i.imgur.com/dKNUKIu.jpeg">
+    </div>
+    <div class="header-center">
+        <h1 class="brand-title">Somos Luz</h1>
+        <p class="brand-subtitle">Centro de Sanación y Bienestar</p>
+    </div>
+    <div class="header-right">
         <div class="cart-icon-container">
             <span class="cart-count">0</span>
             <button id="cart-button">🛒 Carrito</button>
         </div>
-    </header>
+    </div>
+</header>
 
     <main class="main-content">
         <!-- Filtros de Categoría -->
         <div class="filter-container">
-            <button class="filter-btn active" data-type="todos">Ver Todo</button>
-            <button class="filter-btn" data-type="producto">Productos</button>
-            <button class="filter-btn" data-type="servicio">Servicios y Terapias</button>
-        </div>
+    <button class="filter-btn active" data-type="todos">Ver Todo</button>
+    <button class="filter-btn" data-type="producto">Productos</button>
+    <button class="filter-btn" data-type="kit">Kits Holísticos</button>
+    <button class="filter-btn" data-type="servicio">Servicios y Terapias</button>
+</div>
 
         <!-- CONTENEDOR ÚNICO DEL CATÁLOGO -->
         <section id="products-services" class="catalog-grid"></section>
