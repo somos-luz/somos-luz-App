@@ -2,9 +2,9 @@
 // Los datos se guardan en el localStorage del navegador para que no se pierdan al recargar
 let catalog = JSON.parse(localStorage.getItem('catalog')) || [
     {
-        id: 'kit Conecta con tu Poder Creador',
-        name: 'kit Conecta con tu Poder Creador',
-        type: 'producto',
+        id: 'Conecta con tu Poder Creador',
+        name: 'Conecta con tu Poder Creador',
+        type: 'kit',
         description: 'Intención Activar la energía vital, fortalecer la confianza personal y acompañar procesos de inicio, motivación y acción consciente, Este ritual invita a que tus intenciones vayan más allá de los deseos banales y superficiales, conectándote con tu poder creador, tu luz interior y permitiendo que esta crezca y se expanda desde el amor y la conciencia, Materiales incluidos • 🕯️ Vela amarilla y naranja (energía, creatividad y acción consciente) • 🌿 Sahúmo limpiador (copal o salvia) • 🪵 Palo santo • Ritual paso a paso.',
         price: 7777,
         imageUrl: 'https://i.imgur.com/MRnS53F.jpeg'
@@ -34,9 +34,9 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/T0TD8EI.jpeg'
     },
      {
-        id: 'Kit Amor Propio y Conexion Espiritual',
-        name: 'Kit Amor Propio y Conexion Espiritual',
-        type: 'producto',
+        id: 'Amor Propio y Conexion Espiritual',
+        name: 'Amor Propio y Conexion Espiritual',
+        type: 'kit',
         description: 'Este kit incluye; 1 Vela lisa Rosada, 1 sahumo de Copal, 1 Collar de Cuarzo Rosa, Ritual paso a paso, Este kit está diseñado para quienes necesitan conectarse con su corazón, sanar sus emociones y cultivar el amor por sí mismos.',
         price: 8888,
         imageUrl: 'https://i.imgur.com/2AGTgBd.jpeg'
@@ -50,9 +50,9 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/6haCS0h.jpeg'
     },
      {
-        id: 'Kit Proteccion y Manifestacion',
-        name: 'Kit Proteccion y Manifestacion',
-        type: 'producto',
+        id: 'Proteccion y Manifestacion',
+        name: 'Proteccion y Manifestacion',
+        type: 'kit',
         description: 'Este kit incluye; 1 Vela lisa Violeta, 1 sahumo de Romero, 1 Collar de Pirita o 1 producto de Obsidiana, Ritual paso a paso, Este kit es para quienes buscan protegerse de energías densas del exterior e interior y enfocarse en manifestar sus deseos y metas.',
         price: 8888,
         imageUrl: 'https://i.imgur.com/5vXxZR9.jpeg'
@@ -74,8 +74,8 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/9yxQcsQ.jpeg'
     },
      {
-        id: 'Kit Limpieza Energetica y Paz Interior',
-        name: 'Kit Limpieza Energetica y Paz Interior',
+        id: 'Limpieza Energetica y Paz Interior',
+        name: 'Limpieza Energetica y Paz Interior',
         type: 'producto',
         description: 'Este kit incluye; 1 Vela lisa blanca, 1 sahumo de Salvia Blanca, 3 Varillas de incienso de Palo santo Lavanda, 1 producto de Cuarzo blanco (aros, colgantes, pulseras, collar), Ritual paso a paso, este Kit es perfecto para quienes buscan purificar su espacio de energías estancadas y crear un ambiente de calma. Es el regalo ideal para un nuevo hogar o para un nuevo comienzo.',
         price: 8888,
@@ -218,9 +218,9 @@ let catalog = JSON.parse(localStorage.getItem('catalog')) || [
         imageUrl: 'https://i.imgur.com/ek3qZJ6.jpeg'
     },
     {
-        id: 'Kit ambienta tu espacio',
-        name: 'Kit Ambienta tu Espacio',
-        type: 'producto',
+        id: 'Ambienta tu Espacio',
+        name: 'Ambienta tu Espacio',
+        type: 'kit',
         description: '5 varillas de incienso. A eleccion podras elegir del stock disponible 5 varilla de incienso (sin repetir), ideal para probar aromas y luego elegir con conocimiento y gusto la proxima vez.',
         price: 2700,
         imageUrl: 'https://i.imgur.com/DQDZJtM.jpeg'
