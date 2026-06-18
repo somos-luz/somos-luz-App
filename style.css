@@ -1,56 +1,132 @@
-/* Estilos generales */
+/* --- ESTILOS GENERALES E IMPORTACIÓN DE FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600;1,700&family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+    --blanco-divino: #FAFAFA;        /* Blanco luz pura */
+    --dorado-luz: #D4AF37;           /* Dorado espiritual */
+    --verde-natural: #4A5D4E;        /* Verde hojas naturales */
+    --verde-claro: #E8EFE9;          /* Toque verde suave */
+    --texto-oscuro: #2C3530;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--blanco-divino);
+    color: var(--texto-oscuro);
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f0f8ff; /* Azul cielo muy claro */
-    color: #333;
+    padding: 0;
 }
 
-.header {
+/* --- ENCABEZADO: LOGO IZQUIERDA Y TÍTULO CENTRADO --- */
+.site-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 2px solid #e0e0e0;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: var(--blanco-divino);
+    border-bottom: 1px solid var(--verde-claro);
 }
 
-.header h1 {
+.header-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.site-logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 2px solid var(--dorado-luz);
+    object-fit: cover;
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+}
+
+.brand-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;             /* Cursiva suave y elegante */
+    font-weight: 700;
+    color: var(--verde-natural);
+    font-size: 2.8rem;
     margin: 0;
-    color: #ff69b4; /* Rosa vibrante */
+}
+
+.brand-subtitle {
+    color: var(--dorado-luz);
+    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .cart-icon-container {
     position: relative;
 }
 
+#cart-button {
+    background-color: transparent;
+    border: 2px solid var(--verde-natural);
+    color: var(--verde-natural);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+#cart-button:hover {
+    background-color: var(--verde-natural);
+    color: var(--blanco-divino);
+}
+
 .cart-count {
     position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #ff4500; /* Naranja rojizo vibrante */
+    top: -10px;
+    right: -10px;
+    background-color: var(--dorado-luz);
     color: white;
     border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 12px;
+    padding: 2px 7px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-#cart-button, #checkout-button, #close-cart {
-    background-color: #8a2be2; /* Azul violeta */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+/* --- BOTONES DE FILTRO (NUEVO DISEÑO NATURALEZA Y LUZ) --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--blanco-divino);
+    color: var(--verde-natural);
+    border: 2px solid var(--verde-natural);
+    padding: 10px 22px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-#cart-button:hover, #checkout-button:hover, #close-cart:hover {
-    background-color: #9370db; /* Tono más claro */
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--verde-natural);
+    color: var(--blanco-divino);
+    border-color: var(--verde-natural);
+    box-shadow: 0 4px 10px rgba(74, 93, 78, 0.15);
 }
-
 /* Estilos para el catálogo de productos y servicios */
 .catalog-grid {
     display: grid;
