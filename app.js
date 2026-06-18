@@ -638,21 +638,33 @@ if (currentCatalogContainer) {
         }
     });
 }
-// --- INICIALIZACIÓN SEGURA ---
+// --- INICIALIZACIÓN SEGURA Y FILTRADO DE KITS ---
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("El DOM está listo, cargando catálogo...");
+    console.log("El DOM está listo, cargando catálogo de Somos Luz...");
     
-    // Renderizado inicial
-    renderCatalog('todos');
+    // 1. Renderizado inicial: Muestra todos los elementos al cargar la página
+    if (typeof renderCatalog === 'function') {
+        renderCatalog('todos');
+    }
 
-    // Configuración de botones de filtro
+    // 2. Configuración de los botones de filtro (Todos, Producto, Kit, Servicio)
     const filterButtons = document.querySelectorAll('.filter-btn');
+    
     filterButtons.forEach(button => {
         button.addEventListener('click', (e) => {
+            // Quitamos la clase activa de todos los botones para apagar el color verde
             filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Le añadimos la clase activa al botón que el usuario presionó
             e.target.classList.add('active');
+            
+            // Obtenemos el tipo ('todos', 'producto', 'kit' o 'servicio')
             const selectedType = e.target.getAttribute('data-type');
-            renderCatalog(selectedType);
+            
+            // Llamamos a la función encargada de dibujar los productos correspondientes
+            if (typeof renderCatalog === 'function') {
+                renderCatalog(selectedType);
+            }
         });
     });
-}); //
+});
