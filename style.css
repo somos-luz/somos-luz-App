@@ -1,1 +1,106 @@
+:root {
+  --sage: #6e806a;
+  --sage-dark: #4d604b;
+  --cream: #f7f2ea;
+  --sand: #e7dccb;
+  --ink: #2f382d;
+  --muted: #7d7d70;
+  --clay: #b67f67;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  background: #f7f2ea;
+  width: 100%;
+}
+
+.serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(35,48,35,.72), rgba(35,48,35,.34), rgba(35,48,35,.06));
+}
+
+.soft-shadow {
+  box-shadow: 0 18px 50px rgba(74,89,70,.14);
+}
+
+.product-card {
+  transition: transform .35s ease, box-shadow .35s ease, opacity .25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px rgba(68,79,63,.13);
+}
+
+.filter-btn.active {
+  background: var(--sage-dark);
+  color: #fff;
+  border-color: var(--sage-dark);
+}
+
+.cart-panel {
+  transform: translateX(100%);
+  transition: transform .38s cubic-bezier(.22,1,.36,1);
+}
+
+.cart-panel.open {
+  transform: translateX(0);
+}
+
+.cart-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast {
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition: all .28s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up {
+  animation: fadeUp .8s ease both;
+}
+
+.fade-up.delay-1 { animation-delay: .12s; }
+.fade-up.delay-2 { animation-delay: .24s; }
+.fade-up.delay-3 { animation-delay: .36s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cart-item {
+  animation: fadeUp .3s ease both;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #71806a;
+  outline-offset: 3px;
+}
