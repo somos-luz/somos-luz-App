@@ -1,77 +1,334 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somos Luz</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
+/**
+ * ==========================================================================
+ * APPLICACIÓN PRINCIPAL - SOMOS LUZ
+ * ==========================================================================
+ */
 
-    <header class="site-header">
-        <div class="header-center">
-            <h1 class="brand-title">Somos Luz</h1>
-            <p class="brand-subtitle">Centro de Sanación y Bienestar</p>
-        </div>
-        <div class="header-right">
-            <button id="cart-button">🛒 Carrito <span class="cart-count">0</span></button>
-        </div>
-    </header>
+// Base de datos inicial en memoria (si el localStorage está vacío)
+let productosYServicios = JSON.parse(localStorage.getItem('catalog_data')) || [
+    {
+        id: 1,
+        name: "Conecta con tu Poder Creador",
+        description: "Intención Activar la energía vital, fortalecer la confianza personal y acompañar procesos de inicio. Incluye sahúmo, velas y palo santo.",
+        price: 7777,
+        image: "https://i.imgur.com/example1.jpg", // Cambiar por tus URLs reales
+        type: "kit"
+    },
+    {
+        id: 2,
+        name: "Inciensos Palo Santo con Pachulí",
+        description: "Caja de 8 inciensos mágicos ideales para iniciar un viaje emocional y espiritual profundo.",
+        price: 4300,
+        image: "https://i.imgur.com/example2.jpg",
+        type: "producto"
+    },
+    {
+        id: 3,
+        name: "Flores de Bach",
+        description: "Terapia alternativa para el equilibrio de emociones. Aporta una huella energética para dolores emocionales.",
+        price: 15000,
+        image: "https://i.imgur.com/example3.jpg",
+        type: "servicio"
+    }
+];
 
-    <main class="main-content">
-        <div class="filter-container">
-            <button class="filter-btn active" data-type="todos">Ver Todo</button>
-            <button class="filter-btn" data-type="producto">Productos</button>
-            <button class="filter-btn" data-type="kit">Kits Holísticos</button>
-            <button class="filter-btn" data-type="servicio">Servicios y Terapias</button>
-        </div>
+let carrito = [];
 
-        <section id="products-services" class="catalog-grid"></section>
+// Guardar base de datos inicial si no existía
+if (!localStorage.getItem('catalog_data')) {
+    localStorage.setItem('catalog_data', JSON.stringify(productosYServicios));
+}
 
-        <section id="cart-container" class="hidden">
-            <h2>Tu Carrito</h2>
-            <div id="cart-items"></div>
-            <div id="cart-summary">
-                <p>Total: <span id="cart-total">0</span></p>
-            </div>
-            <button id="checkout-button">Enviar Pedido por WhatsApp</button>
-            <button id="close-cart">Cerrar</button>
-        </section>
+/**
+ * 1. INICIALIZACIÓN DEL SISTEMA
+ * ==========================================================================
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    renderCatalogo('todos');
+    inicializarFiltros();
+    inicializarCarritoEvt();
+    inicializarAdmin();
+});
 
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#" id="admin-link" style="color: #ccc; font-size: 12px;">Panel de Administración</a>
+/**
+ * 2. FUNCIÓN DE RENDERIZADO DEL CATÁLOGO
+ * ==========================================================================
+ */
+function renderCatalogo(categoriaFiltrada) {
+    const contenedor = document.getElementById('products-services');
+    if (!contenedor) return;
+    
+    contenedor.innerHTML = '';
+
+    productosYServicios.forEach(item => {
+        // Validación estricta del filtro usando 'type'
+        if (categoriaFiltrada === 'todos' || item.type === categoriaFiltrada) {
+            const tarjeta = document.createElement('div');
+            tarjeta.className = 'catalog-item';
             
-            <section id="admin-panel" class="hidden">
-                <h2>Panel de Administración</h2>
-                <div id="login-form">
-                    <input type="text" id="admin-username" placeholder="Usuario">
-                    <input type="password" id="admin-password" placeholder="Contraseña">
-                    <button id="admin-login-btn">Iniciar Sesión</button>
-                </div>
-                
-                <div id="catalog-manager" class="hidden">
-                    <h3>Gestionar Catálogo</h3>
-                    <form id="product-form" class="admin-form">
-                        <input type="hidden" id="product-id-input">
-                        <input type="text" id="product-name-input" placeholder="Nombre" required>
-                        <textarea id="product-description-input" placeholder="Descripción" rows="2" required></textarea>
-                        <input type="number" id="product-price-input" placeholder="Precio" required>
-                        <input type="text" id="product-image-url-input" placeholder="URL de la Imagen" required>
-                        <select id="product-type-input" required>
-                            <option value="producto">Producto</option>
-                            <option value="kit">Kit Holístico</option>
-                            <option value="servicio">Servicio</option>
-                        </select>
-                        <button type="submit" id="add-edit-btn">Añadir/Guardar Producto</button>
-                    </form>
+            // Etiqueta del botón adaptada dinámicamente si es servicio o producto
+            const textoBoton = item.type === 'servicio' ? 'Agendar Servicio' : 'Añadir al Carrito';
 
-                    <h4>Productos y Servicios Actuales</h4>
-                    <div id="current-catalog"></div>
-                </div>
-            </section>
-        </div>
-    </main>
+            tarjeta.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <div class="price">$${item.price.toLocaleString('es-CL')}</div>
+                <button class="add-to-cart-btn" onclick="agregarAlCarrito(${item.id})">${textoBoton}</button>
+            `;
+            contenedor.appendChild(tarjeta);
+        }
+    });
+}
 
-    <script src="app.js"></script>
-</body>
-</html>
+/**
+ * 3. CORRECCIÓN DEL SISTEMA DE FILTRADO (SOLUCIÓN AL ERROR)
+ * ==========================================================================
+ */
+function inicializarFiltros() {
+    const botonesFiltro = document.querySelectorAll('.filter-btn');
+    
+    botonesFiltro.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            // Remover la clase active de todos los botones
+            botonesFiltro.forEach(btn => btn.classList.remove('active'));
+            
+            // Añadir clase active al botón pulsado
+            boton.classList.add('active');
+            
+            // SOLUCIÓN: Leer exactamente el atributo 'data-type' configurado en tu HTML
+            const categoriaSeleccionada = boton.getAttribute('data-type');
+            
+            // Renderizar la lista aplicando el filtro correspondiente
+            renderCatalogo(categoriaSeleccionada);
+        });
+    });
+}
+
+/**
+ * 4. LOGICA DEL CARRITO MÍSTICO
+ * ==========================================================================
+ */
+function inicializarCarritoEvt() {
+    const btnAbrir = document.getElementById('cart-button');
+    const btnCerrar = document.getElementById('close-cart');
+    const contenedorCarrito = document.getElementById('cart-container');
+    const btnCheckout = document.getElementById('checkout-button');
+
+    if (btnAbrir && contenedorCarrito) {
+        btnAbrir.addEventListener('click', () => {
+            contenedorCarrito.classList.remove('hidden');
+        });
+    }
+
+    if (btnCerrar && contenedorCarrito) {
+        btnCerrar.addEventListener('click', () => {
+            contenedorCarrito.classList.add('hidden');
+        });
+    }
+
+    if (btnCheckout) {
+        btnCheckout.addEventListener('click', enviarPedidoWhatsApp);
+    }
+}
+
+function agregarAlCarrito(id) {
+    const producto = productosYServicios.find(item => item.id === id);
+    if (!producto) return;
+
+    const existe = carrito.find(item => item.id === id);
+
+    if (existe) {
+        existe.cantidad++;
+    } else {
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
+    actualizarInterfazCarrito();
+}
+
+function eliminarDelCarrito(id) {
+    carrito = carrito.filter(item => item.id !== id);
+    actualizarInterfazCarrito();
+}
+
+function actualizarInterfazCarrito() {
+    const listaItems = document.getElementById('cart-items');
+    const totalContador = document.querySelector('.cart-count');
+    const totalSuma = document.getElementById('cart-total');
+
+    if (!listaItems) return;
+
+    listaItems.innerHTML = '';
+    let totalPrecio = 0;
+    let totalProductos = 0;
+
+    carrito.forEach(item => {
+        totalPrecio += item.price * item.cantidad;
+        totalProductos += item.cantidad;
+
+        const divItem = document.createElement('div');
+        divItem.style.display = 'flex';
+        divItem.style.justifyContent = 'space-between';
+        divItem.style.marginBottom = '10px';
+        divItem.style.alignItems = 'center';
+        
+        divItem.innerHTML = `
+            <div style="text-align: left;">
+                <strong style="color: var(--verde-natural);">${item.name}</strong><br>
+                <small>${item.cantidad}x $${item.price.toLocaleString('es-CL')}</small>
+            </div>
+            <button onclick="eliminarDelCarrito(${item.id})" style="background: none; border: none; color: #ff6347; cursor: pointer; font-weight: bold;">✕</button>
+        `;
+        listaItems.appendChild(divItem);
+    });
+
+    if (totalContador) totalContador.textContent = totalProductos;
+    if (totalSuma) totalSuma.textContent = `$${totalPrecio.toLocaleString('es-CL')}`;
+}
+
+function enviarPedidoWhatsApp() {
+    if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+    }
+
+    let numeroTelefono = "56912345678"; // ¡REMPLAZA ESTO CON TU NÚMERO REAL DE WHATSAPP!
+    let mensaje = "✨ *Nuevo Pedido - Somos Luz* ✨\n\n";
+    let total = 0;
+
+    carrito.forEach(item => {
+        mensaje += `• ${item.cantidad}x ${item.name} ($${(item.price * item.cantidad).toLocaleString('es-CL')})\n`;
+        total += item.price * item.cantidad;
+    });
+
+    mensaje += `\n💰 *Total a pagar:* $${total.toLocaleString('es-CL')}\n\nMuchas gracias. ¡Luz y bendiciones! 🙏✨`;
+    
+    const url = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+}
+
+/**
+ * 5. PANEL DE CONTROL DE ADMINISTRACIÓN
+ * ==========================================================================
+ */
+function inicializarAdmin() {
+    const linkAdmin = document.getElementById('admin-link');
+    const panelAdmin = document.getElementById('admin-panel');
+    const btnLogin = document.getElementById('admin-login-btn');
+    const manager = document.getElementById('catalog-manager');
+    const loginForm = document.getElementById('login-form');
+    const productForm = document.getElementById('product-form');
+
+    if (linkAdmin && panelAdmin) {
+        linkAdmin.addEventListener('click', (e) => {
+            e.preventDefault();
+            panelAdmin.classList.toggle('hidden');
+        });
+    }
+
+    if (btnLogin) {
+        btnLogin.addEventListener('click', () => {
+            const user = document.getElementById('admin-username').value;
+            const pass = document.getElementById('admin-password').value;
+
+            // Credenciales simples (puedes cambiarlas aquí)
+            if (user === "admin" && pass === "luz2026") {
+                loginForm.classList.add('hidden');
+                manager.classList.remove('hidden');
+                renderAdminCatalog();
+            } else {
+                alert("Credenciales incorrectas.");
+            }
+        });
+    }
+
+    if (productForm) {
+        productForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const idInput = document.getElementById('product-id-input').value;
+            const name = document.getElementById('product-name-input').value;
+            const description = document.getElementById('product-description-input').value;
+            const price = parseInt(document.getElementById('product-price-input').value);
+            const image = document.getElementById('product-image-url-input').value;
+            const type = document.getElementById('product-type-input').value;
+
+            if (idInput) {
+                // Editar existente
+                const index = productosYServicios.findIndex(item => item.id == idInput);
+                if (index !== -1) {
+                    productosYServicios[index] = { id: parseInt(idInput), name, description, price, image, type };
+                }
+            } else {
+                // Crear nuevo
+                const nuevoId = productosYServicios.length > 0 ? Math.max(...productosYServicios.map(i => i.id)) + 1 : 1;
+                productosYServicios.push({ id: nuevoId, name, description, price, image, type });
+            }
+
+            localStorage.setItem('catalog_data', JSON.stringify(productosYServicios));
+            productForm.reset();
+            document.getElementById('product-id-input').value = '';
+            document.getElementById('add-edit-btn').textContent = 'Añadir/Guardar Producto';
+            
+            renderCatalogo('todos');
+            renderAdminCatalog();
+            alert("Catálogo actualizado con éxito.");
+        });
+    }
+}
+
+function renderAdminCatalog() {
+    const contenedorAdmin = document.getElementById('current-catalog');
+    if (!contenedorAdmin) return;
+
+    contenedorAdmin.innerHTML = '';
+
+    productosYServicios.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'catalog-item';
+        row.style.display = 'flex';
+        row.style.justifyContent = 'space-between';
+        row.style.alignItems = 'center';
+        row.style.padding = '10px';
+        row.style.borderBottom = '1px solid #eee';
+
+        row.innerHTML = `
+            <div style="display:flex; align-items:center; text-align:left;">
+                <img src="${item.image}" style="width:40px; height:40px; object-fit:cover; margin-right:10px; border-radius:4px;">
+                <div>
+                    <strong>${item.name}</strong> (${item.type})<br>
+                    <small>$${item.price.toLocaleString('es-CL')}</small>
+                </div>
+            </div>
+            <div>
+                <button onclick="cargarEditar(${item.id})" class="edit-btn" style="padding:4px 8px; margin-right:5px; background:var(--verde-natural); color:white; border:none; border-radius:4px; cursor:pointer;">✏️</button>
+                <button onclick="eliminarDelCatalogo(${item.id})" class="delete-btn" style="padding:4px 8px; background:#ff6347; color:white; border:none; border-radius:4px; cursor:pointer;">🗑️</button>
+            </div>
+        `;
+        contenedorAdmin.appendChild(row);
+    });
+}
+
+function cargarEditar(id) {
+    const item = productosYServicios.find(i => i.id === id);
+    if (!item) return;
+
+    document.getElementById('product-id-input').value = item.id;
+    document.getElementById('product-name-input').value = item.name;
+    document.getElementById('product-description-input').value = item.description;
+    document.getElementById('product-price-input').value = item.price;
+    document.getElementById('product-image-url-input').value = item.image;
+    document.getElementById('product-type-input').value = item.type;
+
+    document.getElementById('add-edit-btn').textContent = 'Guardar Cambios';
+}
+
+function eliminarDelCatalogo(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este artículo de la tienda definitivamente?")) {
+        productosYServicios = productosYServicios.filter(i => i.id !== id);
+        localStorage.setItem('catalog_data', JSON.stringify(productosYServicios));
+        renderCatalogo('todos');
+        renderAdminCatalog();
+    }
+}
