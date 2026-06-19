@@ -646,15 +646,14 @@
       whatsappBtn.addEventListener('click', () => {
         const keys = Object.keys(cart);
         if (!keys.length) return;
-        let lines = ['Hola Somos Luz, me gustaría realizar un pedido con los siguientes productos y servicios:', ''];
-        let total = 0;
-         let lines = ['¡Espero su confirmación!', ''];
-        keys.forEach(id => {
-          const subtotal = cart[id].qty * products[id].price;
-          total += subtotal;
-          lines.push(`• ${products[id].name} x${cart[id].qty} - ${money(subtotal)}`);
-        });
-        lines.push('', `Total: ${money(total)}`);
+       let lines = ['¡Hola Somos Luz! Me gustaría realizar un pedido con los siguientes productos y servicios:', ''];
+      let total = 0;
+      keys.forEach(id => {
+        const subtotal = cart[id].qty * products[id].price;
+        total += subtotal;
+        lines.push(`- ${products[id].name} x${cart[id].qty} - ${money(subtotal)}`);
+      });
+      lines.push('', `Total: ${money(total)}`, '', '¡Espero su confirmación!');
         const url = 'https://wa.me/56975291753?text=' + encodeURIComponent(lines.join('\n'));
         window.open(url, '_blank', 'noopener,noreferrer');
       });
