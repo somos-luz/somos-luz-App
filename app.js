@@ -646,8 +646,9 @@
       whatsappBtn.addEventListener('click', () => {
         const keys = Object.keys(cart);
         if (!keys.length) return;
-        let lines = ['Hola, quiero hacer este pedido en Somos Luz:', ''];
+        let lines = ['Hola Somos Luz, me gustaría realizar un pedido con los siguientes productos y servicios:', ''];
         let total = 0;
+         let lines = ['¡Espero su confirmación!', ''];
         keys.forEach(id => {
           const subtotal = cart[id].qty * products[id].price;
           total += subtotal;
