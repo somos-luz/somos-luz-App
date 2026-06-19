@@ -654,7 +654,7 @@
           lines.push(`• ${products[id].name} x${cart[id].qty} - ${money(subtotal)}`);
         });
         lines.push('', `Total: ${money(total)}`);
-        const url = 'https://wa.me/56900000000?text=' + encodeURIComponent(lines.join('\n'));
+        const url = 'https://wa.me/56975291753?text=' + encodeURIComponent(lines.join('\n'));
         window.open(url, '_blank', 'noopener,noreferrer');
       });
     }
