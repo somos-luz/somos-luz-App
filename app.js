@@ -17,7 +17,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. Ideal para iniciar un viaje emocional y espiritual, invitando a conectar con las emociones profundas y a encontrar la paz interior.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/kM24kDo.jpeg'
+      imageUrl: 'https://i.imgur.com/KhyZkVt.jpeg'
     },
     {
       id: 'Incienso de Incienso Blanco',
@@ -25,7 +25,7 @@
       type: 'producto',
       description: 'Caja 9 inciensos. Ideal para limpiezas energéticas, meditaciones y crear un clima de bienestar, útil para cerrar o dar inicios dando una sensación de orden y limpieza.',
       price: 4800,
-      imageUrl: 'https://i.imgur.com/DYCPYuM.jpeg'
+      imageUrl: 'https://i.imgur.com/dxIRSJW.jpeg'
     },
     {
       id: 'Incienso de Salvia Blanca',
@@ -33,7 +33,7 @@
       type: 'producto',
       description: 'Caja 9 inciensos. Ideal para limpiezas energéticas profundas del hogar y el aura. Nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiéndonos y abriendo nuestro camino para conectar con nuestra luz y sabiduría interior.',
       price: 4800,
-      imageUrl: 'https://i.imgur.com/T0TD8EI.jpeg'
+      imageUrl: 'https://i.imgur.com/YtUkEMV.jpeg'
     },
     {
       id: 'Amor Propio y Conexion Espiritual',
@@ -49,7 +49,7 @@
       type: 'producto',
       description: 'Caja 9 Inciensos. La combinación de estas hierbas y maderas crea una mezcla poderosa que limpia energías densas, protege el aura y atrae prosperidad. Ideal para rituales de apertura, cambios, manifestación consciente y protección energética.',
       price: 4800,
-      imageUrl: 'https://i.imgur.com/6haCS0h.jpeg'
+      imageUrl: 'https://i.imgur.com/P7Pshgs.jpeg'
     },
     {
       id: 'Proteccion y Manifestacion',
@@ -65,7 +65,7 @@
       type: 'producto',
       description: 'Caja 9 Inciensos. La lavanda aporta equilibrio y armonía que junto con el Olíbano que atrae energías positivas, sutiles y purifica el espacio, son un protector poderoso del hogar y neutralidad de energías densas.',
       price: 4800,
-      imageUrl: 'https://i.imgur.com/IxAqUo1.jpeg'
+      imageUrl: 'https://i.imgur.com/aMiqjGf.jpeg'
     },
     {
       id: 'Inciensos Palo Santo con Lavanda',
@@ -73,7 +73,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. La sagrada madera de Palo Santo combinada con la frescura de la lavanda purifican el campo energético y relajan nuestra mente, nos da equilibrio y armonía en el espacio.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/9yxQcsQ.jpeg'
+      imageUrl: 'https://i.imgur.com/RL0VoVq.jpeg'
     },
     {
       id: 'Limpieza Energetica y Paz Interior',
@@ -137,7 +137,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. El Palo Santo combinado con la Mirra atrae energías positivas armoniosas atrayendo el poder de renovación, calma y tranquilidad a todo aquel que se deleite con su fragancia.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/2AqLPM6.jpeg'
+      imageUrl: 'https://i.imgur.com/ThyCbau.png'
     },
     {
       id: 'Inciensos Palo Santo con Ruda',
@@ -145,7 +145,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. Esta mezcla nos ayuda a purificar los espacios, nos brinda protección y llena de Amor y luz nuestros espacios, además de limpiar las energías densas.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/K0VvwGx.jpeg'
+      imageUrl: 'https://i.imgur.com/8sMzWhM.jpeg'
     },
     {
       id: 'Flores De Bach',
@@ -161,7 +161,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. La canela con su aroma nos ayuda a relajar y mantener una paz mental que nos guía hacia la abundancia y prosperidad junto con el Palo Santo intensifica y abre nuestros caminos.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/mlQb2GW.jpeg'
+      imageUrl: 'https://i.imgur.com/IlsLR6s.jpeg'
     },
     {
       id: 'Inciensos Palo Santo',
@@ -169,7 +169,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. Encender uno de estos inciensos es un acto sagrado y purificador, aumenta la sensación de calma y bienestar, atrayendo energías positivas armoniosas.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/qKuuJFH.jpeg'
+      imageUrl: 'https://i.imgur.com/5ot1yKK.jpeg'
     },
     {
       id: 'Guia de los Elementos',
@@ -185,7 +185,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. Estas maderas sagradas brindan claridad mental, relajan de forma natural reduciendo el estrés y aportan armonía de amor propio o de pareja en el espacio.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/mqSKjb6.jpeg'
+      imageUrl: 'https://i.imgur.com/PVFjRVK.jpeg'
     },
     {
       id: 'Inciensos Palo Santo con Copal',
@@ -193,7 +193,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. La unión de Palo Santo con el Copal forman un humo poderoso que ayuda con la purificación y sanación, volviéndonos un imán para las energías de abundancia tanto física como espiritual.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/pPFGtHx.jpeg'
+      imageUrl: 'https://i.imgur.com/zggCTaD.jpeg'
     },
     {
       id: 'Masaje de Reconexión y Armonía 40 min',
@@ -209,7 +209,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. Combinación poderosa que nos ayuda en la claridad mental y limpieza de espacios ya que la Salvia sube la frecuencia del espacio, protegiéndonos y abriendo caminos.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/XVCHgXr.jpeg'
+      imageUrl: 'https://i.imgur.com/DyhDlh0.jpeg'
     },
     {
       id: 'Inciensos Palo Santo con Romero',
@@ -217,7 +217,7 @@
       type: 'producto',
       description: 'Caja 8 inciensos. El Palo Santo y el Romero juntos brindan purificación de espacios, atraen energías positivas uniendo las almas con Amor, lo que genera paz y armonía.',
       price: 4300,
-      imageUrl: 'https://i.imgur.com/kL062nJ.jpeg'
+      imageUrl: 'https://i.imgur.com/zu5Vt90.jpeg'
     },
     {
       id: 'Lectura de Registros Akashicos',
@@ -233,7 +233,7 @@
       type: 'producto',
       description: 'Atado de hierbas y resinas. La Mirra purifica espacios creando vibraciones positivas de paz y tranquilidad, en combinación con el Palo Santo limpia el aura y sella todo con Amor y luz.',
       price: 3900,
-      imageUrl: 'https://i.imgur.com/VwhdSZs.jpeg'
+      imageUrl: 'https://i.imgur.com/pHJaD9z.png'
     },
     {
       id: 'Sahumo de Romero',
@@ -241,7 +241,7 @@
       type: 'producto',
       description: 'Atado de hierbas y resinas. Efectivo para limpiar nuestra vida y aura. Excelente para abrir caminos, nuestra mente y percepción a nuevas bendiciones y oportunidades.',
       price: 3900,
-      imageUrl: 'https://i.imgur.com/rgEPSVV.jpeg'
+      imageUrl: 'https://i.imgur.com/ocTDI1I.jpeg'
     },
     {
       id: 'Sahumo de Sandalo',
@@ -249,7 +249,7 @@
       type: 'producto',
       description: 'Atado de hierbas y resinas. Purifica y calma la mente ayudándonos a reducir la tensión. Atrae energías positivas, apertura de caminos espirituales y fortalecimiento de la intuición.',
       price: 3900,
-      imageUrl: 'https://i.imgur.com/8ryaAiu.jpeg'
+      imageUrl: 'https://i.imgur.com/gJ0AocD.jpeg'
     },
     {
       id: 'Sahumo de Salvia Blanca',
@@ -257,7 +257,7 @@
       type: 'producto',
       description: 'Atado de hierbas y resinas. Alto poder esotérico y espiritual, ampliamente usada para atraer la sanación, protección espiritual, limpieza poderosa y elevación de la frecuencia del espacio.',
       price: 3900,
-      imageUrl: 'https://i.imgur.com/IxOa3BP.jpeg'
+      imageUrl: 'https://i.imgur.com/7M5opsk.jpeg'
     },
     {
       id: 'Sahumo de Copal',
@@ -265,7 +265,7 @@
       type: 'producto',
       description: 'Atado de hierbas y resinas. Conocida como la "resina de los dioses". Protege, purifica y limpia energéticamente nuestras vidas, uniendo la fuerza de la naturaleza con el cielo.',
       price: 3900,
-      imageUrl: 'https://i.imgur.com/ek3qZJ6.jpeg'
+      imageUrl: 'https://i.imgur.com/U0Gpzgl.jpeg'
     },
     {
       id: 'Ambienta tu Espacio',
